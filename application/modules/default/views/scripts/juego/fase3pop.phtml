@@ -1,0 +1,140 @@
+<?php
+$ataques = $this->ataque;
+$defensas = $this->defensa;
+$fairplays = $this->fairplay;
+$puntajedepors = $this->puntajedepor;
+$respuestas = $this->respuestas;
+?>
+<div class="popJuegoFase3 popJuegos">
+  <form name="frmPaso3" id="frmPaso3" method="post">
+
+  <img class="logoEquipoFase3" src="/images/<?php echo $this->icono;?>" />
+    <h4>
+          <?php echo $this->nombre_equipo; ?>
+          <input type="hidden" name="partido_id" id="partido_id" value="<?php echo $this->partido_id;?>" size="2">
+          <input type="hidden" name="tipo" id="tipo" value="<?php echo $this->tipo;?>" size="2">
+          <input type="hidden" name="indice" id="indice" value="<?php echo $this->indice;?>" size="2">
+    </h4>
+    <p>Califica a tu equipo en diversas categorias de rendimiento</p>
+
+    <div class="popFase3Contenido">
+
+        <div class="cuadroFase3 caso1">
+
+            <div class="cuadroFase3Left">
+            	<img src="/images/_icoFase3Ataque.gif" align="left" />
+            </div> <!--fin cuadroFase3Left-->
+
+            <div class="cuadroFase3Right">
+                <ul class="listadoFase3" id="categoria1">
+                    <li>
+                        <div class="fase3Left">Calificaci&oacute;n</div>
+                        <div class="fase3Right">Categoria</div>
+                    </li>
+                    <input type="hidden" name="puntajejuego_id[<?php echo "0";?>]" id="puntajejuego_id[<?php echo "0";?>]" value="<?php echo $respuestas['ataque']['puntajejuego_id'];?>" size="2">
+                    <input type="hidden" name="variable[<?php echo "0";?>]" id="variable[<?php echo "0";?>]" value="<?php echo $ataques[0]['variable_id'];?>" size="2">
+                    <?php
+                    foreach($ataques as $indice=>$ataque){
+                     ?>
+                    <?php $chkAtaque = $respuestas['ataque']['intervalo_id'] == $ataque['intervalo_id']?"checked='checked'":""; ?>
+                    <li class="verd">
+                        <div class="fase3Left"><input name="intervalo[<?php echo "0";?>]" id="intervalo[<?php echo "0";?>]" type="checkbox" <?php echo $chkAtaque;?> value="<?php echo $ataque['intervalo_id'];?>"  onclick="pulsar3(this,1);"/><p><?php echo $ataque['descripcion'];?></p></div>
+                        <div class="fase3Right"><p><?php echo $ataque['descripcion2'];?> <span>(<?php echo $ataque['puntaje'];?> ptos)</span></p></div>
+                    </li>
+                    <?php
+                    }
+                    ?>
+                </ul>
+            </div> <!--fin cuadroFase3Right-->
+
+          <div class="clear"></div>
+      </div> <!--fin cuadroFase3-->
+
+      <div class="cuadroFase3 caso2">
+
+            <div class="cuadroFase3Left">
+            	<img src="/images/_icoFase3Defensa.gif" align="left" />
+            </div> <!--fin cuadroFase3Left-->
+
+            <div class="cuadroFase3Right">
+                <ul class="listadoFase3" id="categoria2">
+                    <li>
+                        <div class="fase3Left">Calificaci&oacute;n</div>
+                        <div class="fase3Right">Categoria</div>
+                    </li>
+                    <input type="hidden" name="puntajejuego_id[<?php echo "1";?>]" id="puntajejuego_id[<?php echo "1";?>]" value="<?php echo $respuestas['defensa']['puntajejuego_id'];?>" size="2">
+                    <input type="hidden" name="variable[<?php echo "1";?>]" id="variable[<?php echo "1";?>]" value="<?php echo $defensas[0]['variable_id'];?>" size="2">
+                    <?php foreach($defensas as $indice=>$defensa): ?>
+                    <?php $chkDefensa = $respuestas['defensa']['intervalo_id'] == $defensa['intervalo_id']?"checked='checked'":""; ?>
+                    <li class="verd">
+                        <div class="fase3Left"><input name="intervalo[<?php echo "1";?>]" id="intervalo[<?php echo "1";?>]" type="checkbox" <?php echo $chkDefensa;?> value="<?php echo $defensa['intervalo_id'];?>"  onclick="pulsar3(this,2);"/><p><?php echo $defensa['descripcion'];?></p></div>
+                        <div class="fase3Right"><p><?php echo $defensa['descripcion2'];?> <span>(<?php echo $defensa['puntaje'];?> pts)</span></p></div>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div> <!--fin cuadroFase3Right-->
+
+          <div class="clear"></div>
+      </div> <!--fin cuadroFase3-->
+
+      <div class="cuadroFase3 caso3">
+
+            <div class="cuadroFase3Left">
+            	<img src="/images/_icoFase3FairPlay.gif" align="left" />
+            </div> <!--fin cuadroFase3Left-->
+
+            <div class="cuadroFase3Right">
+                <ul class="listadoFase3" id="categoria3">
+                    <li>
+                        <div class="fase3Left">Calificaci&oacute;n</div>
+                        <div class="fase3Right">Categoria</div>
+                    </li>
+                    <input type="hidden" name="puntajejuego_id[<?php echo "2";?>]" id="puntajejuego_id[<?php echo "2";?>]" value="<?php echo $respuestas['fairplay']['puntajejuego_id'];?>" size="2">
+                    <input type="hidden" name="variable[<?php echo "2";?>]" id="variable[<?php echo "2";?>]" value="<?php echo $fairplays[0]['variable_id'];?>" size="2">
+                    <?php foreach($fairplays as $indice=>$fairplay): ?>
+                    <?php $chkFairplay = $respuestas['fairplay']['intervalo_id'] == $fairplay['intervalo_id']?"checked='checked'":""; ?>
+                    <li class="verd">
+                        <div class="fase3Left"><input name="intervalo[<?php echo "2";?>]" id="intervalo[<?php echo "2";?>]" type="checkbox" <?php echo $chkFairplay;?> value="<?php echo $fairplay['intervalo_id'];?>" onclick="pulsar3(this,3);"/><p><?php echo $fairplay['descripcion'];?></p></div>
+                        <div class="fase3Right"><p><?php echo $fairplay['descripcion2'];?> <span>(<?php echo $fairplay['puntaje'];?> pts)</span></p></div>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div> <!--fin cuadroFase3Right-->
+
+          <div class="clear"></div>
+      </div> <!--fin cuadroFase3-->
+
+      <div class="cuadroFase3 caso4">
+
+            <div class="cuadroFase3Left">
+            	<img src="/images/_icoFase3Depor.gif" align="left" />
+            </div> <!--fin cuadroFase3Left-->
+
+            <div class="cuadroFase3Right">
+                <ul class="listadoFase3" id="categoria4">
+                    <li>
+                        <div class="fase3Left">Calificaci&oacute;n</div>
+                        <div class="fase3Right">Categoria</div>
+                    </li>
+                    <input type="hidden" name="puntajejuego_id[<?php echo "3";?>]" id="puntajejuego_id[<?php echo "3";?>]" value="<?php echo $respuestas['puntajedepor']['puntajejuego_id'];?>" size="2">
+                    <input type="hidden" name="variable[<?php echo "3";?>]" id="variable[<?php echo "3";?>]" value="<?php echo $puntajedepors[0]['variable_id'];?>" size="2">
+                    <?php foreach($puntajedepors as $indice=>$puntajedepor): ?>
+                    <?php $chkPuntajeDepor = $respuestas['puntajedepor']['intervalo_id'] == $puntajedepor['intervalo_id']?"checked='checked'":""; ?>
+                    <li class="verd">
+                        <div class="fase3Left"><input name="intervalo[<?php echo "3";?>]" id="intervalo[<?php echo "3";?>]" type="checkbox" <?php echo $chkPuntajeDepor;?> value="<?php echo $puntajedepor['intervalo_id'];?>" onclick="pulsar3(this,4);" /><p><?php echo $puntajedepor['descripcion'];?></p></div>
+                        <div class="fase3Right"><p><?php echo $puntajedepor['descripcion2'];?> <span>(<?php echo $puntajedepor['puntaje'];?> pts)</span></p></div>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div> <!--fin cuadroFase3Right-->
+
+          <div class="clear"></div>
+      </div> <!--fin cuadroFase3-->
+
+    </div> <!--fin popFase3Contenido-->
+
+    <div class="clear"></div>
+  <a href="#" onclick="grabar3pop();" class="btnNaranja180 bold center btnBig">Guardar calificaci&oacute;n</a>
+</form>
+<!--fin popRegistro-->
+</div> 

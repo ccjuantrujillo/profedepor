@@ -1,0 +1,32 @@
+<form action="/panel/variable/" method="post" id="FormPanel">
+  <div class="crearbanner"> 
+       <h1><?php echo $this->title ?></h1>
+       <a class="aceptarlog2" href="/panel/variable/registro/" alt="Nuevo" title="Nuevo">Ingresar nueva Variable</a>
+      <ul>
+        <li><?php echo $this->tipo ?></li>
+      </ul>
+  </div>
+</form>
+
+
+<div class="containertable">
+  <div class="mensajetable">Se han encontrado (<?php echo $this->variables->rowCount() ?>) registro(s)</div>
+  <table  border="1"  cellspacing="0" cellpadding="0">
+    <tr class="list1">
+      <td width="4%">Num</td>
+      <td width="18%">Tipo Variable</td>
+      <td width="47%">Descripcion</td>
+      <td width="10%">Editar</td>
+      <td width="10%">Eliminar</td>
+    </tr>
+    <?php $i = 1; while($item = $this->variables->fetch()): ?>
+    <tr class="<?php echo $this->cycle(array('list_a', 'list_b'))->next() ?>">
+      <td><?php echo $i ?></td>
+      <td><?php echo $item->tipovariable ?></td>
+      <td style="text-align: left">&nbsp;&nbsp;<?php echo $item->descripcion ?></td>
+      <td><a href="#" onclick="Editar(<?php echo $item->variable_id ?>)"><img src="<?php echo $this->Image('editar.jpg');?>" border="0"/></a></td>
+      <td><a href="#" onclick="eliminarVariable(<?php echo $item->variable_id ?>)"><img src="<?php echo $this->Image('eliminar.jpg');?>" border="0"/></a></td>
+    </tr>
+    <?php $i++; endwhile ?>
+  </table>  
+</div>

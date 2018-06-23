@@ -1,0 +1,26 @@
+<div class="pop480 popStyle">
+    <h1>Aprobar Solicitud</h1>
+    <p class="bold">Tienes <?php echo $this->solicitudes->cantidad; ?> solicitudes pendientes de aprobación.</p>
+
+    <div class="solicitudes">
+        <form id="frmAprobarSolicitud" name="frmAprobarSolicitud" action="#" method="post" >
+            <input type="hidden" name="grupo_id" value="<?php echo $this->grupo_id; ?>"/>
+            <a href="#" class="derLink">Seleccionar todos</a>
+            <div class="overListManchaSolicitudes">
+                <ul>
+                    <?php foreach ($this->aprobar as $i => $m): ?>
+                        <li class="l<?php echo ($i % 2 == 0) ? "1" : "2"; ?>">
+                            <p><?php echo $m->nomjugador; ?></p>
+                            <div class="right">
+                                <input id="codjugador" name="codjugador[]" class="cb-element" type="checkbox" value="<?php echo $m->jugador_id; ?>" />
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div> <!--fin overListMancha-->
+        </form>
+    </div> <!--fin solicitudes-->
+
+    <a href="#" id="btnAprobarSolicitud" class="btnNaranja180 bold center btnBig">Aprobar solicitud</a>
+<!--fin popRegistro-->
+</div>

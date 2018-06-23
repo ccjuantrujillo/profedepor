@@ -1,0 +1,51 @@
+<form action="/panel/usuario/" method="post" id="FormPanel">
+  <div class="crearbanner"> <a class="aceptarlog2" href="/panel/usuario/registro/" alt="Nuevo" title="Nuevo">Crear un nuevo Usuario</a>
+      <!-- ul>
+    <li>Fecha de Registro:
+      <input name="input2" type="text" class="borderblue" />
+        <input name="input2" type="button" value="Ver" class="ver2" />
+    </li>
+    <li>Tipo de Banner:
+      <select name="select" class="borderblue">
+          <option value="-Seleccione-" >-Seleccione-</option>
+        </select>
+    </li>
+    <li> Estado:
+      <select name="select" class="borderblue">
+          <option value="-Seleccione-">-Seleccione-</option>
+        </select>
+    </li>
+  </ul -->
+  </div>
+</form>
+
+<div class="containertable">
+  <div class="mensajetable">Se han encontrado (<?php echo $this->usuarios->rowCount();?>) registro(s)</div>
+  <table  border="1"  cellspacing="0" cellpadding="0">
+    <tr class="list1">
+      <td width="5%">NUM</td>
+      <td width="20%">Nombres</td>
+      <td width="20%">Apellidos</td>
+      <td width="15%">Usuario</td>
+      <td width="20%">Email</td>
+      <td width="10%">Editar</td>
+      <td width="10%">Eliminar</td>
+    </tr>
+    <?php $i = 1; while($item = $this->usuarios->fetch()): ?>
+    <tr class="<?php echo $this->cycle(array('list_a', 'list_b'))->next() ?>">
+      <td><?php echo $i ?></td>
+      <td><?php echo $item->nombre ?></td>
+      <td><?php echo $item->apellido ?></td>
+      <td><?php echo $item->login ?></td>
+      <td><?php echo $item->email ?></td>
+      <td><a href="#" onclick="Editar(<?php echo $item->usuario_id;?>)"><img src="<?php echo $this->Image('editar.jpg');?>" border="0"/></a></td>
+      <td><a href="#" onclick="Eliminar(<?php echo $item->usuario_id;?>)"><img src="<?php echo $this->Image('eliminar.jpg');?>" border="0"/></a></td>
+    </tr>
+    <?php $i++; endwhile;?>
+  </table>
+  <!--div class="mensajetable2">
+    <ul>
+      <li>1</li>
+    </ul>
+  </div-->
+</div>

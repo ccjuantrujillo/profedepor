@@ -1,0 +1,36 @@
+<div class="crearbanner">
+    <h1><?php echo $this->form_title ?></h1>
+</div>
+
+<div class="containertable">
+    <div class="container_bg patbotom">
+    	<form action="#" id="frmCrearClub" name="frmCrearClub" method="post" enctype="multipart/form-data">
+            <table style="width: 300px;" border="0" cellspacing="0" cellpadding="3">
+                <tr>
+                	<td colspan="2"><div id="mensaje" style="color: red; text-align: center;"></div></td>
+                </tr>
+                <tr>
+                    <td>Descripci&oacute;n:</td>
+                    <td><input type="text" id="descripcion" name="descripcion" size="20" maxlength="20" /></td>
+                </tr>
+                <tr>
+                    <td>Subir Imagen:</td>
+                    <td style="vertical-align: bottom;"><img width="37" height="37" src="/fotos/grupo/icono_mancha.png" id="fotoCreada" />
+                        <input type="hidden" id="fotoClub" name="fotoClub" />
+                        <input type="hidden" id="imagenClub" name="imagenClub" />
+                        <a href="#" id="btnSubirImagen" class="aceptarlog2">Subir</a>
+                    </td>
+                </tr>   
+                <tr>
+                	<td colspan="2">&nbsp;</td>
+                </tr>                             
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                    	<a href="#" onclick="crearClub();" id="btnEditarClub" style="margin-right: 10px;" class="aceptarlog2">Guardar</a>
+                    	<a href="/panel/club/" id="btnCancelar" style="margin-left: 10px;" class="aceptarlog2">Cancelar</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>

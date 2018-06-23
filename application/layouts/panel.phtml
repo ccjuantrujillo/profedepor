@@ -1,0 +1,47 @@
+<?php echo $this->doctype() . "\n" ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<?php echo $this->headMeta() . "\n" ?>
+<?php echo $this->headTitle() . "\n" ?>
+<?php echo $this->headLink() . "\n" ?>
+<?php echo $this->headScript() . "\n" ?>
+</head>
+
+<body>
+	<div class="wrapper" > 
+    	<div class="headerlogo">
+            <img src="<?php echo $this->Image('logoesika.jpg');?>" border="0"/>
+            <div style="text-align:right;"><?php echo $this->loggedInUs();?></div>
+            <h3><a class="aceptarlog2" href="/panel/login/logout/">Cerrar sesi&oacute;n</a></h3>
+        </div>
+        <div class="zonebody_esika patbotom">
+   	    	<ul class="nav">
+            <?php
+            foreach($this->modulos as $modulo){
+            $fondo = $modulo->modulo_id==$this->modulo_id?"style='background:#505050'":"";
+            ?>
+                 <li><a <?php echo $fondo;?> href="/panel/<?php if(strlen($modulo->controller) > 0) echo $modulo->controller . '/' ?>"><?php echo $modulo->descripcion ?></a></li>
+            <?php
+            }
+            ?>
+            </ul>
+            
+          <div id="box-content">
+            <div style="float: left; width: 20%">
+   	    	  <ul id="menu">
+				<?php foreach($this->menu as $indice=>$value): ?>
+                <li id="<?php echo $value['controlador'];?>"><a href="<?php echo $value['url'];?>"><?php echo $value['title'];?></a></li>
+                <?php endforeach ?>
+              </ul>
+            </div>
+            <div style="float: left; width: 80%"><?php echo $this->layout()->content ?></div>
+          </div>
+        
+        </div><!--zonebody_esika-->
+        <div class="footer_esika">
+       		<h4> 2011 M&oacute;dulo de Administraci&oacute;n - El Profe Depor</h4>
+            <img src="<?php echo $this->Image('logocartoon.jpg') ?>"/>
+        </div> 
+    </div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+Pagina: <?php foreach($this->pagesInRange as $page): ?>
+<?php if($this->current != $page): ?>
+<a href="/grupo/buscar?page=<?php echo $page ?>"><?php echo $page ?></a>
+<?php else: ?>
+<b><?php echo $page ?></b>
+<?php endif ?>
+<?php endforeach ?>

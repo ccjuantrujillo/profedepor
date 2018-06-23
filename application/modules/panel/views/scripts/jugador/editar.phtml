@@ -1,0 +1,48 @@
+<div class="crearbanner">
+  <h1><?php echo $this->form_title ?></h1>
+</div>
+
+<div class="containertable">
+  <div class="container_bg patbotom">
+      <form action="#" id="frmEditarJugador" name="frmEditarJugador" method="post" enctype="multipart/form-data">
+          <input type="hidden" id="jugador_id" name="jugador_id" value="<?php echo $this->jugador->jugador_id; ?>" />
+            <table style="width:100%" border="0"  cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>Tipo Documento:</td>
+                    <td><?php echo $this->tipo; ?></td>
+                </tr>
+                <tr>
+                    <td>Documento:</td>
+                    <td><input type="text" id="numero_doc" name="numero_doc" value="<?php echo $this->jugador->numero_doc; ?>" size="10" maxlength="8" /></td>
+                </tr>
+                <tr>
+                    <td>Nombres:</td>
+                    <td><input type="text" id="nombres" name="nombres" value="<?php echo $this->jugador->nombres; ?>" size="30" maxlength="30" /></td>
+                </tr>
+                <tr>
+                    <td>Apellidos:</td>
+                    <td><input type="text" id="apellidos" name="apellidos" value="<?php echo $this->jugador->apellidos; ?>" size="30" maxlength="30" /></td>
+                </tr> 
+                <tr>
+                    <td>Tel&eacute;fono:</td>
+                    <td><input type="text" id="telefono" name="telefono" value="<?php echo $this->jugador->telefono; ?>" size="15" maxlength="10" /></td>
+                </tr>  
+                <tr>
+                    <td>DNI Apoderado:</td>
+                    <td><input type="text" id="dni_apoderado" name="dni_apoderado" value="<?php echo $this->jugador->dni_apoderado; ?>" size="10" maxlength="8" /></td>
+                </tr> 
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <div style="text-align: center;">
+                        <a href="#" onclick="grabarJugador();" id="btnEditarJugador" style="margin-right: 10px;" class="aceptarlog3">Guardar</a>
+                        <a href="/panel/jugador/" style="margin-left: 10px;" class="aceptarlog3">Cancelar</a>
+                    </div>                        
+                    </td>
+                </tr>
+            </table>
+        </form>
+  </div>
+</div>

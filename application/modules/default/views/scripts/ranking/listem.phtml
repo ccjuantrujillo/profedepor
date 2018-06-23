@@ -1,0 +1,22 @@
+<ul class="listadoRanking">
+  <li class="first">
+    <p>T&Uacute;</p>
+    <div class="puesto"><?php echo ($this->rank_fecha_jugador != null)?$this->rank_fecha_jugador+1:"-"; ?></div>
+    <div class="puntos"><?php echo $this->puntaje_fecha_jugador ?> Ptos.</div>
+    <div class="nombre"><?php echo ucwords($this->nombre_jugador); ?></div>
+  </li>
+</ul>
+<div class="overListRank">
+  <ul class="listadoRanking">
+    <?php if($this->rankfecha != null): ?>
+    <?php foreach ($this->rankfecha as $i => $p): ?>
+    <li class="<?php echo $this->cycle(array('par', 'impar'))->next() ?>">
+      <div class="puesto"><?php echo ($i + 1) ?></div>
+      <div class="puntos"><?php echo $p->puntaje_total ?> ptos.</div>
+      <div class="nombre"><?php echo substr(ucwords($p->nomjugador),0,25); ?></div>
+    </li>
+    <?php endforeach; ?>
+    <?php endif; ?>
+  </ul>
+</div>
+<!--fin overListRank-->

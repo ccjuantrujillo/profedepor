@@ -1,0 +1,184 @@
+<div class="miMancha manchaMuro">
+
+            <div class="sideLeft">
+
+            	<div class="profileMancha">
+                    <h1 class="left">Mi Mancha</h1>
+                    <!--<a href="#" class="backMancha right">Regresar</a>-->
+                    <div class="clear"></div>
+
+                    <img width="49" height="45" class="avatarMancha" src="/fotos/grupo/<?php echo $this->pgrupo->foto; ?>" />
+                    <h2><?php echo $this->pgrupo->nomgrupo ?></h2>
+                    <h3>Admin: <?php echo $this->pgrupo->adminnombre; ?></h3>
+                    <h3>Miembros: <?php echo $this->pgrupo->hinchas; ?></h3>
+                    <div class="clear"></div>
+
+                    <p><span class="bold">Descripci&oacute;n:</span><br /> <?php echo html_entity_decode($this->pgrupo->descripcion); ?></p>
+                </div> <!--profileMancha-->
+
+		<div class="listadoMancha">
+                    <h3><?php echo strtoupper($this->nombregrupo); ?> - <?php echo $this->pgrupo->hinchas; ?> MIEMBRO<?php echo ($this->pgrupo->hinchas==1)?'':'S'; ?></h3>
+                    <div class="overListMancha">
+                    	<ol>
+                        <?php if($this->integrantes != null): ?>
+                        <?php foreach($this->integrantes as $i => $jug): ?>
+                            <li class="<?php echo ($i%2==0)?'inpar':'par'; ?>"><?php echo ucwords($jug->nomjugador); ?></li>
+                        <?php endforeach; ?>
+                        <?php else: ?>
+                            <li class="inpar">No hay integrantes</li>
+                        <?php endif ?>
+                        </ol>
+                    </div> <!--fin overListMancha-->
+                    <div>
+                    <?php if($this->isOwnerGroup): ?>
+                    <p class="bold left" style="margin:10px;">Solicitudes: <?php echo $this->solicitudes->cantidad; ?></p>
+                        <?php if($this->solicitudes->cantidad > 0):?>
+                    <a href="#" onclick="verSolicitud(<?php echo $this->solicitudes->grupo_id; ?>);" id="btnVerSolicitud" class="btnNormal right">Aprobar solicitud</a>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                    <div class="clear"></div>
+                    </div>
+
+                </div> <!--fin listadoMancha-->
+
+		<div class="listadoMancha">
+                    <h3>MANCHAS A LAS QUE PERTENECES</h3>
+                    <div class="overListMancha">
+                    	<ol>
+                        <?php if($this->usuarioGrupos != null): ?>
+                        <?php foreach($this->usuarioGrupos as $i => $grupo): ?>
+                            <li class="<?php echo ($i%2==0)?'inpar':'par'; ?>">
+                                <a href="/grupo/ver/id/<?php echo $grupo->grupo_id; ?>"><?php echo ucwords($grupo->nombre);?> (<?php echo $grupo->cantidad;?> miembro<?php echo ($grupo->cantidad>1)?"s":"";?>)</a>
+                            </li>
+                        <?php endforeach; ?>
+                        <?php endif; ?>
+                        </ol>
+                    </div> <!--fin overListMancha-->
+                    <div style="height:15px;"></div>
+                    <div class="clear"></div>
+
+                </div> <!--fin listadoMancha-->
+
+                <div class="botonesBottomMancha">
+                	<!--<a href="#" class="btnBottomMancha">Invita a tus patas</a>-->
+                	<a href="/grupo/registro/" class="btnBottomMancha">Crea una mancha</a>
+                	<a href="/grupo/buscar/" class="btnBottomMancha">&Uacute;nete a una mancha</a>
+                    <a href="#" onClick="viewPopAyuda()" class="btnNormalM left">¿Qu&eacute; es una Mancha?</a>
+                </div> <!--fin botonesBottomMancha-->
+
+            </div> <!--fin sideLeft-->
+
+            <div class="sideCenter">
+
+                <div class="comentarMancha">
+
+                    <h1>La mancha opina</h1>
+                    <p>Este es el foro de tu mancha. Comenta, comparte informaci&oacute;n,  vac&iacute;late y opina.</p>
+                  <form action="#" name="frmMensajes" id="frmMensajes" method="post">
+                    <input type="hidden" id="grupo_id" name="grupo_id" value="<?php echo $this->pgrupo->grupo_id ?>"/>
+                    <textarea name="mensaje" id="mensaje" cols="" rows="" onkeypress="return limita(this, event,150)" onkeyup="cuenta(this, event,150,'contador')"></textarea>
+                    <span id="contador" style="color: red;"></span><br />
+                    <span id="comprobar" style="color: red;"></span>
+                    <a href="#" id="btnPublicar" class="btnNaranja65 right">Publicar</a>
+                    </form>
+                    <div class="clear"></div>
+
+                </div> <!--fin comentarMancha-->
+                <div class="overListMancha">
+                    <div id="resultado">
+                    <?php if($this->lista_muro != null): ?>
+                    <?php foreach ($this->lista_muro as $m): ?>
+                    <div class="manchaComentario">
+                        <img class="comAvatar" src="/fotos/<?php echo $m->foto; ?>" />
+                        <div class="title">
+                            <h2><?php echo $m->nomjugador; ?></h2>
+                            <h4><?php echo $m->fecha; ?>, <?php echo ($m->dhora>24)?$m->hora:(($m->dhora==0)?(($m->dmin == 0)?"hace 1 min":"hace $m->dmin min"):"hace $m->dhora horas"); ?></h4>
+                        </div>
+                        <p><?php echo html_entity_decode($m->mensaje); ?></p>
+                    </div> <!--fin manchaComentario-->
+                    <?php $muro_id = $m->muro_id; ?>
+                    <?php endforeach; ?>
+                    <div id="mascomentarios">
+                        <div id="more<?php echo $muro_id; ?>" class="morebox">
+                                <a class="btnNormal" href="#" id="<?php echo $muro_id; ?>">[Ver comentarios antiguos]</a>
+                        </div>
+                    </div>
+                    <?php else: ?>
+                    <div class="manchaComentario">
+                        <img class="comAvatar" src="<?php echo $this->Image('_avatar.jpg'); ?>" />
+                        <div class="title"><h2>&nbsp;</h2><h4>&nbsp;</h4></div>
+                        <p>No hay Comentarios en este grupo.</p>
+                    </div> <!--fin manchaComentario-->
+                    <?php endif; ?>
+                    </div>
+                </div>
+            </div> <!--fin sideLeft-->
+						
+            <div class="sideRight unitPng">
+
+                <h1>El Ranking</h1>
+
+                <div class="rankingMancha">
+
+	            <h3>GENERAL DE TU MANCHA</h3>
+                    <ul class="listadoRanking">
+                    <?php if($this->rankgrupo != null): ?>
+                        <?php if($this->countgrupo->cantidad == 0): ?>
+                            <li><div class="puesto">&nbsp;</div>
+                            &nbsp;No hay puntajes registrados</li>
+                        <?php else: ?>
+                            <?php foreach($this->rankgrupo as $i => $rg): ?>
+                            <li<?php echo ($i==0)?" class=\"first\"":""; ?>><div class="puesto"><?php echo ($i+1); ?></div><div class="puntos"><?php echo $rg->puntaje; ?> Ptos.</div><div class="nombre"><?php echo $rg->nomjugador; ?></div></li>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    <?php else: ?>
+                        <li><div class="puesto">&nbsp;</div>
+                        &nbsp;No hay integrantes</li>
+                    <?php endif; ?>
+                    </ul>
+                    <a href="/ranking/" class="btnNormal right" style="margin: 3px;">[Ver Todo]</a>
+                    <div class="clear"></div>
+
+                </div> <!--fin rankingMancha-->
+
+                <div class="rankingMancha">
+
+	            <h3>TU MANCHA FECHA <?php echo $this->fecha_hoy['descripcion']; ?></h3>
+                    <ul class="listadoRanking">
+                        <?php if($this->rankgrupofecha != null): ?>
+                        <?php foreach($this->rankgrupofecha as $i => $rgf): ?>
+                        <li<?php echo ($i==0)?" class=\"first\"":""; ?>><div class="puesto"><?php echo ($i+1); ?></div><div class="puntos"><?php echo $rgf->puntaje_total; ?> Ptos.</div><div class="nombre"><?php echo $rgf->nomjugador; ?></div></li>
+                        <?php endforeach; ?>
+                        <?php else: ?>
+                            <li><div class="puesto">&nbsp;</div>
+                            &nbsp;No hay puntajes registrados</li>
+                        <?php endif; ?>
+                    </ul>
+                    <p class="left" style="margin: 3px;">Fecha: <?php echo $this->fecha_hoy['descripcion']; ?>/30</p>
+                    <a href="/ranking/" class="btnNormal right" style="margin: 3px;">[Ver Todo]</a>
+                    <div class="clear"></div>
+
+                </div> <!--fin rankingMancha-->
+
+                <div class="rankingMancha">
+
+	            <h3>GENERAL DE EL PROFE DEPOR</h3>
+                    <ul class="listadoRanking">
+                        <?php if($this->rankgeneral != null): ?>
+                        <?php foreach($this->rankgeneral as $i => $rg): ?>
+                        <li<?php echo ($i==0)?" class=\"first\"":""; ?>><div class="puesto"><?php echo ($i+1); ?></div><div class="puntos"><?php echo $rg->puntaje; ?> Ptos.</div><div class="nombre"><?php echo $rg->nomjugador ?></div></li>
+                        <?php endforeach; ?>
+                        <?php else: ?>
+                            <li><div class="puesto">&nbsp;</div>
+                            &nbsp;No hay puntajes registrados</li>
+                        <?php endif; ?>
+                    </ul>
+                    <a href="/ranking/" class="btnNormal right" style="margin: 3px;">[Ver Todo]</a>
+                    <div class="clear"></div>
+
+                </div> <!--fin rankingMancha-->
+
+
+            </div> <!--fin sideLeft-->
+            
+</div> <!--fin miMancha-->

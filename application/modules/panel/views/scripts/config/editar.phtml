@@ -1,0 +1,54 @@
+<div class="crearbanner">
+  <h1><?php echo $this->form_title ?></h1>
+</div>
+
+<div class="containertable">
+  <div class="container_bg patbotom">
+    <form action="#" id="frmConfig" name="frmConfig" method="post" enctype="multipart/form-data">
+        <input type="hidden" id="configuracion_id" name="configuracion_id" value="<?php echo $this->config->configuracion_id; ?>"/>
+            <table style="width: 300px;" border="0" cellspacing="0" cellpadding="3">
+                <tr>
+                    <td>Torneo:</td>
+                    <td>
+                        <select id="torneo_id" name="torneo_id">
+                            <?php foreach($this->torneos as $t): ?>
+                            <?php if($this->config->torneo_id == $t->torneo_id): ?>
+                            <option value="<?php echo $t->torneo_id; ?>" selected="selected"><?php echo $t->descripcion; ?></option>
+                            <?php else: ?>
+                            <option value="<?php echo $t->torneo_id; ?>"><?php echo $t->descripcion; ?></option>
+                            <?php endif; ?>
+                            <?php endforeach; ?>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fase:</td>
+                    <td>
+                        <select id="fase_id" name="fase_id">
+                            <?php foreach($this->fases as $f): ?>
+                            <?php if($this->config->fase_id == $f->fase_id): ?>
+                            <option value="<?php echo $f->fase_id; ?>" selected="selected"><?php echo $f->descripcion; ?></option>
+                            <?php else: ?>
+                            <option value="<?php echo $f->fase_id; ?>"><?php echo $f->descripcion; ?></option>
+                            <?php endif; ?>
+                            <?php endforeach; ?>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tolerancia:</td>
+                    <td><input type="text" id="tolerancia" name="tolerancia" size="10" maxlength="10"  value="<?php echo $this->config->tolerancia; ?>" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                </tr>                             
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                    	<a href="#" onclick="guardarConfig();" id="btnEditarConfig" style="margin-right: 10px;" class="aceptarlog2">Guardar</a>
+                    	<a href="/panel/config/" id="btnCancelar" style="margin-left: 10px;" class="aceptarlog2">Cancelar</a>
+                    </td>
+                </tr>
+            </table>
+	</form>
+  </div>
+</div>

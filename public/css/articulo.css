@@ -1,0 +1,41 @@
+#noticia * {
+	/*margin: 0;*/
+	/*padding: 0;*/
+	/*border: 0;*/
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	/*font-size: 100%;*/
+	font-family: inherit;
+	vertical-align: baseline;    
+}
+#noticia strong {		
+	font-weight: bold;  
+}
+#noticia em {		
+	font-style: italic;  
+}
+#noticia ul { 	
+	list-style: inside;
+	line-height: 1.5em;
+	padding-bottom: 10px;
+	padding-left: 2em;	
+}
+#noticia ul li{ 	
+	list-style: inside;
+}
+#noticia ol { 
+	list-style: inside;
+	line-height: 1.5em;
+	padding-bottom: 10px;
+	padding-left: 2em;	
+}
+#noticia ol li{ 	
+	list-style: inside;
+}
+#noticia img{ 	
+	width: inherit;
+	height: inherit;
+	border: inherit;
+}
+

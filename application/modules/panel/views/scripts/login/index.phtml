@@ -1,0 +1,32 @@
+<?php echo $this->doctype() . "\n" ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<?php echo $this->headMeta() . "\n" ?>
+<?php echo $this->headTitle() . "\n" ?>
+<?php echo $this->headLink() . "\n" ?>
+<?php echo $this->headScript() . "\n" ?>
+</head>
+
+<body>
+	<div class="wrapper" > 
+    	<div class="headerlogo">
+       		<img src="<?php echo $this->Image('logoesika.jpg') ?>"/>
+            <div class="border_head">  </div>
+        </div>
+        <div class="zonelogin_esika">
+        	<div class="formlogin">
+            	<img src="<?php echo $this->Image('titlelogin.jpg') ?>"/>
+                <!-- div class="form_log" -->
+                <div id="" style="text-align: center"><?php echo $this->login_error ?></div>
+                <div class="form_log">
+                <?php echo $this->form ?>
+                </div>
+            </div>
+        </div>
+        <div class="footer_esika">
+       		<h4> 2011 M&oacute;dulo de Administraci&oacute;n - El Profe Depor</h4>
+            <img src="<?php echo $this->Image('logocartoon.jpg') ?>"/>
+        </div>
+    </div>
+</body>
+</html>

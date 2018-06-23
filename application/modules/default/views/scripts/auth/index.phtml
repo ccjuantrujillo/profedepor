@@ -1,0 +1,29 @@
+<?php
+if( ! $fbuser){
+?>
+
+<fb:login-button length="long" onlogin="location.href='/login/'"></fb:login-button>
+    <script type="text/javascript" src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php"></script>
+    <script type="text/javascript">
+    FB.init("<?php echo $this->app_key ?>", "/xd_receiver.htm");
+    </script>
+<?php
+
+} else {
+    print_r($user_details);
+    /*
+?>
+Nombre: <?php echo $Nombre ?><br />
+Apellido: <?php echo $Apellido ?><br />
+Email: <?php echo $email ?><br />
+<?
+*/
+}
+
+?>
+<br />GOOGLE CONNECT
+<div id="gfc-button"></div>
+<p>The name of this site is <strong><span id="site-name"></span></p>
+<p id="viewer-info"></p>
+<p>The members of this site are:</p>
+<ol id="friends-list"></ol>

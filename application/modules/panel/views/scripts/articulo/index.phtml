@@ -1,0 +1,39 @@
+<div class="crearbanner" style="width: 100%">
+    <a class="aceptarlog2" href="/panel/articulo/registro" title="Nuevo">Ingresar Nuevo Art&iacute;culo</a>
+</div>
+
+<div class="containertable" style="margin: auto;">
+    <div class="mensajetable">Se han encontrado (<?php echo $this->cantidad; ?>) registro(s)</div>
+    <table style="width: 100%;" border="1" cellspacing="0" cellpadding="0">
+    	<thead>
+    		<tr>
+                <th width="60%">Noticia</th>
+                <th width="10%">Fecha</th>
+                <th width="10%">Ver</th>
+                <th width="10%">Editar</th>
+                <th width="10%">Eliminar</th>
+        	</tr> 
+    	</thead>
+    	<tbody>       
+        <?php foreach ($this->articulos as $listado): ?>
+        <tr id="articulo_<?php echo $listado->articulo_id; ?>">
+        	<td colspan="5">
+        		<table style="width: 100%" cellspacing="0" cellpadding="0">
+        			<tr class="list_b">                
+		                <td width="60%" style="text-align: left;"><b><?php echo $listado->titulo ?></b></td>
+		                <td width="10%"><?php echo $listado->registro ?></td>
+                                <td width="10%"><a href="#" onclick="verNoticia(<?php echo $listado->articulo_id;?>);"><img src="<?php echo $this->Image('ver.png');?>" border="0"/></a></td>
+                                <td width="10%"><a href="#" onclick="editarNoticia(<?php echo $listado->articulo_id;?>)"><img src="<?php echo $this->Image('editar.jpg');?>" border="0"/></a></td>
+		                <td width="10%"><a href="#" onclick="eliminarNoticia(<?php echo $listado->articulo_id;?>)"><img src="<?php echo $this->Image('eliminar.jpg');?>" border="0"/></a></td>
+		            </tr>            
+		            <tr>                
+		                <td><?php echo $listado->descripcion ?></td>
+		                <td colspan="4">&nbsp;</td>
+		            </tr>	
+        		</table>
+        	</td>
+        </tr>            
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>

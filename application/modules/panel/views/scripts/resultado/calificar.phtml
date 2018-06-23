@@ -1,0 +1,125 @@
+<div class="crearbanner">	
+    Fecha:  <?php echo $this->fechas['descripcion'];?><br />
+    Intervalo: <?php echo $this->fechas['intervalo'];?><br /><br />
+    <h2>CALIFICACION LOCAL</h2>
+</div>
+
+<form name="frmLocal" id="frmLocal" method="post">
+<div class="containertable" style="height: 500px;">
+<table border="1" width="85%" cellspacing="3" align="center">
+  <tr class="list1">
+    <td><strong>ID</strong></td>
+    <td><strong>LOCAL</strong></td>
+    <td><input type="hidden" name="tipovar"  id="tipovar" value="3"></td>
+    <td><strong>VISITANTE</strong></td>
+    <td><image src="/images/_icoFase3Ataque.gif" border="0"></td>
+    <td><image src="/images/_icoFase3Defensa.gif" border="0"></td>
+    <td><image src="/images/_icoFase3FairPlay.gif" border="0"></td>
+    <td><image src="/images/_icoFase3Depor.gif" border="0"></td>
+  </tr>
+<?php
+foreach($this->partidos as $indice => $value){
+?>
+<tr class="list_a">
+     <td width="4%" align="center">
+          <input type="hidden" name="respuesta_id[<?php echo $indice;?>]"  id="respuesta_id[<?php echo $indice;?>]" value="<?php echo isset($value->respuesta_id)?$value->respuesta_id:"";?>"  size="5"/>
+          <input type="hidden" name="partido_id[<?php echo $indice;?>]"  id="partido_id[<?php echo $indice;?>]" value="<?php echo $value->id;?>"  size="2"/>
+          <?php echo $indice+1;?>               </td>
+     <td width="20%" style="text-align:left;"><image src="/images/<?php echo $value->icono_local;?>" border="0"><?php echo $value->local;?></td>
+     <td width="2%" align="center">vs</td>
+     <td width="20%" style="text-align:left;"><image src="/images/<?php echo $value->icono_visita;?>" border="0"><?php echo $value->visita;?></td>
+     <?php
+     foreach($this->vars_total  as $i =>$valuevars){
+          if(isset($this->claves[$indice][$i])){
+                  $claves = $this->claves[$indice][$i];
+                  $puntos = $claves->puntajedepor;
+          }
+          else{
+               $puntos = 0;
+          }
+          if($valuevars['variable_id']!=9 && $valuevars['variable_id']<14){
+               $variable_id          = $valuevars['variable_id'];
+                ?>
+                    <td align="center">
+                         <input type="text" class="numeros"  onkeyup="if(this.value>10) {alert('La calificacion puede \nser entre 0 y 10');this.value=0;}"  name="puntos[<?php echo $indice;?>][<?php echo $variable_id;?>]" id="puntos[<?php echo $indice;?>][<?php echo $variable_id;?>]" value="<?php echo $puntos;?>" size="5">
+                    </td>
+                <?php
+          }
+     }
+     ?>
+</tr>
+<?php
+}
+?>
+</table>
+</div>
+</form>
+<br />
+<div style="margin-top: 10px;">
+    <p align="center">
+        <a href="/panel/resultado" class="aceptarlog2">REGRESAR</a>&nbsp;&nbsp;&nbsp;
+        <a href="#" class="aceptarlog2" onclick="califica_local();">GRABAR</a>
+    </p>
+</div>
+<br>
+<div class="crearbanner">	    
+    <h2>CALIFICACION VISITANTE</h2>
+</div>
+<form method="post" id="frmVisita" name="frmVisita">
+<div class="containertable" style="height: 500px;">
+<table border="1" width="85%" cellspacing="3" align="center">
+  <tr class="list1">
+          <td><strong>ID</strong></td>
+          <td><strong>LOCAL</strong></td>
+          <td><input type="hidden" name="tipovar"  id="tipovar" value="4"></td>
+          <td><strong>VISITANTE</strong></td>
+          <td width="8%"><image src="/images/_icoFase3Ataque.gif" border="0"></td>
+           <td width="5%"><image src="/images/_icoFase3Defensa.gif" border="0"></td>
+           <td width="4%"><image src="/images/_icoFase3FairPlay.gif" border="0"></td>
+          <td width="4%"><image src="/images/_icoFase3Depor.gif" border="0"></td>
+   </tr>
+          <?php
+          foreach($this->partidos as $indice => $value){
+          ?>
+          <tr class="list_a">
+               <td width="6%" style="text-align:center;">
+                    <input type="hidden" name="respuesta_id[<?php echo $indice;?>]"  id="respuesta_id[<?php echo $indice;?>]" value="<?php echo isset($value->respuesta_id)?$value->respuesta_id:"";?>"  size="5"/>
+                    <input type="hidden" name="partido_id[<?php echo $indice;?>]"  id="partido_id[<?php echo $indice;?>]" value="<?php echo $value->id;?>"  size="2"/>
+                    <?php echo $indice+1;?>               </td>
+               <td width="14%" style="text-align:left;"><image src="/images/<?php echo $value->icono_local;?>" border="0"><?php echo $value->local;?></td>
+               <td width="2%" align="center">vs</td>
+               <td width="14%" style="text-align:left;"><image src="/images/<?php echo $value->icono_visita;?>" border="0"><?php echo $value->visita;?></td>
+               <?php
+               $j=0;
+               foreach($this->vars_total  as $i =>$valuevars){
+                    if($valuevars['variable_id']>14 && $valuevars['variable_id']<19){
+                         $variable_id          = $valuevars['variable_id'];
+                         if(isset($this->claves4[$indice][$j]->variable_id) && $this->claves4[$indice][$j]->variable_id == $variable_id){
+                              $puntaje = $this->claves4[$indice][$j]->puntajedepor;
+                         }
+                         else{
+                              $puntaje = 0;
+                         }
+                          ?>
+                              <td align="center">
+                                   <input type="text" class="numeros"  onkeyup="if(this.value>10) {alert('La calificacion puede \nser entre 0 y 10');this.value=0;}" name="puntos[<?php echo $indice;?>][<?php echo $variable_id;?>]" id="puntos[<?php echo $indice;?>][<?php echo $variable_id;?>]" value="<?php echo $puntaje;?>" size="5">
+                              </td>
+                          <?php
+                          $j++;
+                    }
+               }
+               ?>
+          </tr>
+          <?php
+          }
+          ?>
+</table>
+</div>
+</form>
+<br />
+<div style="margin-top: 10px;">
+    <p align="center">
+        <a href="/panel/resultado" class="aceptarlog2">REGRESAR</a>&nbsp;&nbsp;&nbsp;
+        <a href="#" class="aceptarlog2" onclick="califica_visita();">GRABAR</a>
+    </p>
+</div>

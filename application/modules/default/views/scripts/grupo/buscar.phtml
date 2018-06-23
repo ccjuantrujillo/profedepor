@@ -1,0 +1,63 @@
+<div class="miMancha manchaUnete">
+  <div class="sideLeft">
+    <div class="profileMancha">
+      <h1 class="left">Mi Mancha</h1>
+      <!--<a href="/grupo/registro/" class="backMancha right">[Regresar]</a>-->
+      <div class="clear"></div>
+    </div>
+    <!--profileMancha-->
+    <div class="listadoMancha">
+      <h3>MANCHAS A LAS QUE PERTENECES</h3>
+      <div class="overListMancha">
+        <ol>
+          <?php foreach($this->usuarioGrupos as $i => $grupo): ?>
+          <li class="<?php echo ($i%2==0)?'inpar':'par'; ?>"><a href="/grupo/ver/id/<?php echo $grupo->grupo_id; ?>"><?php echo $grupo->nombre;?> (<?php echo $grupo->cantidad; ?> miembro<?php echo ($grupo->cantidad==1)?"":"s"; ?>)</a></li>
+          <?php endforeach; ?>
+        </ol>
+      </div>
+      <!--fin overListMancha-->
+    </div>
+    <!--fin listadoMancha-->
+    <div class="botonesBottomMancha"> <a href="/grupo/registro/" class="btnBottomMancha">Crea una mancha</a>
+        <div class="btnBottomManchaDes">&Uacute;nete a una mancha</div>
+      <a href="#" onClick="viewPopAyuda()" class="btnNormalM left">(?) Aprende a jugar aqu&iacute;</a> </div>
+    <!--fin botonesBottomMancha-->
+  </div>
+  <!--fin sideLeft-->
+  <div class="sideRight2">
+    <div>
+      <h1 class="left">&Uacute;nete a una Mancha</h1>
+      <div class="buscaMancha">
+        <form id="formBuscar" name="formBuscar" method="get" action="/grupo/buscar">
+          <input name="q" type="text" id="q" class="required" value="<?php echo $this->q ?>" />
+          <a href="#" id="btnBuscar">&nbsp;</a>
+          <div id="form-errors"></div>
+        </form>
+        </div>
+      <div class="clear"></div>
+    </div>
+    <div class="alfabeto">&lt;&lt;<?php echo $this->letters; ?>&gt;&gt;</div>
+    <!--fin alfabeto-->
+    <div class="listadoAlfabeto">
+      <?php if(isset($this->letra)): ?>
+      <h3>LETRA <?php echo $this->letra; ?></h3>
+      <?php endif ?>
+      <div class="overAlfabeto">
+        <ul>
+          <?php foreach ($this->paginator as $grupo): ?>
+          <li> <img src="/fotos/grupo/<?php echo $grupo->foto; ?>" />
+              <p><span class="bold"><?php echo $grupo->nombre; ?></span> (<?php echo $grupo->cant_jugador; ?> miembro<?php echo ($grupo->cant_jugador==1)?"":"s"; ?>) - Admin: <?php echo $grupo->adminnombre; ?></p>
+            <?php if (0 >= $grupo->unido): ?>
+              <a href="#" onclick="unirseGrupo(<?php echo $grupo->grupo_id; ?>);" id="btnUnirseGrupo" class="btnNormal right">[<?php echo ($grupo->tipo == 1)?"&Uacute;nete a la mancha":"Solicita ingreso"; ?>]</a>
+            <?php endif; ?>
+          </li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+      <!--fin overAlfabeto-->
+    </div>
+    <!--fin listadoAlfabeto-->
+  </div>
+  <!--fin sideRight2-->
+</div>
+<!--fin miMancha-->

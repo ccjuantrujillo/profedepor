@@ -1,0 +1,53 @@
+	<div class="juegoFases juegoFixture0">
+
+        	<div class="fasesLeft">
+
+                <div class="faseHeadLeft">
+                    <h5>Fixture y mis jugadas</h5>
+                </div> <!--fin faseHead-->
+
+                <div class="contFix0">
+					<a href="/juego/index/id/<?php echo $this->fecha_id-1;?>" class="arrowNaranjaLeft" <?php echo ($this->minimo==$this->fecha_id)?'style="visibility:hidden;"':"";?>>&nbsp;</a>
+                    <div class="cuadFixLeft" >
+                    	<h1 <?php echo ($this->minimo==$this->fecha_id)?"style='display:none;'":"";?>>Fecha <?php echo $this->fecha_id-1;?></h1>
+                        <h2 <?php echo ($this->minimo==$this->fecha_id)?"style='display:none;'":"";?>>Fecha: <?php echo isset($this->fecha0->fecha_partido)?$this->fecha0->fecha_partido:"";?></h2>
+                        <a  style="margin:0;"><img src="/images/_depor.gif" width="185" height="133" /></a>
+                        <a href="<?php echo $this->link0;?>" <?php echo ($this->texto0=="" || $this->minimo==$this->fecha_id)?'style="display:none;"':"";?> class="btnNaranja45 esp"><?php echo $this->texto0;?></a>
+                    </div> <!--fin cuadFixLeft-->
+
+                    <div class="cuadFixCenter">
+                   	  <div>
+                        <h1>Fecha <?php echo $this->fecha_id;?></h1>
+                        <h2>Fecha: <?php echo $this->fecha1->fecha_partido;?></h2>
+					   </div>
+                        <div class="fixture">
+							<ul class="tableFixture">
+                                <li class="head"><div class="local">Local</div><div class="visita">Visita</div></li>
+                                <?php
+                                foreach($this->partidos as $value){
+                                ?>
+                                <li class="list1">
+                                    <div class="fechaTabla"><?php echo $value->fecha_formato;?></div>
+                                    <div class="equipo"><img src="/images/<?php echo $value->icono_local;?>" /><p><?php echo $value->local;?></p></div>
+                                    <div class="versus"></div>
+                                    <div class="equipo"><img src="/images/<?php echo $value->icono_visita;?>" /><p><?php echo $value->visita;?></p></div>
+                                </li>
+                               <?php
+                                }
+                               ?>
+                            </ul>
+                             <a href="<?php echo $this->link1;?>" class="btnNaranja100 bold" <?php echo ($this->texto1=="")?'style="display:none;"':"";?>><?php echo $this->texto1;?></a>
+                        </div>
+                    </div> <!--fin cuadFixCenter-->
+
+                    <div class="cuadFixRight" <?php echo ($this->maximo==$this->fecha_id)?"style='display:none;'":"";?> >
+                    	<h1>Fecha <?php echo $this->fecha_id+1;?></h1>
+                        <h2>Fecha: <?php echo isset($this->fecha2->fecha_partido)?$this->fecha2->fecha_partido:"";?></h2>
+                        <a style="margin:0;" ><img src="/images/_depor.gif" width="185" height="133" /></a>
+                        <a href="<?php echo $this->link2;?>" class="btnNaranja45 esp" <?php echo ($this->texto2=="")?'style="display:none;"':"";?>><?php echo $this->texto2;?></a>
+                    </div> <!--fin cuadFixRight-->
+                    <a href="/juego/index/id/<?php echo $this->fecha_id+1;?>" <?php echo ($this->maximo==$this->fecha_id)?"style='display:none;'":"";?> class="arrowNaranjaRight">&nbsp;</a>
+                </div>
+
+            </div> <!--fin fasesLeft-->
+		</div> <!--fin juegoFases-->

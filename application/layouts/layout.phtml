@@ -1,0 +1,90 @@
+<?php echo $this->doctype() . "\n" ?>
+<html xmlns:fb="http://www.facebook.com/2008/fbml" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<?php echo $this->headMeta() . "\n" ?>
+<?php echo $this->headTitle() . "\n" ?>
+<?php echo $this->headLink() . "\n" ?>
+<?php echo $this->headScript() . "\n" ?>
+</head>
+<body>
+<div class="siteDepor">
+    <div class="header">
+    	<div class="dataTop">
+        	<div class="dataTopLeft" id="loggedinas"><?php echo $this->LoggedInAs() ?></div> <!--fin dataTopLeft-->
+            <div class="dataTopRight">
+                <p>Recomienda por: </p>
+                <a href="javascript:;" class="btnShareFb"><img class="unitPng" src="<?php echo $this->Image('_ico_redesFB.png') ?>"/></a>
+                <a href="javascript:;" class="btnShareTw"><img class="unitPng" src="<?php echo $this->Image('_ico_redesTW.png') ?>"/></a>
+                <a href="javascript:;" class="btnShareMail"><img class="unitPng" src="<?php echo $this->Image('_ico_redesMAIL.png') ?>"/></a>
+                <div class="auspiciadorTop"><a href="#"></a></div>
+            </div> <!--fin dataTopRight-->
+        </div> <!--fin user-->
+        <a href="/portada/"><img src="<?php echo $this->Image('_depor.gif') ?>" width="425" height="176" /></a>
+    </div> <!--fin header-->
+
+    <div class="menu">
+    	<div class="menuLeft">
+        	<div class="fecha"><p><?php echo $this->layout_date ?></p></div>
+            <div class="ruta">&gt; Portada  /  El Profe Depor</div>
+        </div> <!--fin menuLeft-->
+        <div class="menuRight">            
+        	<div class="menuPrincipal">
+                <a href="/portada/" class="btnMenu1Portada unitPng">&nbsp;</a>
+                <a href="/juego/fase1/" class="btnMenu2Juega unitPng">&nbsp;</a>
+                <a href="/grupo/ver/id/1" class="btnMenu3miMancha unitPng">&nbsp;</a>
+            </div> <!--fin menuPrincipal-->            
+            <div class="menuSecundario">
+                <a href="javascript:;" onClick="viewPopAyuda()"><img src="<?php echo $this->Image('_btnSubMenuAyuda.png') ?>" /></a>
+                <img src="<?php echo $this->Image('_btnSubMenuSeparador.png') ?>" />
+                <a href="javascript:;" onClick="viewPopPolitica()"><img src="<?php echo $this->Image('_btnSubMenuPoliticas.png') ?>" width="97" height="17" /></a>
+                <img src="<?php echo $this->Image('_btnSubMenuSeparador.png') ?>" />
+                <a href="javascript:;" onClick="viewPopMapa()"><img src="<?php echo $this->Image('_btnSubMenuSitemap.png') ?>" width="83" height="17" /></a>
+            </div> <!--fin menuSecundario-->
+        </div> <!--fin menuRight-->
+    </div> <!--fin menu-->
+    <div class="contenidoDash">
+    <?php echo $this->layout()->content ?>
+    </div>
+    <!--fin contenido-->
+    <div class="footer">
+    	<div class="menuFooter">
+			    <ul>
+                    <li><a href="/portada/">Portada El Profe Depor</a></li>
+                    <li><a href="/juego/">Fixture</a></li>
+                    <li><a href="/grupo/ver?id=1">Comentarios de tu Hinchada</a></li>
+                    <li><a href="/ranking/">Ranking</a></li>
+                    <li><a href="javascript:;" onClick="viewPopAyuda()">Ayuda</a></li>
+                    <li><a href="javascript:;" onClick="viewPopPolitica()">Politica del site</a></li>
+                    <li><a href="javascript:;" onClick="viewPopMapa()">Mapa del Sitio</a></li>
+                </ul>
+        </div> <!--fin menuFooter-->
+
+        <div class="bottomAuspiciador">
+
+        </div> <!--fin bottomAuspiciador-->
+
+      <div class="creditosFooter">
+			<div class="mapRecomienda">
+            <img class="unitPng" src="<?php echo $this->Image('_recomiendaFooter1.png') ?>" />
+            <a href="javascript:;" class="btnShareFb"><img class="unitPng" src="<?php echo $this->Image('_recomiendaFooter2.png') ?>" /></a>
+            <a href="javascript:;" class="btnShareTw"><img class="unitPng" src="<?php echo $this->Image('_recomiendaFooter3.png') ?>" /></a>
+            <a href="javascript:;" class="btnShareMail"><img class="unitPng" src="<?php echo $this->Image('_recomiendaFooter4.png') ?>" /></a>
+            </div>
+			<a class="logoDepor" href="#"><img class="unitPng" src="<?php echo $this->Image('_logoDepor.png') ?>" /></a>
+	        <div class="copy">Todos los derechos reservados Depor 2011<a href="/twitter/redirect?type=email" onClick="$(this).openWin({ url: $(this).attr('href'), name: 'Twitter' }); return false;">Invitar A tus amigos de fb</a></div>
+	</div> <!--fin creditosFooter-->
+
+    </div> <!--fin footer-->
+
+</div> <!--fin siteDepor-->
+<!-- Inicio Loader -->
+<div id="box-loader" style="display: none;">
+  <div class="overlay_absolute"></div>
+  <div class="popCargando">
+	<h1>Espera, por favor</h1>
+    <div><img src="<?php echo $this->Image('loading.gif') ?>" /></div>
+  </div>
+</div>
+<!-- Fin Loader-->
+</body>
+</html>

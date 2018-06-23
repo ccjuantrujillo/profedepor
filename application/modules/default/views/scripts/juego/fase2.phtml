@@ -1,0 +1,129 @@
+<?php
+$puntuacion   = $this->puntuacion;
+$fecha_actual = $this->fecha_actual;
+?>
+<form name="frmPaso2" id="frmPaso2" method="post">
+<div class="juegoFases">
+
+        	<div class="fasesLeft">
+
+                <div class="faseHeadLeft">
+                    <h1>Nivel 2</h1>
+                    <h2>Fecha <?php echo $fecha_actual['descripcion'];?> de <?php echo $fecha_actual['intervalo'];?></h2>
+                </div> <!--fin faseHead-->
+
+                <ul class="tableFixture">
+                    <li class="head"><div class="local">Local</div><div class="visita">Visita</div></li>
+                     <?php
+                     foreach($this->partidos as $indice=>$partido){
+                      $partido_id         = $partido->id;
+                      $intervalos         = $partido->intervalos;
+                      $nom_variable = $partido->nom_variable;
+                      $situacion           = $partido->situacion;
+                      $clase                   = $indice%2==0?"list1":"list2";
+                      $deshabilita      = "disabled='disabled'";
+                      foreach($intervalos as $indice2=>$variable2){
+                         $intervalo_id = $variable2['variable_id'];
+                         $variable_id   = $variable2['intervalo_id'];
+                         if(isset($this->disabled[$partido_id][$variable_id])){
+                              $disabled                 = $this->disabled[$partido_id][$variable_id];
+                              if($disabled==""){$deshabilita = "";break;}
+                         }
+                      }
+                     ?>
+                    <li class="<?php echo $clase;?>">
+                             <div class="fechaTabla">
+                                 <input type="hidden" name="puntajejuego_id[<?php echo $indice;?>]" id="puntajejuego_id[<?php echo $indice;?>]" value="<?php echo $partido->puntajejuego_id;?>" size="2">
+                                 <input type="hidden"  name="partido_id[<?php echo $indice;?>]" id="partido_id[<?php echo $indice;?>]" value="<?php echo $partido->id;?>">
+                                 <?php echo $partido->fecha_partido;?>
+                             </div>
+                             <div class="equipo"><img class="unitPng" src="/images/<?php echo $partido->icono_local;?>" /><p><?php echo $partido->local;?></p></div>
+                             <div class="versus unitPng"></div>
+                             <div class="equipo"><img class="unitPng" src="/images/<?php echo $partido->icono_visita;?>" /><p><?php echo $partido->visita;?></p></div>
+                         </li>
+                      <?php
+                     }
+                      ?>
+                </ul>
+
+                <a href="javascript:;" onclick="viewPopAyuda()" class="btnNormalJ left">(?) Aprende a jugar aqu&iacute;</a>
+
+            </div> <!--fin fasesLeft-->
+            <div class="fasesRight">
+
+                <div class="faseHeadRight">
+                	<a href="/juego" class="btnVerFixture unitPng">&nbsp;</a>
+                    <h1>Afina tu pron&oacute;stico</h1>
+                    <h2>&iquest;CU&Aacute;NTOS GOLES SE ANOTAR&Aacute; EN CADA FECHA?</h2>
+                </div> <!--fin faseHead-->
+
+                <ul class="tablePronostico" id="chksFase2">
+                    <li class="head">
+                     <div class="local">Dijiste que:</div>
+                     <div class="visita">Ser&aacute; por:</div></li>
+                     <?php
+                     foreach($this->partidos as $indice=>$partido){
+                      $partido_id   = $partido->id;
+                      $intervalos   = $partido->intervalos;
+                      $nom_variable    = $partido->nom_variable;
+                      $nombre_variable = $partido->nombre_variable;
+                      $icono_variable  = $partido->icono_variable;
+                      $situacion       = $partido->situacion;
+                      if($situacion==1){$variable_ctrl = 6;}
+                      elseif($situacion==2){$variable_ctrl = 7;}
+                      elseif($situacion==3){$variable_ctrl = 8;}
+                      else{$variable_ctrl = 5;}
+                      $clase = $indice%2==0?"list1":"list2";
+                     ?>
+                    <li class="<?php echo $clase;?> unitPng">
+                        <div class="estadon"><?php echo $partido->nom_variable;?></div>
+                        <div class="equipo">
+                        <?php
+                        if($situacion!=2){
+                            ?>
+                            <img src="/images/<?php echo $icono_variable;?>" />
+                            <?php
+                        }
+                        ?>
+                        <p><?php echo $nombre_variable;?></p>
+                        </div>
+                      <?php
+                      foreach($intervalos as $indice2=>$value2){
+                           $variable_id  = $value2['variable_id'];
+                           $intervalo_id = $value2['intervalo_id'];
+                           $puntaje      = $value2['puntaje'];
+                           $disabled     = $this->disabled[$partido_id][$variable_id];
+                           $checked      = $value2['checked']==true?"checked='checked'":"";
+                           $descripcion  = $value2['descripcion'];
+                           $clase2       = $indice2%2==0?"opt2":"opt1";
+                           if($variable_id==$variable_ctrl && ($variable_id==6 || $variable_id==7 || $variable_id==8)){
+                              ?>
+                                   <div class="<?php echo $clase2;?>">
+                                        <input <?php echo $checked;?> name="intervalos[<?php echo $indice;?>][<?php echo $intervalo_id;?>]" id="intervalos[<?php echo $indice;?>][<?php echo $intervalo_id;?>]"  type="checkbox" onclick='pulsar2(this,"<?php echo $indice;?>");' value="<?php echo $variable_id;?>"  <?php echo $disabled;?>/><p><?php echo $descripcion;?> (<?php echo $puntaje;?>pts.)</p>
+                                   </div>
+                              <?php
+                               }
+                           }
+                           if($situacion==0){
+                                ?>
+                             <div class="opt1"><input name="" type="checkbox" value="" /><p>Por 1gol (20pts.)</p></div>
+                             <div class="opt2"><input name="" type="checkbox" value="" /><p>Por más de 1gol (35pts.)</p></div>
+                                <?php
+                           }
+                          ?>
+                    </li>
+                      <?php
+                     }
+                      ?>
+                </ul>
+                
+                <div class="btnsBottomFasesRight">
+                    <a href="/juego/fase1" class="btnNaranja100 btnBig bold left unitPng">Regresar</a>
+                    <!--a  href="#" class="btnNaranja100 btnBig bold left">Editar</a-->
+                    <a href="#" class="btnNaranja100 btnBig bold right unitPng" onclick="grabar_paso2();">Siguiente</a>
+                </div> <!--fin btnsBottomFasesRight-->
+
+            </div> <!--fin fasesRight-->
+          <!--fin juegoFases-->
+		</div>
+     </form>

@@ -1,0 +1,111 @@
+  <?php
+  $fecha_actual = $this->fecha;
+  foreach($this->variables as $indice=>$value){
+       $intervalos   = $value['intervalos'];
+       $variable_id = $intervalos[0]['variable_id'];
+       print("<pre>");
+       print_r($intervalos);
+       print("</pre>");
+       if($variable_id==2)   $puntos_local       = $intervalos[0]['puntaje'];
+       if($variable_id==3)   $puntos_empate = $intervalos[0]['puntaje'];
+       if($variable_id==4)   $puntos_visita      = $intervalos[0]['puntaje'];
+  }
+  ?>
+<form name="frmPaso1" id="frmPaso1" method="post">
+<div class="juegoFases">
+
+        	<div class="fasesLeft">
+
+                <div class="faseHeadLeft">
+                    <h1>Nivel 1</h1>
+                    <h2>Fecha <?php echo $fecha_actual['descripcion'];?> de <?php echo $fecha_actual['intervalo'];?></h2>
+                </div> <!--fin faseHead-->
+
+                <ul class="tableFixture">
+                    <li class="head"><div class="local">Local</div><div class="visita">Visita</div></li>
+                    <?php
+                    foreach ($this->partidos as $indice=>$partido){
+                    $intervalos = $partido->intervalos;
+                    $disabled   = $partido->readonly==true?"":"disabled='disabled'";
+                    $clase           = $indice%2==0?"list1":"list2";
+                    ?>
+                    <li class="<?php echo $clase;?>">
+                        <div class="fechaTabla">
+                              <input type="hidden" <?php echo $disabled;?> name="puntajejuego_id[<?php echo $indice;?>]" id="puntajejuego_id[<?php echo $indice;?>]" value="<?php echo $partido->puntajejuego_id;?>" size="2">
+                              <input type="hidden" <?php echo $disabled;?> name="partido_id[<?php echo $indice;?>]" id="partido_id[<?php echo $indice;?>]" value="<?php echo $partido->id;?>">
+                              <?php echo $partido->fecha_partido;?>
+                        </div>
+
+                        <div class="equipo"><img class="unitPng" src="/images/<?php echo $partido->icono_local;?>" border="0"/><p> <?php echo $partido->local;?></p></div>
+                        <div class="versus unitPng"><img class="unitPng" src="/images/_versus.png" /></div>
+                        <div class="equipo"><img class="unitPng" src="/images/<?php echo $partido->icono_visita;?>" border="0"/><p> <?php echo $partido->visita;?></p></div>
+
+                    </li>
+                    <?php
+                    }
+                    ?>
+                </ul>
+
+                <a href="javascript:;" onclick="viewPopAyuda()" class="btnNormalJ left">(?) Aprende a jugar aqu&iacute;</a>
+
+            </div> <!--fin fasesLeft-->
+            <div class="fasesRight">
+
+                <div class="faseHeadRight">
+                	<a href="/juego" class="btnVerFixture unitPng">&nbsp;</a>
+                    <h1>Elige a tus ganadores</h1>
+                    <h2>&iquest;CU&Aacute;L SER&Aacute; EL RESULTADO DE CADA FECHA?</h2>
+                </div> <!--fin faseHead-->
+
+                <ul class="tablePronostico"  id="chksFase1">
+                    <li class="head">
+                    	<div class="tit"><span class="bold">Gana Local</span> (<?php echo $puntos_local;?> ptos.)</div>
+                        <div class="tit"><span class="bold">Empatada</span> (<?php echo $puntos_empate;?> ptos.)</div>
+                        <div class="tit"><span class="bold">Gana Visita</span> (<?php echo $puntos_visita;?> ptos.)</div>
+					</li>
+                   <?php
+                    foreach ($this->partidos as $indice=>$partido){
+                    $intervalos = $partido->intervalos;
+                    $disabled   = $partido->readonly==true?"":"disabled='disabled'";
+                    $clase           = $indice%2==0?"list1":"list2";
+                    ?>
+                    <li class="<?php echo $clase;?> unitPng">
+                        <div class="estado">
+                             <input type="hidden" <?php echo $disabled;?> name="puntaje[<?php echo $indice;?>]" id="puntaje[<?php echo $indice;?>]" value="<?php echo $partido->puntaje;?>" size="2">
+                             <input type="hidden" <?php echo $disabled;?> name="fecha_registro[<?php echo $indice;?>]" id="fecha_registro[<?php echo $indice;?>]" value="<?php echo $partido->registro;?>" size="16">
+                        </div>
+                     <?php
+                    $i=0;
+                     foreach($intervalos as $indice2=>$value2){
+                              switch($i){
+                                   case 0: $clase2="equipo";$i++;break;
+                                   case 1: $clase2="opt1";$i++;break;
+                                   case 2: $clase2="opt2";$i=0;break;
+                              }
+                             $variable_id  = $value2['variable_id'];
+                             $intervalo_id = $value2['intervalo_id'];
+                             $checked      = $value2['checked']==true?"checked='checked'":"";
+                             if($variable_id==2 || $variable_id==3 || $variable_id==4 ){
+                             ?>
+                              <div class="<?php echo $clase2;?>">
+                                   <input type="checkbox"  <?php echo $checked;?> name="intervalos[<?php echo $indice;?>][<?php echo $intervalo_id;?>]" id="intervalos[<?php echo $indice;?>][<?php echo $intervalo_id;?>]" onclick='pulsar(this,"<?php echo $indice;?>");'  value="<?php echo $variable_id;?>"  <?php echo $disabled;?>/>
+                              </div>
+                             <?php
+                             }
+                         ?>
+                         <?php
+                     }
+                    ?>
+                         <div>&nbsp;</div>
+                    </li>
+                    <?php
+                    }
+                    ?>
+                </ul>
+
+                <a href="javascript:;" id="btnGrabarFase1" class="btnNaranja100 btnBig bold center unitPng" onclick="grabar_paso1();">Jugar</a>
+
+            </div> <!--fin fasesRight-->
+
+		</div> <!--fin juegoFases-->
+      </form>

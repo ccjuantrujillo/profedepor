@@ -1,0 +1,53 @@
+<?php
+/*
+if(strlen($this->content) > 0)
+	echo $this->content;
+else
+	echo $this->form;
+*/
+?>
+
+<div class="pop480 popStyle">
+	<h1>Registro</h1>
+
+    <h2>&iexcl;Bienvenido a El Profe Depor!</h2>
+	<p>Diviértete jugando con los resultados del Descentralizado y los puntajes de los jugadores. Piensa como técnico y suma puntos fecha a fecha.</p>
+
+    <form id="formRegistro" name="formRegistro" method="post" action="">
+      <table border="0" cellspacing="0" cellpadding="0" class="formulaDepor">
+        <tr>
+          <td valign="middle"><div class="dataSingle">Nombre:</div></td>
+          <td><input name="name" type="text" id="name" class="required" /></td>
+        </tr>
+        <tr>
+          <td><div class="dataSingle">Apellidos:</div></td>
+          <td><input name="last_name" type="text" id="last_name" class="required" /></td>
+        </tr>
+        <tr>
+          <td><div class="dataSingle">E-mail:</div></td>
+          <td><input name="email" type="text" id="email" class="required email" /></td>
+        </tr>
+        <tr>
+          <td><div class="dataDoble">Confirmar<br />
+            e-mail:</div></td>
+          <td><input name="confirm_email" type="text" id="confirm_email" class="required" equalTo="#email" /></td>
+        </tr>
+        <tr>
+          <td><div class="dataSingle">Contrase&ntilde;a:</div></td>
+          <td><input name="password" type="password" id="password" class="required" minlength="6" /></td>
+        </tr>
+        <tr>
+          <td><div class="dataDoble">Confirmar<br />
+            contrase&ntilde;a:</div></td>
+          <td><input name="confirm_password" type="password" id="confirm_password" class="required" equalTo="#password" /></td>
+        </tr>
+      </table>
+  </form>
+  <div id="form-errors"></div>
+  <a href="#" id="btnRegistro" class="btnNaranja180 bold center btnBig">Unirme a El Profe Depor</a>
+<div class="msjBottomRegistro">
+
+	    <p>Al hacer clic en "Unirme a El Profe Depor", confirmas que aceptas los <a href="#">T&eacute;rminos y Condiciones.</a></p>
+  </div>
+<!--fin popRegistro-->
+</div>

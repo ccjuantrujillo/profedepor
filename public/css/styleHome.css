@@ -1,0 +1,966 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-family: Arial, Helvetica, sans-serif!important;
+	font-size: 11px;
+	background: #000;
+}
+.left {
+	float: left;	
+}
+.right {
+	float: right;	
+}
+.clear {
+	clear: both;
+}
+.oculto {
+	display: none!important;
+}
+.hidden {
+	visibility: hidden;	
+}
+.show {
+	visibility: visible;	
+}
+
+.wrapper{
+	margin: 0 auto;
+	width: 950px;
+}
+.login_frm{
+	width:320px;
+	height:123px;
+	margin: 30px auto 0;
+}
+.login_frm h1 {
+	color:#3d7a00;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-stretch:semi-condensed;
+	font-size:20px;
+	font-weight:bold;
+	margin-bottom: 10px;
+}
+.top{
+	background-image:url(../images/top_depor.jpg);
+	background-repeat:no-repeat;
+	height:190px;
+	width:950px;
+	float:left;
+}
+
+.top2{
+	background-image:url(../images/top_depor2.jpg);
+	background-repeat:no-repeat;
+	height:176px;
+	width:950px;
+	float:left;
+}
+
+.main_body_b{
+	background-image:url(../images/body_a.jpg);
+	background-repeat:no-repeat;
+	height:202px;
+	width:950px;
+	float:left;
+}
+
+.navigator1{
+	background-image:url(../images/menu_bkg.jpg);
+	background-repeat:no-repeat;
+	height:73px;
+	width:950px;
+	float:left;
+}
+
+.main_body{
+	background-image:url(../images/body.jpg);
+	background-repeat:no-repeat;	
+	width:950px;
+	height:578px;
+	float:left;
+
+
+}
+
+
+.main_body_a{
+	background-image:url(../images/body_b.jpg);
+	background-repeat:no-repeat;	
+	width:950px;
+	heigth:578px
+	float:left;
+	
+}
+
+
+.main_body_c1{
+	background-image:url(../images/bkg_bloq_sup1.png);
+	background-repeat:no-repeat;	
+	height:375px;
+	width:368px;
+	margin-left:4px;
+	margin-right:5px;
+	margin-top:10px;
+	float:left;
+	}
+	
+.main_body_c2{
+	background-image:url(../images/bkg_bloq_sup2.png);
+	background-repeat:no-repeat;	
+	height:375px;
+	width:354px;
+	margin-right:5px;
+	margin-top:10px;
+	float:left;
+	}
+
+.main_body_c3{
+	background-image:url(../images/bkg_bloq_sup3.png);
+	background-repeat:no-repeat;	
+	height:375px;
+	width:208px;
+	margin-right:0px;
+	margin-top:10px;
+	float:left;
+	}
+
+.footer_b{
+	background-image:url(../images/footer_a.jpg);
+	background-repeat:no-repeat;	
+	height:77px;
+	width:950px;	
+	float:left;
+}
+
+.footer_a{
+	background-image:url(../images/footer_b.jpg);
+	background-repeat:no-repeat;	
+	height:98px;
+	width:950px;
+	float:left;
+}
+
+.bd_doble{
+	float:left;
+}
+
+.logo_nike{
+	margin-left:323px;
+	margin-right:331px;
+	
+}
+
+.modBottom h1 {
+	color: #3d7a00;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-stretch:semi-condensed;
+	font-size: 28px;
+	font-weight:bold;
+	margin-bottom: 3px;
+	letter-spacing: -1px;
+}
+.modBottom h2 {
+	font-size: 13px;
+	color: #000;
+	font-weight: bold;
+	margin-bottom: 2px;
+}
+.modBottom p {
+	margin-top: 5px;
+	text-align: justify;
+	line-height: 13px;
+	color: #333;
+}
+
+
+.headers_2{
+	color:#693;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-stretch:semi-condensed;
+	font-size:24px;
+	font-weight:bold;
+}
+
+.headers_4{
+	color:#000;
+	font-family:"Arial Narrow", Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:700;
+}
+
+
+.headers_5{
+	color:#693;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-stretch:semi-condensed;
+	font-size:24px;
+	font-weight:bold;
+}
+
+.bd_doble_der{
+	width:475px;
+	float:left;
+	background-image:url(../images/double_right.jpg);
+	height:282px;
+    background-position: 0 -14px;	
+}
+
+.bd_doble_izq{
+	width:475px;
+	float:left;
+	background-image:url(../images/double_left.jpg);
+	background-repeat:no-repeat;
+	height:282px;
+    background-position: 0 -14px;
+}
+
+.cnt_dbl_izq{
+	float:left;
+	margin-left:60px;
+	margin-top:46px;
+	width: 360px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+.lbl_frm_pk{
+	float:left;
+	width:90px;
+	margin-left:33px;
+	color: #444;
+	height: 10px;
+}
+
+
+.lbl_frm{
+	float:left;
+	background-image:url(../images/frm_arrow.png);
+	background-repeat:no-repeat;
+	padding-left:18px;
+	width:90px;
+	padding-bottom: 12px;
+	#padding-bottom: 7px;	
+	color:#444444;
+	font-family:arial;
+	font-size:13px;	
+}
+
+
+.ipt_frm_pk{
+	float:left;
+	width:193px;
+}
+
+.ipt_frm{
+	float:left;
+	width:193px;
+	margin-top:3px;
+}
+
+
+.btn_frm_pk{
+	float:left;
+	width:268px;
+	margin-left:51px;
+	margin-top:4px;
+}
+
+.link_izq{
+	float:left;
+}
+
+
+.link_der{
+	float:right;
+}
+
+
+input.txt_fld {
+	background: none;
+	height:19px;
+	width:191px;
+	border:none;
+	display:block;
+	background-image:url(../images/bkg_input.png);
+	padding-top:5px;
+	padding-left:5px;
+	margin-bottom: 5px;
+	#margin-bottom: 0px;	
+}
+
+input.btn_1
+{
+	height:25px;
+	width:66px;
+	font-size:9px;
+	display:block;
+	border:solid #FFF 1px;
+	background-image:url(../images/btn_frm.jpg);
+	background-repeat:no-repeat;
+}
+
+
+
+
+.networks_links{
+	width:320px;
+	float:left;
+}
+
+
+
+
+
+
+
+
+
+
+.bd_triple{
+	float:left;
+	height:205px;
+	width:950px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+
+.bd_triple_1{
+	float:left;
+	background-image:url(../images/triple_1.jpg);
+	background-repeat:no-repeat;
+	height:205px;
+	width:325px;
+	_width:322px;	
+}
+
+.cnt_trp_1{
+	width:240px;
+	text-align:left;
+	margin: 26px 39px 0 43px;
+}
+
+.bd_triple_2{
+	float:left;
+	background-image:url(../images/triple_2.jpg);
+	background-repeat:no-repeat;
+	height: 205px;
+	width: 308px;
+}
+
+.bd_triple_3{
+	float:left;
+	background-image:url(../images/triple_3.jpg);
+	background-repeat:no-repeat;
+	height:205px;
+	width:317px;
+}
+.cnt_trp_3{
+	width:240px;
+	text-align:left;
+	padding-bottom:19px;
+	margin: 26px 39px 0 25px;
+}
+.bd_simple1{
+	float:left;
+	height:100px;
+	width:950px;
+	background-image:url(../images/simple_bottom1.jpg);
+	background-repeat:no-repeat;
+}
+.bd_simple2{
+	float:left;
+	height:146px;
+	width:950px;
+	background-image:url(../images/simple_bottom2.jpg);
+	background-repeat:repeat;
+}
+.links_under {
+	float:right;
+
+}
+.lnk_pwd_form a {
+	text-decoration:underline;
+	color:#666;
+	font-size:11px;
+}
+.lnk_pwd_form a :hover {
+	color:#690;
+}
+.links_esp{
+	text-decoration:underline;
+	color:#000;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+}
+.links_esp:hover{
+	text-decoration:underline;
+	color:#060;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+}
+.copyright{
+	float:left;
+}
+.recomendar{
+	float:left;
+}		
+.logo_depor{
+	float:left;
+}
+.listing{
+	float:left;
+	padding:0px;
+	margin: 5px 0 0 33px;
+	_margin: 5px 0 0 15px;	
+	width: 230px;
+}
+.navi2 li {
+	margin:0;	
+	list-style:none;
+	background-image:url(../images/listing1.png);
+	background-repeat:no-repeat;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+	padding-top:2px;
+	height:21px;
+	width:220px;
+	float: left;
+	clear: both;
+}
+.navi2 li a {
+	text-decoration:none;
+	color:#FFF;
+}
+.navi {
+	list-style:none;
+}
+.navi li {	
+	margin:2px;	
+	padding-top:2px;
+	padding-bottom:2px;
+	padding-left:8px;
+	padding-right:8px;
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#FFF;
+}
+.navi li a {
+	text-decoration:none;
+	color:#FFF;
+}
+.navi li a:hover {
+	text-decoration: underline;	
+}
+.menu_btm {
+	height:47px;
+	width: 400px;
+	padding-left: 400px;
+	#padding-left: 200px;
+	#margin-left: 200px;
+	padding-top: 15px;
+	#padding-top: 17px;	
+}
+.redes{
+	padding-left:50px;
+	padding-right:95px;
+	float:left;
+}
+
+	/* silde */
+	
+
+.scroll_galeria{
+   width:950px;
+   height:200px;
+   background-color:#000;
+   float:left;
+	}
+	
+.scroll_galeria li {
+   display:inline;
+   float:left;
+   width:210px;
+   height:186px;
+   background-image:url(../images/bkg_bloq_inf.png);
+   background-repeat:no-repeat;
+   margin-right:5px;
+}
+
+
+
+	
+	
+.div_left{ 
+height:186px;
+width:27px;
+background-image:url(../images/sld_arrow_left.png);
+background-repeat:no-repeat;
+float:left;
+display: inline;
+	}
+.div_right{ 
+height:186px;
+width:27px;
+background-image:url(../images/sld_arrow_right.png);
+background-repeat:no-repeat;
+float:left;
+display: inline;
+	}
+.marright0{ 
+margin-right:0!important;
+}
+	
+	/* silde */
+	
+	
+a.olvidarContrasena:link, a.olvidarContrasena:visited {
+	color: #777;
+	font-size: 10px;
+	padding: 0 0 9px 18px;
+	#padding: 7px 0 2px 18px;	
+	float: left;
+}
+a.olvidarContrasena:hover {
+	color: #333;	
+}
+a.btnIngresar:link, a.btnIngresar:visited {
+	width: 87px;
+	height: 29px;
+	background: url(../images/btn_ingresar.png) no-repeat;
+	display: block;
+	text-decoration: none;
+	float: right;
+	margin-right: 4px;
+	#margin-right: 0px;
+}
+a.btnRegistrate:link, a.btnRegistrate:visited {
+	width: 208px;
+	height: 50px;
+	display: block;
+	background: url(../images/btn_registrate.png) no-repeat;
+	text-decoration: none;
+	margin: 189px 0 0 123px;
+}
+a.btnRegistrate:hover {
+	background-position: bottom;	
+}
+.connectRedes {
+	margin:0 auto;
+	width:190px;
+}
+.connectRedes a {
+		
+}
+.bd_triple_2 .modBottom {
+	margin: 26px 39px 0 32px;
+}
+.navi2 .puesto {
+	font-weight: bold;
+	font-size: 13px;
+	float: left;
+	width: 27px;
+	text-align: center;
+	color: #FFF;
+}
+.navi2 .puntos {
+	float:left;
+	font-size:10px;
+	padding:2px 0 0 7px;
+	text-align:left;
+	width:57px;
+}
+.navi2 .nombre {
+	float:left;
+	font-size:11px;
+	font-weight:bold;
+	padding:2px 0 0 4px;
+	text-align:left;
+	width:120px;
+}
+.footer {
+	margin: 0 auto;
+	width: 950px;
+}
+.contAyuda {
+	background: url(../images/_ayudaPag.png) no-repeat;
+	height: 490px;
+}
+.ayuda {
+	width: 750px;
+	margin: 0 auto;
+}
+.ayuda .left {
+	width: 170px;
+}
+.ayuda .left ul li {
+	clear: both;
+}
+.ayuda .right {
+	width: 560px;
+	padding-left: 15px;
+}
+.ayuda .right .overAyuda {
+	overflow: auto;
+	height: 345px;
+	padding: 0 20px 0 5px;
+}
+.ayuda .right .overAyuda p {
+	font-size: 12px;
+	color: #666666;
+	line-height: 14px;
+	text-align: justify;
+	margin-bottom: 15px;
+}
+.ayuda .right .overAyuda h1 {
+	font-size: 15px;
+	letter-spacing: 0;
+	margin-bottom: 2px;
+}
+.ayuda .left a:link, .ayuda .left a:visited {
+	font-size: 11px;
+	text-decoration: none;
+	color: #3d7a00;
+	font-weight: bold;
+	margin-bottom: 4px;
+	float: left;
+}
+.ayuda .left a:hover {
+	text-decoration: underline;
+}
+
+.contAyuda h4 {
+    color: #3D7A00;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    padding: 22px 0 30px 100px;
+}
+/***** FORM *******/
+
+.popEditarCuentaV2 {
+	width: 542px;
+	height: 541px;
+	background: url(../images/_fnd_formRegistroV2.png) no-repeat top center;
+	margin: 0 auto;
+	padding: 15px 25px;
+}
+.popStyle h1 {
+	color:#3D7A00;
+	font-size:26px;
+	font-weight:bold;
+	letter-spacing:-1px;
+	margin-bottom: 20px;
+}
+.popStyle h2 {
+	font-size: 16px;
+	letter-spacing: -0.5px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.popStyle h3 {
+	font-size: 22px;
+	letter-spacing: -0.5px;
+	font-weight: bold;
+	margin: 60px auto 10px;
+	text-align: center;
+}
+.popStyle h4 {
+	color:#3D7A00;
+	font-size:26px;
+	font-weight:bold;
+	letter-spacing:-1px;
+	margin: 182px 0 20px 0;
+	#margin: 195px 0 20px 0;	
+}
+.popStyle h5 {
+	color:#ff5a00;
+	font-size:86px;
+	font-weight:bold;
+	float: left;
+}
+.popStyle p {
+	font-size: 12px;
+}
+.popEditarCuentaV2 p.titularFormV2 {
+	margin-top: 20px;	
+}
+.foto img, .foto a {
+	float: left;	
+}
+input.addMail {
+	padding-right: 10px!important;
+	background: #FFF!important;
+	width: 120px!important;
+	border: 1px solid #999!important;
+	height: 20px!important;
+	padding: 0 9px 0!important;
+	float: left!important;
+}
+.editarCuenta .right p.desc {
+	margin: 0;
+	font-size: 11px;
+	width: 50px;
+	text-align: center;
+	font-weight: normal;
+	padding-top: 4px;
+}
+.icoRed {
+	float: left;
+	margin: 0 7px 0 0;
+}
+.blokIcoRed {
+	float: left;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #CCC;
+}
+table.formulaDepor {
+	width: 320px;
+	margin: 10px auto 0;
+}
+table.formulaDepor tr td .dataSingle, table.formulaDepor tr td .dataDoble {
+	font-size: 11px;
+	background: url(../images/_fndDataInput.gif) no-repeat top left;
+	display: block;
+	height: 19px;
+	float: left;	
+	line-height: 11px;
+}
+table.formulaDepor tr td select {
+	float:right;
+	height:22px;
+	width:208px;
+	font-size: 11px;
+	padding: 2px;
+}
+table.formulaDepor tr td p.mails {
+	font-size: 12px;
+    margin-bottom: 5px;
+	color: #666666;
+} 
+table.formulaDepor tr td .dataSingle {
+	padding: 5px 0 0 17px;
+	width: 100px;
+}
+table.formulaDepor tr td .dataDoble {
+	padding: 0px 0 0 17px;
+}
+table.formulaDepor tr td {
+	padding-bottom: 5px;	
+}
+table.formulaDepor input {
+	float: right;
+	width: 191px;
+	height: 19px;
+	background: url(../images/_fndInputForm.gif) no-repeat;
+	border: none;
+	font-size: 11px;
+	padding: 4px 9px 0;
+}
+.msjBottomRegistro p {
+	margin: 20px 0 0 0;
+	font-size: 11px;	
+}
+.msjBottomRegistro a:link, .msjBottomRegistro a:visited {
+	color: #000;
+	text-decoration: underline;
+}
+.terminos {
+	height: 230px;
+	overflow: auto;
+	width: 400px;
+	margin: 15px auto 0;
+}
+.terminos p {
+	margin-bottom: 7px;
+	width: 370px;
+	text-align: justify;
+}
+a.btnNaranja100:link, a.btnNaranja100:visited {
+	color: #FFF;
+	font-size: 10px;
+	text-decoration: none;
+	padding-top: 6px;
+	width: 100px;
+	height: 18px;
+	display: block;
+	text-align: center;
+	background: url(../images/_btnNaranja100.png) no-repeat;
+}
+a.btnNaranja100:hover {
+	color: #000;
+}
+.overMailsAlter {
+	height: 45px;
+	overflow: auto;
+}
+.overMailsAlter p {
+	width: 80px;	
+}
+a.btnNaranja65:link, a.btnNaranja65:visited {
+	color: #FFF;
+	font-size: 10px;
+	text-decoration: none;
+	padding-top: 6px;
+	width: 65px;
+	height: 18px;
+	display: block;
+	text-align: center;
+	background: url(../images/_btnNaranja65.png) no-repeat;
+}
+a.btnNaranja65:hover {
+	color: #000;
+}
+a.btnNaranja180:link, a.btnNaranja180:visited {
+	color: #FFF;
+	font-size: 10px;
+	text-decoration: none;
+	padding-top: 6px;
+	width: 180px;
+	height: 18px;
+	display: block;
+	text-align: center;
+	background: url(../images/_btnNaranja180.png) no-repeat;
+}
+a.btnNaranja180:hover {
+	color: #000;
+}
+.derecha {
+	float: right;	
+}
+div.icoEditCuenta_Fb, div.icoEditCuenta_Tw, div.icoEditCuenta_Gg {
+	width: 46px;
+	height: 46px;
+}
+div.icoEditCuenta_Fb {
+	background: url(../images/_ico_editCuenta_Facebook.png) no-repeat bottom left;
+}
+div.icoEditCuenta_Tw {
+	background: url(../images/_ico_editCuenta_Twitter.png) no-repeat bottom left;
+}
+div.icoEditCuenta_Gg {
+	background: url(../images/_ico_editCuenta_Google.png) no-repeat bottom left;
+}
+.editarCuenta .right .activo {
+	background-position: top left;
+}
+.editarCuenta .right {
+	background: #DDD;
+	width: 180px;
+	margin-top:15px;
+	padding-bottom:10px;
+	padding-left: 20px;
+}
+.editarCuenta .right p {
+	margin: 9px 0 7px 0px;
+	font-weight: bold;
+}
+.popAyudaPoliticasMapa {
+	width: 551px;
+	height: 448px;
+	background: url(../images/_fndPopAyudaPoliticasMapa.png) no-repeat;
+	margin: 0 auto;
+	padding: 15px 25px;
+}
+.popAyudaPoliticasMapa h4 {
+	margin-top: 115px;
+	#margin-top: 130px;	
+}
+.politicas {
+	padding: 0 20px;
+	overflow: auto;
+	height: 280px;
+}
+.politicas h1 {
+	font-size: 18px;
+	letter-spacing: 0;
+	margin-bottom: 3px;
+}
+.politicas p {
+	line-height: 13px;
+	margin-bottom: 18px;
+	text-align: justify;
+}
+.pop480 {
+	width: 430px;
+	height: 366px;
+	background: url(../images/_popRegistro.png) no-repeat;
+	margin: 0 auto;
+	padding: 15px 25px;
+}
+.bold {
+	font-weight: bold!important;	
+}
+.center {
+	margin: 15px auto 0;
+}
+.btnBig {
+	font-size: 11px!important;
+}
+.pop438 {
+	width: 388px;
+	height: 336px;
+	background: url(../images/_fndPop438.png) no-repeat;
+	margin: 0 auto;
+	padding: 15px 25px;
+}
+.olvContra input {
+	background: url(../images/_fndInputForm.gif) no-repeat;
+	border: 0;
+	padding: 4px 8px;
+    width: 194px;
+	text-align: center;
+}
+.popFase1 {
+	width: 346px;
+	height: 241px;
+	background: url(../images/_popFasesJuegos1.png) no-repeat;
+	margin: 0 auto;
+	padding: 15px 25px;	
+}
+.popJuegos h1 {
+	color:#3D7A00;
+	font-size:26px;
+	font-weight:bold;
+	letter-spacing:-1px;
+	margin-bottom: 20px;
+}
+.popJuegos h2 {
+	font-size: 16px;
+	letter-spacing: -0.5px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.popJuegos h3 {
+	font-size: 22px;
+	letter-spacing: -0.5px;
+	font-weight: bold;
+	margin: 60px auto 10px;
+	text-align: center;
+}
+.popJuegos h4 {
+	color:#3D7A00;
+	font-size:22px;
+	font-weight:bold;
+	letter-spacing:-1px;
+	padding-top: 4px;
+}
+.popJuegos p {
+	color:#000;
+	font-size: 11px;
+	padding-top: 1px;
+	float: left;
+}
+.popJuegoFase3 {
+	width: 567px;
+	height: 336px;
+	background: url(../images/_popFase3.png) no-repeat;
+	margin: 0 auto;
+	padding: 6px 15px;
+}
+.popJuegos img.logoEquipoFase3 {
+	float: left;
+}

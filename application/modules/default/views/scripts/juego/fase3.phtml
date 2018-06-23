@@ -1,0 +1,149 @@
+<?php  $fecha_actual = $this->fecha;?>
+<div class="juegoFases">
+        	<div class="fasesLeft fase3">
+		<div id="globo1">
+                </div> <!--fin globo1-->
+                <div class="faseHeadLeft">
+                    <h1>Nivel 3</h1>
+                    <h2>Fecha <?php echo $fecha_actual['descripcion'];?> de <?php echo $fecha_actual['intervalo'];?></h2>
+                </div> <!--fin faseHead-->
+                <form id="frmPaso3_grande" method="post">                    
+                <ul class="tableFixture">  
+                    <li class="head"><div class="local">Local</div><div class="visita">Visita</div></li>
+                    <?php
+                        foreach($this->partidos as $indice => $partido){
+                        $partido_id  = $partido->id;
+                        $intervalos  = $partido->intervalos;
+                        $disabled    = $partido->readonly;
+                        $hidden      = $disabled==true?"":"style='visibility:hidden'";
+                    ?>
+                    <input type="hidden" name="puntajejuego_id[<?php echo $indice;?>]" id="puntajejuego_id[<?php echo $indice;?>]" value="<?php echo $partido->puntajejuego_id;?>" size="2">
+                    <input type="hidden" name="partido_id[<?php echo $indice;?>]" id="partido_id[<?php echo $indice;?>]" value="<?php echo $partido->id;?>">
+
+                    <li class="list<?php echo ($indice%2==0)?'1':'2'; ?>">
+                        <div class="fechaTabla"><?php echo $partido->fecha_partido; ?></div>
+                        <div class="equipo<?php echo ($partido->califica==3)?' activo':''; ?>">
+                            <input <?php echo $hidden;?> name="partido[<?php echo $indice;?>]" id="partido[<?php echo $indice;?>]" type="radio" <?php echo ($partido->califica==3)?"checked='checked'":"";?> value="1" onclick="mostrarfase3(<?php echo $partido->id;?>,<?php echo ($partido->puntajejuego_id=='')?'0':$partido->puntajejuego_id;?>,3,<?php echo $indice;?>);" />
+                            <img class="unitPng" src="<?php echo $this->Image($partido->icono_local); ?>" />
+                            <p class="tooltipjuego"><?php echo $partido->local; ?></p>
+                        </div>
+                        <div class="versus unitPng"></div>
+                        <div class="equipo<?php echo ($partido->califica==4)?' activo':''; ?>">
+                              <input <?php echo $hidden;?> name="partido[<?php echo $indice;?>]" id="partido[<?php echo $indice;?>]" type="radio"  <?php echo ($partido->califica==4)?"checked='checked'":"";?> value="1" onclick="mostrarfase3(<?php echo $partido->id;?>,<?php echo ($partido->puntajejuego_id=='')?'0':$partido->puntajejuego_id;?>,4,<?php echo $indice;?>);" />
+                            <img class="unitPng" src="<?php echo $this->Image($partido->icono_visita); ?>" />
+                            <p class="tooltipjuego"><?php echo $partido->visita; ?></p>
+                        </div>
+                    </li>
+                    <?php } ?>
+                </ul>
+                </form>
+                <!--<div class="rellenoFase3"></div>-->
+
+                <a href="javascript:;" onclick="viewPopAyuda()" class="btnNormalJ left">(?) Aprende a jugar aqu&iacute;</a>
+
+            </div> <!--fin fasesLeft-->
+            <div class="fasesRight">
+
+                <div class="faseHeadRight">
+                	<a href="/juego" class="btnVerFixture unitPng">&nbsp;</a>
+                    <h1>Demuestra que la rompes</h1>
+                    <h2>CALIFICA A TU EQUIPO FAVORITO</h2>
+                </div> <!--fin faseHead-->
+
+                <ul class="tablePronostico">
+                    <li class="head">
+                        <div class="featured">Ataque:</div>
+                        <div class="featured">Defensa:</div>
+                        <div class="featured">Fair Play:</div>
+                        <div class="featured">Depor:</div>
+                    </li>
+                    <?php
+                    foreach($this->partidos as $indice => $partido){
+                        $partido_id   = $partido->id;
+                        $intervalos   = $partido->intervalos;
+                        $disabled     = $partido->readonly;
+                        $hidden       = $disabled==true?"":"style='display:none'";
+                        $anterior     = 0;
+                        $a            = 0;
+                        $i            = 0;
+                        $contador     = 0;
+                        $respuesta[$partido_id]=array();
+                          foreach($intervalos as $indice2=>$value2){
+                             $intervalo_id  = $value2['intervalo_id'];
+                             $variable_id    = $value2['variable_id'];
+                             $descripcion   = $value2['descripcion'];
+                             $descripcion2 = $value2['descripcion2'];
+                             $puntaje           = $value2['puntaje'];
+                             $checked          = $value2['checked'];
+                             $tipo                   = $value2['tipo'];
+                             $arrTipo[$partido_id][$variable_id] = "";
+                             $nombre           = "";
+                             if($variable_id!=9 && $variable_id!=14){
+                                 foreach($intervalos as $indice3=>$value3){
+                                     $variable_id3 = $value3['variable_id'];
+                                     $checked3     = $value3['checked'];
+                                     $descrip      = $value3['descripcion'];
+                                     $sigla        = $value3['descripcion2'];
+                                     if($variable_id==$variable_id3){
+                                     $arrTipo[$partido_id][$variable_id]   = $tipo;
+                                        if($checked3){
+                                            $respuesta[$partido_id][$variable_id] = $sigla;
+                                            break;
+                                        }
+                                        else{
+                                            $respuesta[$partido_id][$variable_id] = "?";
+                                        }
+                                     }
+                                 }
+                             }
+                          }
+                      ?>
+                    <?php
+                    }
+                    $iii=0;
+                    $jj=0;
+                    if(count($respuesta)>0){
+                        foreach($respuesta as $indice4=>$value4){
+                             $partido_id4 = $indice4;
+                             $clase4 = $iii%2==0?"list1":"list2";
+                             echo "<li class='".$clase4." unitPng'>";
+                             foreach($value4 as $vars=>$descrip){
+                                  $tipo4 = $arrTipo[$partido_id4][$vars];
+                                  if($tipo4==3 && $descrip!='?'){
+                                       if($vars<14) {
+                                            $jj++;
+                                            echo "<div class='featured'>".$descrip."</div>";
+                                       }
+                                  }
+                                  elseif($tipo4==4 && $descrip!='?'){
+                                       if($vars>14){
+                                            echo "<div class='featured'>".$descrip."</div>";
+                                            $jj++;
+                                       }
+                                  }
+                             }
+                             if($jj==0){
+                                  echo "<div class='featuredini'>-</div>";
+                                  echo "<div class='featuredini'>-</div>";
+                                  echo "<div class='featuredini'>-</div>";
+                                  echo "<div class='featuredini'>-</div>";
+                             }
+                             $jj=0;
+                             echo "</li>";
+                             $iii++;
+                        }
+                    }
+                    ?>
+                </ul>
+
+                <!--<div class="rellenoFase3"></div>-->
+
+                <div class="btnsBottomFasesRight">
+                    <a href="/juego/fase2" class="btnNaranja100 btnBig bold left unitPng">Regresar</a>
+                    <!--a href="#" class="btnNaranja100 btnBig bold left">Editar</a-->
+                    <a href="#" onclick="grabar_paso3();" class="btnNaranja100 btnBig bold right unitPng">Guardar</a>
+                </div> <!--fin btnsBottomFasesRight-->
+
+            </div> <!--fin fasesRight-->
+
+</div> <!--fin juegoFases-->

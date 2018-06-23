@@ -1,0 +1,45 @@
+<form action="/panel/rol/" method="post" id="FormPanel">
+  <div class="crearbanner"> <a class="aceptarlog2" href="/panel/rol/registro/" alt="Nuevo" title="Nuevo">Crear un nuevo Rol</a>
+      <!-- ul>
+    <li>Fecha de Registro:
+      <input name="input2" type="text" class="borderblue" />
+        <input name="input2" type="button" value="Ver" class="ver2" />
+    </li>
+    <li>Tipo de Banner:
+      <select name="select" class="borderblue">
+          <option value="-Seleccione-" >-Seleccione-</option>
+        </select>
+    </li>
+    <li> Estado:
+      <select name="select" class="borderblue">
+          <option value="-Seleccione-">-Seleccione-</option>
+        </select>
+    </li>
+  </ul -->
+  </div>
+</form>
+
+<div class="containertable">
+  <div class="mensajetable">Se han encontrado (<?php echo $this->roles->rowCount() ?>) registro(s)</div>
+  <table  border="1"  cellspacing="0" cellpadding="0">
+    <tr class="list1">
+      <td width="5%">NUM</td>
+      <td width="75%">Descripci&oacute;n</td>
+      <td width="10%">Editar</td>
+      <td width="10%">Eliminar</td>
+    </tr>
+    <?php $i = 1; while($item = $this->roles->fetch()): ?>
+    <tr class="<?php echo $this->cycle(array('list_a', 'list_b'))->next() ?>">
+      <td><?php echo $i ?></td>
+      <td style="text-align: left">&nbsp;&nbsp;<?php echo $item->descripcion ?></td>
+      <td><a href="#" onclick="Editar(<?php echo $item->rol_id;?>)"><img src="<?php echo $this->Image('editar.jpg');?>" border="0"/></a></td>
+      <td><a href="#" onclick="Eliminar(<?php echo $item->rol_id;?>)"><img src="<?php echo $this->Image('eliminar.jpg');?>" border="0"/></a></td>
+    </tr>
+    <?php $i++; endwhile ?>
+  </table>
+  <!--div class="mensajetable2">
+    <ul>
+      <li>1</li>
+    </ul>
+  </div-->
+</div>

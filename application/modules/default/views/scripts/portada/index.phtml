@@ -1,0 +1,148 @@
+<div class="modulosDash">
+
+    <div class="mod1 modulos">
+        <h1>FIXTURE</h1>
+        <h2>Fecha <?php echo $this->fechoy->numfecha; ?> del <?php echo $this->fechoy->fecha; ?>.</h2>
+
+        <ul class="tableFixture">
+            <li class="head"><div class="local">Local</div><div class="visita">Visita</div></li>
+            <?php foreach($this->fixture as $i => $f): ?>
+            <li class="list<?php echo ($i%2==0)?'1':'2'; ?>">
+                <div class="fechaTabla"><?php echo $f->fecha_formato; ?></div>
+                <div class="equipo">
+                    <img class="unitPng" src="<?php echo $this->Image($f->icono_local); ?>" />
+                    <p><?php echo $f->local; ?></p>
+                </div>                
+                <div class="versus unitPng"></div>
+                <div class="equipo">
+                    <img class="unitPng" src="<?php echo $this->Image($f->icono_visita); ?>" />
+                    <p><?php echo $f->visita; ?></p>
+                </div>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+
+        <div class="botonesMod1">
+            <a href="/juego/" class="btnNaranja180 left">Ver todo el Fixture y mis jugadas</a>
+            <a href="/juego/fase1/" class="btnNaranja65 right">Jugar</a>
+        </div> <!--fin botonesMod1-->
+    </div> <!--fin mod1-->
+
+    <div class="mod2 modulos">
+        <h1>COMENTARIOS</h1>
+        <h2>&Uacute;ltimos comentarios de tus manchas.</h2>
+
+        <div class="overflowComentarios">
+            <?php if(count($this->comentarios)>0):?>
+            <?php foreach($this->comentarios as $com): ?>
+            <div class="overflowComment">
+                <h2>Mancha: <span><?php echo $com->nomgrupo; ?></span></h2>
+                <h1><?php echo $com->nomjugador; ?></h1>
+                <div class="fechaComment"><?php echo $com->fecha; ?>, <?php echo $com->hora; ?></div>
+                <p><?php echo html_entity_decode($com->mensaje); ?></p>
+            </div> <!--fin overflowComment-->
+            <?php endforeach; ?>
+            <?php endif;?>
+        </div> <!--fin overflowComentarios-->
+
+    </div> <!--fin mod2-->
+
+    <div class="mod3 modulos">
+        <h1>RANKING</h1>
+        <h2>Tu posici&oacute;n general.</h2>
+
+        <ul class="listadoRanking">
+            <li class="titulos"><div class="puesto">Puesto</div><div class="puntos">Ptos.</div><div class="nombre">Nombre</div></li>
+            <li class="miPuestov2"><div class="persona">T&Uacute;</div>
+                <div class="puesto"><?php echo ($this->cgeneral != 0)?(($this->posicion_rank_jugador != null)?$this->posicion_rank_jugador:$this->pos):"-"; ?></div>
+                <div class="puntos"><?php echo $this->puntaje_jugador; ?></div>
+                <div class="nombre"><?php echo substr($this->nombres_jugador, 0, 13); ?></div>
+            </li>
+            <?php if($this->ranking != null): ?>
+                <?php foreach($this->ranking as $i => $r): ?>
+                <li><div class="persona"></div>
+                    <div class="puesto"><?php echo ($i+1); ?></div>
+                    <div class="puntos"><?php echo $r->puntaje; ?></div>
+                    <div class="nombre"><?php echo ucwords($r->nomjugador); ?></div>
+                </li>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </ul>
+
+        <div class="botonesMod3">
+            <a class="btnNaranja65" href="/ranking/">Ver Todo</a>
+        </div>
+
+    </div> <!--fin mod3-->
+
+    <div class="clear"></div>
+</div> <!--fin modulosDash-->
+
+<div class="modVarios">
+    <a href="#" class="arrowLeft unitPng">&nbsp;</a>
+    <div class="mod4 modulosv2">
+        <h1>Noticias Depor</h1>
+        <?php if($this->noticias != null): ?>
+        <h2><?php echo $this->noticias->titulo; ?></h2>
+        <p><?php echo $this->noticias->descripcion; ?></p>
+        <?php else: ?>
+        <h2>&nbsp;</h2>
+        <p>&nbsp;</p>
+        <?php endif; ?>
+        <a href="/articulo/index/id/1" class="verMasP">Ver M&aacute;s</a>
+    </div> <!--fin mod4-->
+    <div class="mod5 modulosv2">
+        <h1>El Profe opina</h1>
+        <h2>Este t&eacute;cnico s&iacute; que sabe. Te aconseja muy bien, pero puede fallar.</h2>
+        <?php if($this->profedepor != null): ?>
+        <ul>
+        	<li><?php echo $this->profedepor->titulo; ?></li>
+            <li><?php echo $this->profedepor->descripcion; ?></li>
+        </ul>
+        <?php else: ?>
+        <ul>
+            <li>&nbsp;</li>
+        </ul>
+        <?php endif; ?>
+        <a href="/articulo/index/id/2" class="verMasP">Ver M&aacute;s</a>
+    </div> <!--fin mod5-->
+    <div class="mod6 modulosv2">
+        <h1>Los resultados</h1>
+        <h2>Checa aqu&iacute; los resultados fecha a fecha.</h2>
+        <div class="resEquipos">
+
+            <div class="iconosEquipos">
+                <img src="<?php echo $this->Image($this->equipo_local['imagen']); ?>" />
+                <img src="<?php echo $this->Image('_versusBig.png'); ?>" />
+                <img src="<?php echo $this->Image($this->equipo_visitante['imagen']); ?>" />
+            </div> <!--fin iconosEquipos-->
+
+            <div class="equipoLeft"><?php echo ucwords(strtolower($this->equipo_local['descripcion'])); ?></div>
+            <div class="equipoRight"><?php echo ucwords(strtolower($this->equipo_visitante['descripcion'])); ?></div>
+
+            <div class="datosResultado">
+                <div class="marcador left"><?php echo isset($this->resultados['goles_local'])?$this->resultados['goles_local']:"?"; ?></div>
+                <div class="marcador right" style="margin-right: 20px;"><?php echo isset($this->resultados['goles_visita'])?$this->resultados['goles_visita']:"?"; ?></div>
+            </div> <!--fin datosResultado-->
+
+            <div class="fechaNum">Fecha : <?php echo $this->partido->fecha_partido ?></div>
+            <a href="/resultado/" class="verMasP">Ver M&aacute;s</a>
+
+        </div> <!--fin resEquipos-->
+
+    </div> <!--fin mod6-->
+    <div class="mod7 modulosv2">
+        <h1>El Cuy Yimi</h1>
+        <h2>El roedor que no  acierta ni la hora predice los partidos. &iquest;Le haces caso?</h2>
+    <?php if($this->pronostico != null): ?>
+        <p class="pcuy"><?php echo $this->pronostico->titulo; ?><br />
+        <?php echo $this->pronostico->descripcion; ?>
+        </p>
+        <?php else: ?>
+        <p class="pcuy">&nbsp;</p>
+        <?php endif; ?>
+        <a href="/articulo/index/id/3" class="verMasP">Ver M&aacute;s</a>
+    </div> <!--fin mod7-->
+    <a href="#" class="arrowRight unitPng">&nbsp;</a>
+    <div class="clear"></div>
+</div> <!--modVarios-->

@@ -1,0 +1,28 @@
+<div class="crearbanner">
+<h1><?php echo $this->title ?></h1>
+</div>
+
+<div class="containertable" style="width: 100%">
+<table border="0" width="100%" cellspacing="0" cellpadding="3">
+	<tr>
+		<td width="20%">Tipo:</td>
+		<td width="80%"><?php echo $this->tipo->nombre; ?></td>
+		
+	</tr>
+	<tr>
+		<td width="20%">Modificar:</td>
+		<td width="80%"><a href="#" onclick="editarVerNoticia(<?php echo $this->articulo_id; ?>)">
+                    <img src="<?php echo $this->Image('editar.jpg')?>" /></a>
+		</td>
+	</tr>
+	<tr class="list_b">
+		<td colspan="2" style="text-align: left; width: 70%"><b><?php echo $this->titulo; ?></b></td>
+	</tr>
+	<tr>
+		<td colspan="2"><?php echo $this->descripcion; ?></td>
+	</tr>	
+</table>
+<div id="noticia" style="width: 100%; clear: both;">	
+	<div><?php echo html_entity_decode($this->contenido); ?></div>		
+</div>	
+</div>

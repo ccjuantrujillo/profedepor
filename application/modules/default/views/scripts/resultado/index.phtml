@@ -1,0 +1,190 @@
+<div class="resultados">
+  <div class="title">
+    <h5>Resultados</h5>
+  </div>
+  <div class="resLeft">
+    <h1>Las Fechas</h1>
+    <p>Escoge una fecha:</p>
+    <div class="resOverFlow">
+      <ul>
+      <?php while($fecha = $this->fechas->fetch()): ?>
+        <li id="<?php echo $fecha->fecha_id ?>"><a<?php if($fecha->fecha_id == $this->fecha_id) echo ' class="activ"' ?> href="/resultado?fecha_id=<?php echo $fecha->fecha_id ?>"><span><?php echo $fecha->descripcion ?>&ordm;</span><?php echo $fecha->fecha_partido ?></a></li>
+      <?php endwhile ?>
+      </ul>
+    </div>
+    <!--fin resOverFlow-->
+  </div>
+  <!--fin resleft-->
+  <div class="resCenter">
+    <h2>Fecha <?php echo $this->fecha['descripcion'] ?>: <?php echo $this->primera_fecha ?></h2>
+    <ul class="tableFixture">
+      <li class="head">
+        <div class="local">Local</div>
+        <div class="visita">Visita</div>
+      </li>
+    <?php
+    if((count($this->puntaje1)==0 && count($this->puntaje2)==0 && count($this->puntaje3)==0) || count($this->partidos)==0){
+         $hidden = "style='display:none;'";
+    }
+    else{
+         $hidden = "";
+    }
+    ?>
+    <?php foreach($this->partidos as $partido): ?>
+      <li class="<?php echo $this->cycle(array('list1', 'list2'))->next() ?>">
+        <div class="equipo"><img src="<?php echo $this->Image($partido->icono_local) ?>" />
+            <p><?php echo $partido->local ?></p>
+        </div>
+        <div class="goles"><?php echo $partido->goles_local ?></div>
+        <div class="versus"></div>
+        <div class="goles"><?php echo $partido->goles_visita ?></div>
+        <div class="equipo"><img src="<?php echo $this->Image($partido->icono_visitante) ?>" />
+            <p><?php echo $partido->visitante ?></p>
+        </div>
+        <div class="verMasRes"><a href="/resultado?partido_id=<?php echo $partido->partido_id ?>&fecha_id=<?php echo $partido->fecha_id ?>">&nbsp;</a></div>
+      </li>
+    <?php endforeach ?>
+    </ul>
+    <div class="puntAcumulado">
+      <p>Tus puntos acumulados para la &quot;Fecha <?php echo $this->fecha['descripcion'] ?>&quot; son: <span><?php echo $this->puntaje_fecha_jugador ?> pts</span></p>
+    </div>
+    <!--fin puntAcumulado-->
+  </div>
+  <!--fin resCenter-->
+ <?php if($this->partido): ?>
+  <div class="resRight">
+    <div class="encuenttro">
+      <div class="left">
+        <div class="equipoLeft">
+             <?php
+             if($this->partido->icono_local!=''){
+             ?>
+             <img src="<?php echo $this->Image($this->partido->icono_local) ?>" />
+             <?php
+             }
+             ?>
+            <p><?php echo $this->partido->local ?></p>
+        </div>
+        <div class="equipoRight">
+             <?php
+             if($this->partido->icono_visitante!=''){
+             ?>
+             <img src="<?php echo $this->Image($this->partido->icono_visitante) ?>" />
+             <?php
+             }
+             ?>
+            <p><?php echo $this->partido->visitante ?></p>
+        </div>
+      </div>
+      <div class="left">
+        <div class="golLeft"> <?php echo $this->partido->goles_local ?> </div>
+        <div class="golRight"> <?php echo $this->partido->goles_visita ?> </div>
+      </div>
+    </div>
+    <!--fin encuentro-->
+    <div class="overResulEncuentro">
+      <table width="290" border="2" cellspacing="2" cellpadding="2" class="tabResRight" <?php echo $hidden;?>>
+        <tr>
+          <td class="tabTitleJugadas" colspan="5">TU JUGADA</td>
+        </tr>
+        <tr <?php echo ($this->partido->fase1==1)?"":"style='display:none;'";?>>
+          <td class="tabJugadas" colspan="5">
+               <div class="left tabFases"><span>NIVEL 1:</span><?php echo (count($this->puntaje1)>0)?$this->puntaje1[0]['descripcion2']:"";?></div>
+               <div class="left logo">
+                    <?php
+                    $puntaje_partido = 0;
+                    ?>
+                    <?php 
+                    if(count($this->puntaje1)>0){
+                         $puntaje_partido = $puntaje_partido + $this->puntaje1[0]['puntaje'];
+                         if($this->puntaje1[0]['icono_equipo']!=""){
+                              ?>
+                              <img src="/images/<?php echo ($this->puntaje1[0]['icono_equipo'])?>" />
+                              <?php
+                         }
+                    }
+                    ?>
+               </div>
+               <div class="left tabFases"><?php echo (count($this->puntaje1)>0)?$this->puntaje1[0]['nombre_equipo']:"";?></div>
+              <div class="right tabFases bold">(<?php echo (count($this->puntaje1)>0)?$this->puntaje1[0]['puntaje']:"0";?> ptos.)</div>
+          </td>
+        </tr>
+        <tr <?php echo ($this->partido->fase2==1)?"":"style='display:none;'";?>>
+          <td class="tabJugadas" colspan="5">
+               <div class="left tabFases"><span>NIVEL 2:</span><?php echo (count($this->puntaje2)>0)?$this->puntaje2[0]['descripcion2']:"";?></div>
+               <div class="left logo">
+                    <?php 
+                    if(count($this->puntaje2)>0){
+                         $puntaje_partido = $puntaje_partido + $this->puntaje2[0]['puntaje'];
+                         if(isset($this->puntaje1[0])){
+                             if($this->puntaje1[0]['icono_equipo']!=""){
+                             ?>
+                                  <img src="/images/<?php echo ($this->puntaje1[0]['icono_equipo'])?>"/>
+                             <?php
+                             }
+                         }
+                    }
+                    ?>
+               </div>
+              <div class="left tabFases"><?php echo (count($this->puntaje2)>0)?$this->puntaje2[0]['descripcion3']:"";?></div>
+              <div class="right tabFases bold">(<?php echo (count($this->puntaje1)>0)?$this->puntaje2[0]['puntaje']:"0";?> ptos.)</div></td>
+        </tr>
+        <tr <?php echo ($this->partido->fase3==1)?"":"style='display:none;'";?>>
+          <td class="tabJugadas" colspan="5"><div class="left tabFases"><span>NIVEL 3:</span>
+                    Calificaci&oacute;n </div>
+              <div class="left logo">
+                   <?php 
+                   $puntaje3 = 0;
+                   ?>
+                   <?php if(count($this->puntaje3)>0):?>
+                   <?php 
+                   if(isset($this->puntaje3[0]) && isset($this->puntaje3[1]) && isset($this->puntaje3[2]) && isset($this->puntaje3[3])){
+                    $puntaje3 = $this->puntaje3[0]['puntaje'] + $this->puntaje3[1]['puntaje'] + $this->puntaje3[2]['puntaje'] + $this->puntaje3[3]['puntaje'];
+                   }
+                   else{
+                       $puntaje3=0;
+                   }
+                   $puntaje_partido = $puntaje_partido + $puntaje3;
+                   ?>
+                   <img src="/images/<?php echo ($this->puntaje3[0]['icono_equipo'])?>" />
+                   <?php endif;?>
+              </div>
+            <div class="right tabFases bold">(<?php echo $puntaje3;?> ptos.)</div></td>
+        </tr>
+        <tr <?php echo ($this->partido->fase3==1)?"":"style='display:none;'";?>>
+          <td class="blanco">&nbsp;</td>
+          <td class="blanco">Ataque</td>
+          <td class="blanco">Defensa</td>
+          <td class="blanco">Fair Play</td>
+          <td class="blanco">Depor</td>
+        </tr>
+        <tr <?php echo ($this->partido->fase3==1)?"":"style='display:none;'";?>>
+          <td class="gris bold">T&uacute;</td>
+          <td class="gris bold"><?php echo (count($this->puntaje3)>0)?$this->puntaje3[0]['descripcion3']:"-";?></td>
+          <td class="gris bold"><?php echo (count($this->puntaje3)>0)?$this->puntaje3[1]['descripcion3']:"-";?></td>
+          <td class="gris bold"><?php echo (count($this->puntaje3)>0)?$this->puntaje3[2]['descripcion3']:"-";?></td>
+          <td class="gris bold"><?php echo (count($this->puntaje3)>0)?$this->puntaje3[3]['descripcion3']:"-";?></td>
+        </tr>
+        <tr <?php echo ($this->partido->fase3==1)?"":"style='display:none;'";?>>
+          <td class="blanco bold">Depor</td>
+          <td class="blanco"><?php echo (count($this->puntajedepor)>0)?$this->puntajedepor[0]->puntajedepor:"0";?></td>
+          <td class="blanco"><?php echo (count($this->puntajedepor)>0)?$this->puntajedepor[1]->puntajedepor:"0";?></td>
+          <td class="blanco"><?php echo (count($this->puntajedepor)>0)?$this->puntajedepor[2]->puntajedepor:"0";?></td>
+          <td class="blanco"><?php echo (count($this->puntajedepor)>0)?$this->puntajedepor[3]->puntajedepor:"0";?></td>
+        </tr>
+        <tr <?php echo ($this->partido->fase3==1)?"":"style='display:none;'";?>>
+          <td class="gris bold">&nbsp;</td>
+          <td class="gris bold"><?php echo (count($this->puntaje3)>0)?$this->puntaje3[0]['puntaje']:"0";?> ptos.</td>
+          <td class="gris bold"><?php echo (count($this->puntaje3)>0)?$this->puntaje3[1]['puntaje']:"0";?> ptos.</td>
+          <td class="gris bold"><?php echo (count($this->puntaje3)>0)?$this->puntaje3[2]['puntaje']:"0";?> ptos.</td>
+          <td class="gris bold"><?php echo (count($this->puntaje3)>0)?$this->puntaje3[3]['puntaje']:"0";?> ptos.</td>
+        </tr>
+      </table>
+      <div class="puntAcumulado bold"> Tus puntos acumulados para el partido <?php echo $puntaje_partido;?> pts </div>
+      <a href="/juego" class="btnNaranja180 bold center" style="margin-top: 5px;">Ir a mis jugadas</a> </div>
+    <!--fin overResulEncuentro-->
+  </div>
+ <?php endif ?>  
+  <!--fin resRight-->
+</div>
+<!--fin resultados-->

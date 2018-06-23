@@ -1,0 +1,25 @@
+body {
+}
+
+#wrap-content {
+	width: 90%;
+    margin: 0 auto;
+}
+
+#header {
+	text-align: center;
+	font-size: 30px;
+	height: 150px;
+	background:  #CCFF00;
+}
+
+#content {
+	text-align: left;
+	background: #33CCFF;
+}
+
+#footer {
+	text-align: center;
+	font-size: 30px;
+	background: #CC3399;
+}

@@ -1,0 +1,51 @@
+<div class="crearbanner">
+    <h1>Comentarios <?php echo $this->tipo->nombre; ?></h1>
+</div>
+
+<div style="text-align: left;">
+<div class="alfabeto" style="margin: 10px 0 10px 0;">&lt;&lt; <?php echo $this->numbers; ?> &gt;&gt;</div>
+<?php if(isset($this->num)): ?>
+      <h3 style="margin: 10px 0 10px 0;">P&Aacute;GINA <?php echo $this->num; ?></h3>
+<?php endif; ?>
+</div>
+<div class="containertable">
+<table style="width: 70%" border="1" cellspacing="0" cellpadding="2">
+	<?php if ($this->comentarios != null): ?>
+	<tr>
+		<td>        
+            <?php foreach ($this->comentarios as $listado): ?>
+            <table style="width: 100%; margin-bottom: 10px;" border="0" cellspacing="0" cellpadding="2">        
+		    	<tr class="list1">
+		        	<td style="text-align: left;"><b><?php echo $listado->nomjugador; ?></b></td>
+	                <td style="text-align: right;">Fecha: <b><?php echo $listado->fecha; ?></b>  Hora: <b><?php echo $listado->hora; ?></b></td>
+	            </tr>
+	            <tr>
+	                <td colspan="2"><?php echo html_entity_decode($listado->descripcion); ?></td>
+	            </tr>
+	            <tr>
+	                <td colspan="2"><a class="aceptarlog2" href="#" onclick="eliminar_comentario(<?php echo $listado->comentario_id; ?>, <?php echo $listado->articulo_id; ?>, <?php echo $this->tipo->tipoarticulo_id; ?>);">Eliminar</a></td>
+	            </tr>
+            </table>
+            <?php endforeach; ?>        
+		</td>
+	</tr>	
+	<?php else: ?>
+        <tr>
+            <td><i>No hay comentarios</i></td>
+        </tr>
+    <?php endif; ?>
+</table>
+</div>
+
+<div class="containertable">
+    <table style="width: 20%; margin-left: 10%;" border="1" cellspacing="0" cellpadding="0">
+        <tr class="list1">
+            <td>Archivo</td>
+        </tr>
+        <?php foreach ($this->archivo as $archivo): ?>
+        <tr class="<?php echo $this->cycle(array('list_a', 'list_b'))->next() ?>">
+            <td style="text-align: left; padding-left: 20px;"><a href="#" onclick="verArchivoEditar(<?php echo $this->tipo->tipoarticulo_id; ?>,<?php echo $archivo->mes; ?>,<?php echo $archivo->anio; ?>);"><?php echo $archivo->nombre; ?> <?php echo $archivo->anio; ?></a></td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+</div>

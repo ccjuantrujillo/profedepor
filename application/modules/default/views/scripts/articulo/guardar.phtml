@@ -1,0 +1,33 @@
+<div style="text-align: center; margin: 10px 0 10px 0;">
+	<div class="alfabeto" style="margin:auto;">&lt;&lt; <?php echo $this->numbers; ?> &gt;&gt;</div>
+	<?php if(isset($this->num)): ?>
+    <h3 style="margin: 10px 0 10px 0;text-align: left;">P&Aacute;GINA <?php echo $this->num; ?></h3>
+	<?php endif; ?>
+</div>
+<?php if ($this->comentarios != null): ?>
+<?php foreach ($this->comentarios as $m): ?>
+        <div class="singleComment">
+            <div class="comLeft">
+                <img src="/fotos/<?php echo $m->foto; ?>" />
+            </div> <!--fin comLeft-->
+            <div class="comRight">
+                <h1><?php echo $m->nomjugador; ?></h1>
+                <h2><?php echo $m->registro; ?></h2>
+                <p><?php echo html_entity_decode($m->descripcion); ?></p>
+            </div> <!--fin comRight-->
+            <div class="clear"></div>
+        </div> <!--fin singleComment-->
+<?php endforeach; ?>
+<?php else: ?>
+            <div class="singleComment">
+                <div class="comLeft">
+                    <img src="<?php echo $this->Image('_avatar.jpg'); ?>" />
+                </div> <!--fin comLeft-->
+                <div class="comRight">
+                    <h1>&nbsp;</h1>
+                    <h2>No hay Comentarios registrados.</h2>
+                    <p>&nbsp;</p>
+                </div> <!--fin comRight-->
+                <div class="clear"></div>
+            </div> <!--fin singleComment-->
+<?php endif; ?>

@@ -1,0 +1,30 @@
+<form action="/panel/config/" method="post" id="FormConfig">
+	<div class="crearbanner">
+       	<h1><?php echo $this->title ?></h1>       
+  	</div>
+</form>
+
+<div id="contenedor" class="containertable">
+    <!-- <div class="mensajetable" style="width:100%">Se han encontrado (<?php //echo $this->cantidad; ?>) registro(s)</div> -->
+    <input type="hidden" name="fecha_id" id="fecha_id" />
+    <table style="width:100%" border="1"  cellspacing="0" cellpadding="0">
+        <tr class="list1">
+          <td width="10%">Id</td>
+          <td width="30%">Torneo</td>
+          <td width="30%">Fase</td>
+          <td width="20%">Tolerancia</td>          
+          <td width="10%">Editar</td>          
+        </tr>
+    <?php if($this->configs != null): ?>  
+    <?php foreach($this->configs as $i => $f): ?>    
+        <tr id="configid_<?php echo $f->configuracion_id; ?>" class="<?php echo $this->cycle(array('list_a', 'list_b'))->next() ?>">
+          <td><?php echo $i+1;?></td>
+          <td class="textleft"><?php echo $f->nom_torneo; ?></td>
+          <td class="textleft"><?php echo $f->nom_fase; ?></td>
+          <td class="textleft"><?php echo $f->tolerancia; ?></td>
+          <td><a href="#" onclick="editarConfig(<?php echo $f->configuracion_id ?>);"><img src="<?php echo $this->Image('editar.jpg');?>" border="0"/></a></td>
+        </tr>
+    <?php endforeach; ?>
+    <?php endif; ?>
+    </table>
+</div>

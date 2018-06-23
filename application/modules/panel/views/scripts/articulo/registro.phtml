@@ -1,0 +1,48 @@
+<div class="crearbanner">
+	<h1><?php echo $this->form_title ?></h1>
+</div>
+
+<div class="containertable">
+<div class="container_bg patbotom">
+<form action="#" name="frmIngresarArticulo" id="frmIngresarArticulo" method="post">
+<table border="0" width="100%" cellpadding="3" cellspacing="0">
+	<tbody>
+		<tr>
+			<td>Tipo:</td>
+			<td><?php echo $this->tipoArticulo ?></td>
+		</tr>
+		<tr>
+			<td>T&iacute;tulo:</td>
+			<td><input type="text" name="titulo" id="titulo"
+				size="80" maxlength="100" /></td>
+		</tr>
+		<tr>
+			<td>Descripci&oacute;n:</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2"><textarea name="descripcion" id="descripcion"
+				cols="70" rows="3" onkeypress="return limita(this, event,180)" onkeyup="cuenta(this, event,180,'mensaje')"></textarea></td>
+		</tr>
+		<tr>
+			<td>Contenido:</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>			
+			<td colspan="2"><label> <textarea class="tinymce" id="contenido" name="contenido"></textarea> </label></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align: center;">
+				<div id="mensaje" style="color: red;"></div>
+			</td>
+		</tr>
+		<tr>			
+			<td colspan="2" style="text-align: right;">
+				<a class="aceptarlog2" href="#" onclick="ingresarNoticia();" id="btnIngresarArt" name="btnIngresarArt">Publicar</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</form>
+</div>
+</div>

@@ -1,0 +1,12 @@
+<?php foreach($this->my_friends as $friend): ?>
+<div align="left" class="masc_friend onclick">
+<?php echo $friend->name ?><br />
+<img src="<?php echo $friend->profile_image_url ?>" /><br />
+<input type="checkbox" style="display: none" name="friends[]" value="<?php echo $friend->id ?>" />
+</div>
+<?php endforeach ?>
+<?php if($this->cantidad_pags > $this->pag): ?>
+<div style="clear: both;" id="btnVerMas">
+<input type="button" value="Ver Mas!" onclick="getRedFriends(<?php echo $this->pag+1 ?>)" />
+</div>
+<?php endif ?>

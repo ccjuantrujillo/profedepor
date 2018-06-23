@@ -1,0 +1,24 @@
+<?php if ($this->lista_muro != null): ?>
+<?php foreach ($this->lista_muro as $m): ?>
+        <div class="manchaComentario">
+            <img class="comAvatar" src="/fotos/<?php echo $m->foto; ?>" />
+            <div class="title">
+                <h2><?php echo $m->nomjugador; ?></h2>
+                <h4><?php echo $m->fecha; ?>, <?php echo ($m->dhora>24)?$m->hora:(($m->dhora==0)?(($m->dmin == 0)?"hace 1 min":"hace $m->dmin min"):"hace $m->dhora horas"); ?></h4>
+            </div>
+            <p><?php echo html_entity_decode($m->mensaje); ?></p>
+        </div> <!--fin manchaComentario-->
+        <?php $muro_id = $m->muro_id; ?>
+<?php endforeach; ?>
+<div id="mascomentarios">
+    <div id="more<?php echo $muro_id; ?>" class="morebox">
+        <a class="btnNormal" href="#" id="<?php echo $muro_id; ?>">[Ver comentarios antiguos]</a>
+    </div>
+</div>
+<?php else: ?>
+            <div class="manchaComentario">
+                <img class="comAvatar" src="<?php echo $this->Image('_avatar.jpg'); ?>" />
+                <div class="title"><h2>&nbsp;</h2><h4>&nbsp;</h4></div>
+                <p>No hay m&aacute;s comentarios en este grupo.</p>
+            </div> <!--fin manchaComentario-->
+<?php endif; ?>

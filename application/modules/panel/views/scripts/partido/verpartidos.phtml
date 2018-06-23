@@ -1,0 +1,39 @@
+ <table border="1">
+    <tr class="list1">
+         <td>No.</td>
+         <td>Fecha partido</td>
+         <td>Local</td>
+         <td>Visitante</td>
+         <td>Fase 1</td>
+         <td>Fase 2</td>
+         <td>Fase 3</td>
+         <td>Estado</td>
+         <td>Editar</td>
+         <td>Eliminar</td>
+    </tr>
+    <?php foreach($this->partidos as $indice=>$item):?>
+    <tr class="list_a">
+      <td align="center"><?php echo $indice+1;?></td>
+      <td><?php echo $item->fecha_partido ?></td>
+      <td style="text-align: left;"><img src="/images/<?php echo $item->icono_local;?>" border="0"><?php echo $item->local ?></td>
+      <td style="text-align: left;"><img src="/images/<?php echo $item->icono_visitante;?>" border="0"><?php echo $item->visitante ?></td>
+      <td align="left"><input disabled="disabled" type="checkbox" <?php echo ($item->fase1==1)?"checked='checked'":"";?> name="fase1" id="fase1" /></td>
+      <td align="left"><input disabled="disabled" type="checkbox" <?php echo ($item->fase2==1)?"checked='checked'":"";?> name="fase2" id="fase2" /></td>
+      <td align="left"><input disabled="disabled" type="checkbox" <?php echo ($item->fase3==1)?"checked='checked'":"";?> name="fase3" id="fase3" /></td>
+      <td align="left">
+      <?php
+      if($item->situacion == 1){
+           ?>
+           <image src="/images/check.jpg" border="0"/>
+           <?php
+      }
+      else{
+           echo "Por Jugar";
+      }
+      ?>
+      </td>
+      <td><a href="#" onclick="EditarPartido(<?php echo $item->partido_id;?>)"><img src="/images/editar.jpg" border="0"/></a></td>
+      <td><a href="#" onclick="EliminarPartido(<?php echo $item->partido_id;?>)"><img src="/images/eliminar.jpg" border="0"/></a></td>
+    </tr>
+    <?php endforeach ?>
+  </table>

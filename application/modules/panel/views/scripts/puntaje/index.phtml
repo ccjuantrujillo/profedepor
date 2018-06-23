@@ -1,0 +1,80 @@
+<form name="frmFase" method="post">
+<?php
+foreach($this->fases as $indice=>$value){
+     $arrDescripcion[$value->fase_id]=$value->descripcion;
+}
+?>
+<div class="crearbanner">
+     <h1><?php echo $this->title ?></h1>
+     <div style="position: relative;">Fases:</div>
+     <div><?php echo $this->formSelect('fase', $this->fase_id, array('onchange'=>'submit();','class'=>'optionn'), $arrDescripcion) ?></div>
+<input type="hidden" name="fila_id" id="fila_id" value="<?php echo $this->fila_id;?>" size="3" />
+</div>
+<div class="containertable">
+<table border="1" width="95%" cellpadding="0" cellspacing="0">
+    <tr align="center" class="list1">
+      <td>ID</td>
+      <td>FASE</td>
+      <td>FECHA</td>
+      <td>INTERVALO</td>
+      <td>FECHA DE PROCESO</td>
+      <td>SITUACION</td>
+      <td>ACCIONES</td>
+    </tr>
+<?php
+ foreach($this->fechas as $indice=>$value){
+  ?>
+    <tr class="list_a">
+      <td style="text-align:center;"><?php echo $indice+1;?>&nbsp; <a href="/panel/puntaje/index/id/<?php echo $indice;?>">+</a> </td>
+      <td align="left"><input type="hidden" name="fecha[<?php echo $indice;?>]" id="fecha[<?php echo $indice;?>]" value="<?php echo $value->fecha_id;?>" size="5" />
+          <?php echo $value->fase_id;?> </td>
+      <td align="left"><?php echo $value->descripcion;?></td>
+      <td align="center"><?php echo $value->intervalo;?></td>
+      <td align="center"><?php echo $value->fecha_proceso2;?>&nbsp;<?php echo $value->hora_proceso2;?></td>
+      <td align="center">
+          <?php
+          if($value->calculado=="0"){
+               echo "Por Calcular";
+          }
+          else{
+               ?>
+               <image src="/images/check.jpg" border="0">
+               <?php
+          }
+          ?>
+      </td>
+      <td align="center"><a href="#" onclick="calcular_puntajes(<?php echo $indice;?>);"><image src="<?php echo $this->Image('calculadora.gif');?>" border="0" alt="Calcular Puntajes" title="Calcular Puntajes"/></a> </td>
+    </tr>
+    <?php
+ if($value->verpartidos ==1){
+      foreach($value->partidos as $indice2 => $value2){
+      ?>
+    <tr class="list_c">
+      <td align="center">&nbsp;</td>
+      <td align="left"><input type="hidden" name="partido[<?php echo $indice;?>][<?php echo $indice2;?>]" id="partido[<?php echo $indice;?>][<?php echo $indice2;?>]" value="<?php echo $value2->id;?>" size="5" />
+          <?php echo $indice2+1;?> </td>
+      <td style="text-align:left;"><?php echo $value2->local;?></td>
+      <td style="text-align:left;"><?php echo $value2->visita;?></td>
+      <td align="center">&nbsp;&nbsp;<?php echo $value2->fecha_proceso;?></td>
+      <td align="center">&nbsp;&nbsp;
+          <?php
+          if($value2->calculado=="0"){
+               echo "Por Calcular";
+          }
+          else{
+               ?>
+               <image src="/images/check.jpg" border="0">
+               <?php
+          }
+          ?>
+      </td>
+      <td align="center"><a href="#" onclick="calcular_puntajes_x_partido(<?php echo $indice;?>,<?php echo $indice2;?>);">x Partido</a> </td>
+    </tr>
+    <?php
+           }
+      }
+      }
+      ?>
+</table>
+</div>
+</form>

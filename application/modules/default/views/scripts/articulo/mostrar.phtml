@@ -1,0 +1,128 @@
+<div class="blogDepor">
+    <div class="contBlog">
+
+
+        <div class="contLeft">
+            <h1><?php echo $this->tipo->nombre; ?></h1>
+
+            <div class="articulos">
+
+                <div class="single">
+                    <div class="titular">
+                        <h2><?php echo $this->articulo->titulo; ?></h2>
+                        <h3><?php echo $this->fecha; ?></h3>
+                        <h4><a href="#"><?php echo $this->articulo->num; ?> comentario<?php echo ($this->articulo->num == 1)?"":"s"; ?></a></h4>
+                        <div class="clear"></div>
+                    </div> <!--fin titular-->
+                    <div id="noticia" class="estracto">
+                        <!--<img src="<?php //echo $this->Image('_fotoBlog.png'); ?>" />-->
+                        <p><?php echo $this->articulo->descripcion; ?></p>
+                        <div style="margin-bottom: 15px;"><?php echo html_entity_decode($this->articulo->contenido); ?></div>
+                        <a id="val1" class="val1" href="javascript:;" onclick="votarTipo(<?php echo $this->articulo->articulo_id; ?>, 1);">crack</a><div class="cont1"><?php echo $this->tot1->total; ?></div>
+                        <a id="val2" class="val2" href="javascript:;" onclick="votarTipo(<?php echo $this->articulo->articulo_id; ?>, 2);">cumplidor</a><div class="cont2"><?php echo $this->tot2->total; ?></div>
+                        <a id="val3" class="val3" href="javascript:;" onclick="votarTipo(<?php echo $this->articulo->articulo_id; ?>, 3);">monse</a><div class="cont3"><?php echo $this->tot3->total; ?></div>
+                        <div id="msgVoto" style="color:red;"></div>
+                    </div> <!--fin estracto-->
+                    <div class="clear"></div>
+                </div> <!--fin single-->
+
+                <div class="comentarioSingle">
+                    <div class="formComent">
+                        <form action="#" name="frmComentario" id="frmComentario" method="post">
+                            <input type="hidden" id="articulo_id" name="articulo_id" value="<?php echo $this->articulo->articulo_id; ?>"/>
+                            <input type="hidden" id="tipoarticulo_id" name="tipoarticulo_id" value="<?php echo $this->articulo->tipoarticulo_id; ?>"/>
+                            <h2>Escribe un comentario:</h2><br />
+                            <textarea name="comentario" id="comentario" cols="" rows="" onkeypress="return limita(this, event,300)" onkeyup="cuenta(this, event,300,'contador')"></textarea>
+                            <span id="contador" style="color: red;"></span>
+                            <span id="mostrar" style="color: red;"></span>
+                            <a href="javascript:;" id="btnEnviarCom" class="btnNaranja100 right">Enviar</a>
+                        </form>
+                        <div class="clear"></div>
+                    </div>
+                </div> <!--fin comentarioSingle-->
+
+                <div class="listadoComentarios">
+                    <div id="resultado">
+                    <div style="text-align: center; margin: 10px 0 10px 0;">
+						<div class="alfabeto" style="margin:auto;"><?php echo ($this->numbers != null)?"&lt;&lt; ".$this->numbers." &gt;&gt":""; ?></div>
+						<?php if(isset($this->num)): ?>
+      					<h3 style="margin: 10px 0 10px 0;text-align: left;">P&Aacute;GINA <?php echo $this->num; ?></h3>
+						<?php endif; ?>
+					</div>
+                    <?php if($this->comentarios != null): ?>
+                    <?php foreach ($this->comentarios as $m): ?>
+                    <div class="singleComment">
+                        <div class="comLeft">
+                            <img src="/fotos/<?php echo $m->foto; ?>" />
+                        </div> <!--fin comLeft-->
+                        <div class="comRight">
+                            <h1><?php echo $m->nomjugador; ?></h1>
+                            <h2><?php echo $m->registro; ?></h2>
+                            <p><?php echo html_entity_decode($m->descripcion); ?></p>
+                        </div> <!--fin comRight-->
+                        <div class="clear"></div>
+                    </div> <!--fin singleComment-->
+                    <?php endforeach; ?>
+                    <?php else: ?>
+                    <div class="singleComment">
+                        <div class="comLeft">
+                            <img src="<?php echo $this->Image('_avatar.jpg'); ?>" />
+                        </div> <!--fin comLeft-->
+                        <div class="comRight">
+                            <h1>&nbsp;</h1>
+                            <h2>No hay Comentarios registrados.</h2>
+                            <p>&nbsp;</p>
+                        </div> <!--fin comRight-->
+                        <div class="clear"></div>
+                    </div> <!--fin singleComment-->
+                    <?php endif; ?>
+                    </div>
+                </div> <!--fin listadoComentarios-->
+
+                <a href="/articulo/index/id/<?php echo $this->tipo->tipoarticulo_id; ?>" class="verMasP" style="margin: 10px 0 20px; float: left;">&lt;&lt; regresar</a>
+
+
+            </div> <!--fin articulos-->
+        </div> <!--fin contLeft-->
+
+        <div class="contRight">
+            <h1>El Ranking</h1>
+            <div class="conSideRight">
+                <h2>GENERAL DEL PROFE DEPOR</h2>
+                <ul class="listadoRanking">
+                <?php if($this->rankgeneral != null): ?>
+                    <?php foreach($this->rankgeneral as $i => $rg): ?>
+                    <li<?php echo ($i==0)?" class=\"first\"":""; ?>>
+                        <div class="puesto"><?php echo ($i+1); ?></div>
+                        <div class="puntos"><?php echo $rg->puntaje; ?> Ptos.</div>
+                        <div class="nombre"><?php echo ucwords($rg->nomjugador); ?></div>
+                    </li>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <li><div class="puesto">&nbsp;</div>&nbsp;No Hay puntajes registrados</li>
+                <?php endif; ?>
+                </ul>
+                <a href="/ranking/" class="verMas">[Ver todo]</a>
+
+                <div class="clear"></div>
+
+                <div class="archivo">
+                    <h1>Archivo</h1>
+                    <ul class="archivoList">
+                        <?php foreach($this->archivo as $i => $archivo): ?>
+                        <li<?php echo ($i%2==0)?" class=\"fndGris\"":""; ?>><a href="/articulo/archivo/id/<?php echo $this->tipo->tipoarticulo_id; ?>/mes/<?php echo $archivo->mes; ?>/anio/<?php echo $archivo->anio; ?>"><?php echo $archivo->nombre; ?> <?php echo $archivo->anio; ?></a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div> <!--fin archivo-->
+
+                <div class="clear"></div>
+
+            </div> <!--fin conSideRight-->
+        </div> <!--fin contRight-->
+
+        <div class="clear"></div>
+
+        <div class="blogFooter"></div>
+
+    </div> <!--fin contBlog-->
+</div> <!--fin juegoFases-->

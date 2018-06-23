@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<projectProfile type="default" version="1.10">
+  <projectDirectory>
+    <projectProfileFile filesystemName=".zfproject.xml"/>
+    <applicationDirectory classNamePrefix="Application_">
+      <apisDirectory enabled="false"/>
+      <configsDirectory>
+        <applicationConfigFile type="ini"/>
+      </configsDirectory>
+      <controllersDirectory>
+        <controllerFile controllerName="Index">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Error"/>
+      </controllersDirectory>
+      <formsDirectory>
+        <formFile formName="TwitterRegistro"/>
+      </formsDirectory>
+      <layoutsDirectory enabled="false"/>
+      <modelsDirectory>
+        <modelFile modelName="RedSocial"/>
+      </modelsDirectory>
+      <modulesDirectory>
+        <moduleDirectory moduleName="panel">
+          <apisDirectory enabled="false"/>
+          <configsDirectory enabled="false"/>
+          <controllersDirectory>
+            <controllerFile controllerName="Noticia">
+              <actionMethod actionName="index"/>
+            </controllerFile>
+          </controllersDirectory>
+          <formsDirectory enabled="false"/>
+          <layoutsDirectory enabled="false"/>
+          <modelsDirectory/>
+          <viewsDirectory>
+            <viewScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Noticia">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+            </viewScriptsDirectory>
+            <viewHelpersDirectory/>
+            <viewFiltersDirectory/>
+          </viewsDirectory>
+        </moduleDirectory>
+        <moduleDirectory moduleName="default">
+          <apisDirectory enabled="false"/>
+          <configsDirectory enabled="false"/>
+          <controllersDirectory>
+            <controllerFile controllerName="Jugador">
+              <actionMethod actionName="index"/>
+              <actionMethod actionName="editar"/>
+              <actionMethod actionName="loginRedSocial"/>
+              <actionMethod actionName="registroRedSocial"/>
+            </controllerFile>
+            <controllerFile controllerName="GrupoJugador">
+              <actionMethod actionName="index"/>
+              <actionMethod actionName="registro"/>
+              <actionMethod actionName="buscar"/>
+            </controllerFile>
+            <controllerFile controllerName="Grupo">
+              <actionMethod actionName="ver"/>
+              <actionMethod actionName="registro"/>
+              <actionMethod actionName="buscar"/>
+              <actionMethod actionName="unirte"/>
+              <actionMethod actionName="index"/>
+              <actionMethod actionName="request"/>
+            </controllerFile>
+            <controllerFile controllerName="Ubigeo">
+              <actionMethod actionName="index"/>
+              <actionMethod actionName="provincia"/>
+            </controllerFile>
+            <controllerFile controllerName="Politica">
+              <actionMethod actionName="index"/>
+              <actionMethod actionName="terminos"/>
+            </controllerFile>
+            <controllerFile controllerName="JugadorRed">
+              <actionMethod actionName="index"/>
+              <actionMethod actionName="login"/>
+              <actionMethod actionName="registro"/>
+            </controllerFile>
+            <controllerFile controllerName="Red">
+              <actionMethod actionName="index"/>
+              <actionMethod actionName="registro"/>
+              <actionMethod actionName="login"/>
+              <actionMethod actionName="redirect"/>
+            </controllerFile>
+            <controllerFile controllerName="Facebook">
+              <actionMethod actionName="index"/>
+            </controllerFile>
+            <controllerFile controllerName="Twitter">
+              <actionMethod actionName="index"/>
+              <actionMethod actionName="registro"/>
+              <actionMethod actionName="clearsessions"/>
+            </controllerFile>
+            <controllerFile controllerName="Google">
+              <actionMethod actionName="index"/>
+            </controllerFile>
+            <controllerFile controllerName="Ayuda">
+              <actionMethod actionName="index"/>
+            </controllerFile>
+          </controllersDirectory>
+          <formsDirectory enabled="false">
+            <formFile formName="RegistroGrupoJugador"/>
+            <formFile formName="RegistroGrupo"/>
+            <formFile formName="BuscarGrupo"/>
+            <formFile formName="DatosJugador"/>
+          </formsDirectory>
+          <layoutsDirectory enabled="false"/>
+          <modelsDirectory>
+            <modelFile modelName="Grupo"/>
+            <modelFile modelName="JugadorGrupo"/>
+            <modelFile modelName="Ubigeo"/>
+            <modelFile modelName="JugadorRed"/>
+          </modelsDirectory>
+          <viewsDirectory>
+            <viewScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Jugador">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="GrupoJugador">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="GrupoJugador">
+                <viewScriptFile forActionName="registro"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="GrupoJugador">
+                <viewScriptFile forActionName="buscar"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Grupo">
+                <viewScriptFile forActionName="ver"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Grupo">
+                <viewScriptFile forActionName="registro"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Grupo">
+                <viewScriptFile forActionName="unirte"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Grupo">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Jugador">
+                <viewScriptFile forActionName="editar"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Ubigeo">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Ubigeo">
+                <viewScriptFile forActionName="provincia"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Politica">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="JugadorRed">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="JugadorRed">
+                <viewScriptFile forActionName="login"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="JugadorRed">
+                <viewScriptFile forActionName="registro"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Red">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Red">
+                <viewScriptFile forActionName="registro"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Red">
+                <viewScriptFile forActionName="login"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Red">
+                <viewScriptFile forActionName="redirect"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Facebook">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Twitter">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Google">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Twitter">
+                <viewScriptFile forActionName="registro"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Twitter">
+                <viewScriptFile forActionName="clearsessions"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Ayuda">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+            </viewScriptsDirectory>
+            <viewHelpersDirectory/>
+            <viewFiltersDirectory/>
+          </viewsDirectory>
+        </moduleDirectory>
+      </modulesDirectory>
+      <modulesDirectory enabled="false"/>
+      <viewsDirectory>
+        <viewScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Index">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Error">
+            <viewScriptFile forActionName="error"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Grupo">
+            <viewScriptFile forActionName="buscar"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Grupo">
+            <viewScriptFile forActionName="request"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Politica">
+            <viewScriptFile forActionName="terminos"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Jugador">
+            <viewScriptFile forActionName="loginRedSocial"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Jugador">
+            <viewScriptFile forActionName="registroRedSocial"/>
+          </viewControllerScriptsDirectory>
+        </viewScriptsDirectory>
+        <viewHelpersDirectory/>
+        <viewFiltersDirectory enabled="false"/>
+      </viewsDirectory>
+      <bootstrapFile filesystemName="Bootstrap.php"/>
+    </applicationDirectory>
+    <dataDirectory enabled="false">
+      <cacheDirectory enabled="false"/>
+      <searchIndexesDirectory enabled="false"/>
+      <localesDirectory enabled="false"/>
+      <logsDirectory enabled="false"/>
+      <sessionsDirectory enabled="false"/>
+      <uploadsDirectory enabled="false"/>
+    </dataDirectory>
+    <docsDirectory>
+      <file filesystemName="README.txt"/>
+    </docsDirectory>
+    <libraryDirectory>
+      <zfStandardLibraryDirectory enabled="false"/>
+    </libraryDirectory>
+    <publicDirectory>
+      <publicStylesheetsDirectory enabled="false"/>
+      <publicScriptsDirectory enabled="false"/>
+      <publicImagesDirectory enabled="false"/>
+      <publicIndexFile filesystemName="index.php"/>
+      <htaccessFile filesystemName=".htaccess"/>
+    </publicDirectory>
+    <projectProvidersDirectory enabled="false"/>
+    <temporaryDirectory enabled="false"/>
+    <testsDirectory>
+      <testPHPUnitConfigFile filesystemName="phpunit.xml"/>
+      <testApplicationDirectory>
+        <testApplicationBootstrapFile filesystemName="bootstrap.php"/>
+        <testApplicationControllerDirectory>
+          <testApplicationControllerFile filesystemName="JugadorControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="GrupoJugadorControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="GrupoControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="UbigeoControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="PoliticaControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="JugadorRedControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="RedControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="FacebookControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="TwitterControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="GoogleControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="NoticiaControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="AyudaControllerTest.php"/>
+        </testApplicationControllerDirectory>
+      </testApplicationDirectory>
+      <testLibraryDirectory>
+        <testLibraryBootstrapFile filesystemName="bootstrap.php"/>
+      </testLibraryDirectory>
+    </testsDirectory>
+  </projectDirectory>
+</projectProfile>

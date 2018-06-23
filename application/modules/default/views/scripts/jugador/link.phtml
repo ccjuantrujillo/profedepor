@@ -1,0 +1,25 @@
+<?php if(count($this->redes_jugador->asoc) > 0): ?>
+<div class="blokIcoRed">
+  <p>Cuentas asociadas:</p>
+  <?php foreach($this->redes_jugador->asoc as $red): ?>
+  <div class="icoRed">
+    <div class="<?php echo $red->class ?>"></div>
+    <p class="desc"><?php echo $red->descripcion ?></p>
+  </div>
+  <?php endforeach ?>
+</div>
+<!--fin blokIcoRed-->
+<?php endif ?>
+
+<?php if(count($this->redes_jugador->noasoc) > 0): ?>
+<div class="blokIcoRed">
+  <p>Asocia otras cuentas:</p>
+  <?php foreach($this->redes_jugador->noasoc as $red): ?>
+  <div class="icoRed">
+    <div class="<?php echo $red->class ?> activo" id="<?php echo $red->id ?>"></div>
+    <p class="desc"><?php echo $red->descripcion ?></p>
+  </div>
+  <?php endforeach ?>
+</div>
+<!--fin blokIcoRed-->
+<?php endif ?>

@@ -1,0 +1,29 @@
+<div class="crearbanner">
+     <h1><?php echo $this->title ?></h1>
+    <a class="aceptarlog2" href="/panel/fase/registro/" title="Nuevo">Ingresar Nueva Fase</a>
+    <ul style="padding-left: 0px;">
+        <li><?php echo $this->tipo ?></li>
+    </ul>
+</div>
+
+<div class="containertable">
+    <div class="mensajetable">Se han encontrado (<?php echo $this->cantidad; ?>) registro(s)</div>
+    <table  border="1"  cellspacing="0" cellpadding="0">
+        <tr class="list1">
+            <td>Id</td>
+            <td>Campeonato</td>
+            <td>Descripci&oacute;n</td>
+            <td>Editar</td>
+            <td>Eliminar</td>
+        </tr>
+        <?php foreach ($this->fases as $i => $value): ?>
+        <tr id="fase_<?php echo $value->fase_id ?>" class="<?php echo $this->cycle(array('list_a', 'list_b'))->next() ?>">
+                <td><?php echo $i + 1; ?></td>
+                <td style="text-align:left"><?php echo $value->nombre_torneo; ?></td>
+                <td><?php echo $value->descripcion; ?></td>
+                <td><a href="#" onclick="editarFase(<?php echo $value->fase_id ?>)"><img src="<?php echo $this->Image('editar.jpg');?>" border="0"/></a></td>
+                <td><a href="#" onclick="eliminarFase(<?php echo $value->fase_id ?>)"><img src="<?php echo $this->Image('eliminar.jpg');?>" border="0"/></a></td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+</div>

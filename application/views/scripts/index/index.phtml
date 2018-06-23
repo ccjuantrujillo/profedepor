@@ -1,0 +1,6 @@
+<span><a href="index/add">Agregar Nuevo</a></span><br /><br />
+<ol>
+<?php foreach($this->equipos as $equipo): ?>
+<li><a href="index/update/eq_id/<?php echo $equipo->TORNEO_ID ?>"><?php echo $equipo->DESCRIPCION ?></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="index/delete/eq_id/<?php echo $equipo->TORNEO_ID ?>" title="Eliminar">&times;</a> </li>
+<?php endforeach ?>
+</ol>

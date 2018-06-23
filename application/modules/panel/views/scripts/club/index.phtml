@@ -1,0 +1,25 @@
+<div class="crearbanner">
+   <h1><?php echo $this->title ?></h1>
+   <a class="aceptarlog2" href="/panel/club/registro/" title="Nuevo">Ingresar Nuevo Club</a>
+</div>
+
+<div class="containertable">
+    <div class="mensajetable" style="width:100%">Se han encontrado (<?php echo $this->cantidad;?>) registro(s)</div>
+    <table style="width:100%" border="1"  cellspacing="0" cellpadding="0">
+        <tr class="list1">
+          <td width="5%">Id</td>
+          <td width="50%" colspan="2">Descripci&oacute;n</td>
+          <td width="10%">Editar</td>
+          <td width="10%">Eliminar</td>
+        </tr>
+    <?php foreach($this->clubes as $i => $club): ?>
+        <tr id="clubid_<?php echo $club->club_id; ?>" class="<?php echo $this->cycle(array('list_a', 'list_b'))->next() ?>">
+          <td><?php echo $i+1;?></td>
+          <td><img src="/images/<?php echo $club->icono; ?>"/></td>
+          <td style="text-align: left"><?php echo $club->descripcion; ?></td>
+          <td><a href="#;" onclick="editarClub(<?php echo $club->club_id;?>)"><img src="<?php echo $this->Image('editar.jpg');?>" border="0"/></a></td>
+          <td><a href="#" onclick="eliminarClub(<?php echo $club->club_id;?>)"><img src="<?php echo $this->Image('eliminar.jpg');?>" border="0"/></a></td>
+        </tr>
+    <?php endforeach; ?>
+    </table>
+</div>

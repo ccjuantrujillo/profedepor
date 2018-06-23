@@ -1,0 +1,100 @@
+<div class="miMancha manchaUnete">
+
+            <div class="sideLeft">
+
+            	<div class="profileMancha">
+                	<h1 class="left">Mi Mancha</h1>
+                    <!--<a href="#" class="backMancha right">[Regresar]</a>-->
+                    <div class="clear"></div>
+                </div> <!--profileMancha-->
+
+		<div class="listadoMancha">
+                	<h3>MANCHAS A LAS QUE PERTENECES</h3>
+                    <div class="overListMancha">
+                    	<ol>
+                        <?php if(count($this->usuarioGrupos) > 0): ?>
+                        <?php foreach($this->usuarioGrupos as $i => $g): ?>
+                            <li class="<?php echo ($i%2==0)?'inpar':'par'; ?>">
+                                <a href="/grupo/ver/id/<?php echo $g->grupo_id; ?>"><?php echo $g->nombre;?> (<?php echo $g->cantidad; ?> miembro<?php echo ($g->cantidad==1)?"":"s"; ?>)</a>
+                            </li>
+                        <?php endforeach; ?>
+                        <?php endif; ?>
+                        </ol>
+                    </div> <!--fin overListMancha-->
+
+                </div> <!--fin listadoMancha-->
+
+                <div class="botonesBottomMancha">
+                	<div class="btnBottomManchaDes">Crea una mancha</div>
+                    <a href="/grupo/buscar/" class="btnBottomMancha">&Uacute;nete a una mancha</a>
+                    <a href="#" onClick="viewPopAyuda()" class="btnNormalM left">(?) Aprende a jugar aqu&iacute;</a>
+                </div> <!--fin botonesBottomMancha-->
+
+            </div> <!--fin sideLeft-->
+
+			<div class="sideRight2">
+	            <div>
+                    <h1 class="left">Crea una Mancha</h1>
+                    <div class="clear"></div>
+                </div>
+
+                <div>
+                    <form action="#" name="frmCrearMancha" id="frmCrearMancha" method="post" enctype="multipart/form-data">
+                    <table border="0" cellspacing="0" cellpadding="0" class="formulaDepor">
+                    	<tr>
+                        	<td colspan="2">
+                        		<div id="form-errors">
+                                	<span id="comprobar" style="color: red;font-size: 11px;"></span><br />
+                                	<span id="contador" style="color: red;font-size: 11px;"></span>
+                            	</div>
+                        	</td>
+                        </tr>
+                        <tr>
+                            <td><div class="dataSingle">Nombre de la mancha:</div></td>
+                            <td><input name="nombre" id="nombre" type="text" size="30" maxlength="30" /><div id="status"></div></td>
+                        </tr>
+                        <tr>
+                        	<td><img src="/images/_depor.gif" width="5" height="5" /></td>
+                        </tr>
+                        <tr>
+                            <td valign="top"><div class="dataSingle">Descripci&oacute;n:<br /><span>(M&aacute;ximo 140 caracteres)</span></div></td>
+                            <td><textarea name="descripcion" id="descripcion" cols="" rows="" onkeypress="return limita(this, event,140)" onkeyup="cuenta(this, event,140,'contador')"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="/images/_depor.gif" width="5" height="5" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div class="dataSingle">Foto: <span>(Opcional)</span></div></td>
+                            <td><img width="49" height="45" src="<?php echo $this->Image('icono_mancha.png'); ?>" id="fotoMancha" align="left" />
+                                <input name="fileFoto" type="hidden" id="fileFoto"  />
+                                <a href="#" id="btnSubirFoto" class="btnNaranja65 left" style="margin: 10px 0 0 7px;">Subir</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="/images/_depor.gif" width="5" height="5" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div class="dataSingle">Tipo de mancha:</div></td>
+                            <td>
+                                <div><input class="radio" id="tipo" name="tipo" type="radio" value="0" /><p>Brava<br /><span>(Cualquiera puede<br /> un&iacute;rsele)</span></p></div>
+                                <div><input class="radio" id="tipo" name="tipo" type="radio" value="1" /><p>Sobrada<br /><span>(Requiere aceptación del<br /> administrador para unirsele)</span></p></div>                            </td>
+                        </tr>
+                        <tr>
+                        	<td><img src="/images/_depor.gif" width="5" height="5" /></td>
+                        	<td><img src="/images/_depor.gif" width="5" height="5" /></td>
+                        </tr>                        
+                        <tr>
+                            <td colspan="2"><a href="#" onclick="crearGrupo();" id="btnCrearMancha" class="btnNaranja100 center">Crear mi mancha</a></td>
+                   		</tr>
+                    </table>
+                    </form>
+              </div>
+
+
+            </div> <!--fin sideRight2-->
+
+</div> <!--fin miMancha-->

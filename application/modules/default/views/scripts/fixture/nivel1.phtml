@@ -1,0 +1,75 @@
+<div class="juegoFases juegoFixture1">
+        	<div class="fasesLeft">
+                <div class="faseHeadLeft">
+                    <h5>Fixture y mis jugadas</h5>
+                    <h6>Fecha <?php echo (int)$this->fechas['descripcion']?>. <?php echo $this->primera_fecha->fecha_partido;?></h6>
+                </div> <!--fin faseHead-->
+
+                <ul class="tableFixture">
+                    <li class="head"><div class="local">Local</div><div class="visita">Visita</div></li>
+                    <?php
+                    foreach($this->partidos as $indice=>$value){
+                         $clase = $indice%2==0?'list1':'list2';
+                         ?>
+                         <li class="<?php echo $clase;?>">
+                             <div class="fechaTabla"><?php echo $value->fecha_partido;?></div>
+                             <div class="equipo"><img class="unitPng" src="/images/<?php echo $value->icono_local;?>" /><p><?php echo $value->local;?></p></div>
+                             <div class="versus unitPng"></div>
+                             <div class="equipo"><img class="unitPng" src="/images/<?php echo $value->icono_visita;?>" /><p><?php echo $value->visita;?></p></div>
+                         </li>
+                         <?php
+                    }
+                    ?>
+                </ul>
+
+				<p class="bottomFixtureLeft unitPng">Puntos ganados nivel 1: <span class="bold"><?php echo $this->puntajes[0]?></span></p>
+            </div> <!--fin fasesLeft-->
+            <?php
+            foreach($this->variables as $indice=>$value){
+                 $variable_id = $value['intervalos'][0]['variable_id'];
+                 $puntaje        = $value['intervalos'][0]['puntaje'];
+                 if($variable_id==2)   $puntos_local        = $puntaje;
+                 if($variable_id==3)   $puntos_empate = $puntaje;
+                 if($variable_id==4)   $puntos_visita      = $puntaje;
+            }
+            ?>
+            <div class="fasesRight">
+                <div class="faseHeadRight">
+                	<a href="/portada" class="btnNaranja100 bold right">Cerrar</a>
+                    <div class="clear"></div>
+                    <div class="fixtureNiveles">
+                    <a class="activo" href="/fixture/nivel1/id/<?php echo $this->fechas['fecha_id'];?>">Nivel 1</a>
+                    <a href="/fixture/nivel2/id/<?php echo $this->fechas['fecha_id'];?>">Nivel 2</a>
+                    <a href="/fixture/nivel3/id/<?php echo $this->fechas['fecha_id'];?>" style="border: none;">Nivel 3</a>
+                    </div>
+                </div> <!--fin faseHead-->
+                <ul class="tablePronostico">
+                    <li class="head">
+                        <div class="casOptResultado" style="padding: 0;">Resultado</div>
+                        <div class="casOpt" style="padding: 0;"><span class="bold">Gana Local</span> (<?php echo $puntos_local;?> ptos.)</div>
+						<div class="casOpt" style="padding: 0;"><span class="bold">Empatada</span> (<?php echo $puntos_empate;?> ptos.)</div>
+						<div class="casOpt" style="padding: 0;"><span class="bold">Gana Visita</span> (<?php echo $puntos_visita;?> ptos.)</div>
+					</li>
+                    <?php
+                    foreach($this->partidos as $indice=>$value){
+                         $clase             = $indice%2==0?'list1':'list2';
+                         $intervalos  = $value->intervalos;
+                         ?>
+                              <li class="<?php echo $clase;?>">
+                                  <div class="casOptResultado"><?php echo $value->resultados[0];?> -<?php echo $value->resultados[1];?></div>
+                                  <?php
+                                  foreach($intervalos as $indice2=>$value2){
+                                            $checked      = $value2['checked']==true?"checked='checked'":"";
+                                            ?>
+                                            <div class="casOpt"><input disabled="disabled" name="intervalos[<?php echo $indice;?>][<?php echo $indice2;?>]" <?php echo $checked;?>  type="checkbox" value="" /></div>
+                                            <?php
+                                  }
+                                  ?>
+                              </li>
+                         <?php
+                    }
+                    ?>
+                </ul>
+				<p class="bottomFixtureRight unitPng">Puntos totales de la fecha: <span class="bold"><?php echo $this->puntajes[1]?></span></p>
+            </div> <!--fin fasesRight-->
+		</div> <!--fin juegoFases-->

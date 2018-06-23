@@ -1,0 +1,83 @@
+<div class="bd_doble">
+  <div class="bd_doble_izq">
+    <div class="login_frm">
+      <h1>Si est&aacute;s registrado entra aqu&iacute;:</h1>
+      <!-- div class="box-error">jksdhfjksdhfskjdhfsjkdfhjksdfh</div -->
+      <form id="formLogin" name="formLogin" method="post" action="/auth/login/">
+        <div id="form-errors"><?php echo $this->login_error ?></div>
+        <table width="350" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td valign="top"><div class="lbl_frm" id="label-login_email">E-mail</div></td>
+            <td><input name="login_email" type="text" class="txt_fld required email" id="login_email" /></td>
+          </tr>
+          <tr>
+            <td valign="top"><div class="lbl_frm" id="label-login_password">Contrase&ntilde;a</div></td>
+            <td><input name="login_password" type="password" class="txt_fld required" id="login_password" /></td>
+          </tr>
+          <tr>
+            <td><a class="olvidarContrasena" href="javascript:;" onClick="recoverPassword()">Me olvide de la contrase&ntilde;a</a></td>
+            <td><a class="btnIngresar" id="submit" href="javascript:;">&nbsp;</a></td>
+          </tr>
+        </table>
+      </form>
+      <h1 style="margin: 15px auto 2px;">Ingresa con tus cuentas:</h1>
+      <div class="connectRedes"> <a href="javascript:;" id="btnTwitter"><img src="<?php echo $this->Image('connectTW.png') ?>" alt="Sign in with Twitter" /></a> <a href="javascript:;" id="btnFacebook"><img src="<?php echo $this->Image('connectFB.png') ?>" alt="Sign in with Facebook" /></a> <a href="javascript:;" id="btnGoogle"><img src="<?php echo $this->Image('connectG.png') ?>" alt="Sign in with Google" /></a> </div>
+      <!--fin connectRedes-->
+    </div>
+    <!--fin login_frm-->
+  </div>
+  <!--fin cnt_dbl_izq!-->
+  <div class="bd_doble_der"> <a class="btnRegistrate" id="btnRegistrate" href="javascript:;" >&nbsp;</a> </div>
+</div>
+<!--fin bd_doble-->
+<div class="bd_triple">
+  <div class="bd_triple_1">
+    <div class="cnt_trp_1 modBottom">
+      <h1>Ya van <?php echo $this->total->cantidad; ?></h1>
+      <h2>Hinchas jugando El Profe Depor</h2>
+      <p>&iexcl;No te quedes! T&uacute; puedes formar parte de esta gran comunidad futbolera. 
+      Inscr&iacute;bete e invita a todos tus amigos a jugar. 
+      Demuestra cu&aacute;nto sabes de f&uacute;tbol y divi&eacute;rtete fecha a fecha del Campeonato Descentralizado.</p>
+    </div>
+    <!--fin cnt_trp_1-->
+  </div>
+  <!--fin bd_triple_1-->
+  <div class="bd_triple_2">
+    <div class="cnt_trp_1 modBottom">
+      <h1>Ranking General</h1>
+      <h2>Encuentra en que puesto estas aqui</h2>
+    </div>
+    <div class="listing">
+      <ul class="navi2">
+        <?php if($this->ranking != null): ?>
+        <?php foreach($this->ranking as $i => $r): ?>
+        <li>
+          <div class="puesto"><?php echo $i+1; ?></div>
+          <div class="puntos"><?php echo $r->puntaje; ?> Ptos.</div>
+          <div class="nombre"><?php echo ucwords($r->nomjugador); ?></div>
+        </li>
+        <?php endforeach; ?>
+        <?php endif; ?>
+      </ul>
+      <div class="links_under"> <a href="/ranking/" class="links_esp">Ver todo el ranking</a> </div>
+    </div>
+    <!--fin listing-->
+  </div>
+  <!--fin bd_triple_2-->
+  <div class="bd_triple_3">
+    <div class="cnt_trp_3 modBottom">
+      <h1>&iquest;C&oacute;mo juego?</h1>
+      <h2>Demuestra cu&aacute;nto sabes de f&uacute;tbol</h2>
+      <p style="height:93px;">Aqu&iacute; encontrar&aacute;s todo lo que necesitas saber para jugar El Profe Depor. 
+      Usa tus conocimientos futboleros para sumar puntos.      
+      &iquest;Qu&eacute; es un ranking? &iquest;C&oacute;mo veo los resultados? 
+      &iquest;Me puedo enfrentar a mis patas? Aqu&iacute; las respuestas. </p>
+      <div class="links_under"> <a href="/ayuda/" target="_blank" class="links_esp">Ver m&aacute;s informaci&oacute;n</a>
+          <div> </div>
+      </div>
+      <!--fin bd_triple_3-->
+    </div>
+    <!--fin bd_triple-->
+  </div>
+  <!--fin wrapper-->
+</div>

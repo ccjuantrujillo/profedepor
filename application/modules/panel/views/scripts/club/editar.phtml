@@ -1,0 +1,30 @@
+<div class="crearbanner">
+  <h1><?php echo $this->form_title ?></h1>
+</div>
+
+<div class="containertable">
+  <div class="container_bg patbotom">
+      <form action="#" id="frmEditarClub" name="frmEditarClub" method="post" enctype="multipart/form-data">
+          <input type="hidden" id="club_id" name="club_id" value="<?php echo $this->club->club_id; ?>" />
+            <table>
+                <tr>
+                    <td>Descripci&oacute;n:</td>
+                    <td><input type="text" id="descripcion" name="descripcion" value="<?php echo $this->club->descripcion; ?>" size="30" maxlength="30" /></td>
+                </tr>
+                <tr>
+                    <td>Subir Imagen:</td>
+                    <td style="vertical-align: bottom;"><img width="37" height="37" src="/images/<?php echo $this->club->imagen; ?>" id="fotoCreada" />
+                        <input type="hidden" id="fotoClub" name="fotoClub" value="<?php echo $this->club->icono; ?>" />
+                        <input type="hidden" id="imagenClub" name="imagenClub" value="<?php echo $this->club->imagen; ?>" />
+                        <a href="#" id="btnSubirImagen" class="aceptarlog2">Subir</a>
+                    </td>
+                <tr>
+                    <td colspan="2">
+                        <a href="#" onclick="grabarClub();" id="btnEditarClub" class="aceptarlog2">Guardar</a>
+                        <a href="/panel/club/" id="btnCancelar" style="margin-left: 10px;" class="aceptarlog2">Cancelar</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+  </div>
+</div>

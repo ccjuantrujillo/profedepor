@@ -1,0 +1,15 @@
+#RewriteCond %{HTTPS} =off
+#RewriteCond %{SERVER_NAME} !^www\.
+#RewriteCond %{SERVER_NAME} ^(.+)$
+#RewriteRule (.*) http://www.%1/$1 [R=301,L]
+#RewriteCond %{HTTPS} =on
+#RewriteCond %{SERVER_NAME} !^www\.
+#RewriteCond %{SERVER_NAME} ^(.+)$
+#RewriteRule (.*) https://www.%1/$1 [R=301,L]
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ index.php [NC,L]

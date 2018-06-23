@@ -1,0 +1,80 @@
+.error {
+}
+
+.masc_friend {
+    cursor: pointer;
+    width: 24%;
+    margin: 2px;
+    height: 100px;
+    float: left
+}
+
+.masc_friend.checked {
+    background: #60DF13;
+}
+
+p.tooltipjuego {
+    cursor: pointer;
+}
+
+a.control {
+    visibility: hidden;
+}
+
+/* - - - - DESIGN - - - - */
+.editarCuenta .right .activo {
+    cursor: pointer;
+}
+
+.pop296 {
+	width: 430px;
+	height: 266px;
+	background: url(../images/_popRegistro296.png) no-repeat;
+	margin: 0 auto;
+	padding: 15px 25px;
+}
+
+.popCargando {
+	background: url(../images/_fndPopUp.png) no-repeat;
+	width: 238px;
+	height: 136px;
+	text-align: center;
+}
+
+.popCargando h1 {
+	font-size: 16px;
+	font-weight: bold;
+	padding: 28px 0 8px;
+}
+
+.fasesLeft a:link, .fasesLeft a:visited {
+	color: #000;
+}
+/* - - - - - - - - -  - - - - */
+
+#form-errors {
+    text-align: center;
+    color: red;
+}
+
+.popEditarCuentaV2 {
+    #padding: 15px 25px;
+}
+
+#box-loader {
+    display: none;
+    z-index: 2000;
+}
+
+.overlay_absolute {
+    z-index: -1;
+    background: #000;
+    filter: alpha(opacity=50);
+    left: 0px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    opacity: .5;
+    moz-opacity: 50
+}

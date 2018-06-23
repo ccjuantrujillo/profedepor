@@ -1,0 +1,2578 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background: #000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.derecha {
+	float: right;
+}
+.clear {
+	clear: both;
+}
+.oculto {
+	display: none!important;
+}
+.hidden {
+	visibility: hidden;
+}
+.show {
+	visibility: visible;
+}
+.siteDepor {
+	width: 950px;
+	margin: 0 auto;
+}
+.header {
+	height: 176px;
+	background: url(../images/_header.jpg) no-repeat top center;
+}
+.menu {
+	height: 73px;
+	background: url(../images/_fndMenu.jpg) no-repeat top center;
+}
+.contenidoDash {
+	background: url(../images/_fndSiteInterno.png) repeat-x;
+}
+.modulosDash {
+	margin-left: 6px;
+	_margin-left: 0px;
+}
+.modVarios {
+	padding-top: 12px;
+	#padding-top: 6px;
+	padding-left: 8px;
+}
+.mod1, .mod2, .mod3 {
+	float: left;
+	height: 375px;
+	margin: 0 6px;
+}
+.mod4, .mod5, .mod6, .mod7 {
+	float: left;
+	height: 186px;
+	width: 209px;
+	margin: 0 5px;
+}
+.mod1 {
+	background: url(../images/_fndDash1.jpg) no-repeat top center;
+	width: 368px;
+}
+.mod2 {
+	background: url(../images/_fndDash2.jpg) no-repeat top center;
+	width: 321px;
+}
+.mod3 {
+	background: url(../images/_fndDash3.jpg) no-repeat top center;
+	width: 208px;
+}
+.mod4 {
+	background: url(../images/_fndDash4.jpg) no-repeat top center;
+}
+.mod5 {
+	background: url(../images/_fndDash5.jpg) no-repeat top center;
+}
+.mod6 {
+	background: url(../images/_fndDash6.jpg) no-repeat top center;
+}
+.mod7 {
+	background: url(../images/_fndDash7.jpg) no-repeat top center;
+}
+a.arrowLeft, a.arrowRight {
+	width: 26px;
+	height: 38px;
+	display: block;
+	text-decoration: none;
+	float: left;
+	margin-top: 80px;
+}
+a.arrowLeft:link, a.arrowLeft:visited {
+	background: url(../images/_arrowLeftV2.png) no-repeat top center;
+}
+a.arrowLeft:hover {
+	background-position: bottom;
+}
+a.arrowRight:link, a.arrowRight:visited {
+	background: url(../images/_arrowRightV2.png) no-repeat top center;
+}
+a.arrowRight:hover {
+	background-position: bottom;
+}
+.menuFooter {
+	height: 49px;
+	background: url(../images/_fndMenuFooter.jpg);
+ }
+.menuFooter ul {
+	width: 720px;
+	margin: 0 auto;
+}
+.menuFooter ul li {
+	float: left;
+	margin-top: 18px;
+}
+.menuFooter ul li a:link, .menuFooter ul li a:visited {
+	font-size: 12px;
+	color: #FFF;
+	text-decoration: none;
+	margin: 0 10px 0;
+}
+.menuFooter ul li a:hover {
+	text-decoration: underline;
+}
+.bottomAuspiciador {
+	height: 40px;
+	background: url(../images/_fndAuspiciadorFooter.jpg) repeat-y;
+}
+.creditosFooter {
+	background: url(../images/_fndCreditosFooter.jpg) repeat-y;
+	height: 76px;
+}
+a.logoDepor {
+	margin: 10px 0 0 35px;
+	float: left;
+}
+.copy {
+	color: #CCC;
+	font-size: 11px;
+	width: 350px;
+	margin: 0 auto;
+	padding-top: 25px;
+	text-align: center;
+}
+.mapRecomienda {
+	float: right;
+	margin: 20px 35px 0 0;
+}
+.dataTop {
+	margin: 10px;
+	_margin: 10px 5px 0 0;
+	width: 480px;
+	height: 85px;
+	float: right;
+}
+.dataTopLeft {
+	float: left;
+	height: 75px;
+	width: 300px;
+	padding-top: 10px;
+}
+.dataTopRight {
+	float: right;
+	height: 65px;
+	width: 150px;
+	padding: 10px;
+}
+.userLeft {
+	width: 65px;
+	float: left;
+	margin-left: 10px;
+	_margin-left: 5px;
+}
+.userRight {
+	width: 200px;
+	float: right;
+	padding-right: 10px;
+}
+.avatar {
+	float: left;
+}
+.avatar img {
+	border: #ccc solid 1px;
+}
+a.btnEditarPerfil:link, a.btnEditarPerfil:visited {
+	color: #dbdbdb;
+	font-size: 9px;
+	text-decoration: none;
+	padding-top: 5px;
+	float: left;
+}
+a.btnEditarPerfil:hover {
+	text-decoration: underline;
+	color: #FFF;
+}
+.userRight p {
+	color: #FFF;
+	font-size: 12px;
+	text-align: justify;
+	height: 50px;
+}
+.userRight p span {
+	font-weight: bold;
+}
+a.btnGris100:link, a.btnGris100:visited {
+	color: #dbdbdb;
+	font-size: 10px;
+	text-decoration: none;
+	padding-top: 3px;
+	width: 100px;
+	height: 17px;
+	display: block;
+	text-align: center;
+	background: url(../images/_btnGris100.png) no-repeat top center;
+}
+a.btnGris100:hover {
+	color: #FFF;
+	background-position: bottom;
+}
+a.btnGris75:link, a.btnGris75:visited {
+	color: #dbdbdb;
+	font-size: 10px;
+	text-decoration: none;
+	padding-top: 3px;
+	width: 75px;
+	height: 17px;
+	display: block;
+	text-align: center;
+	background: url(../images/_btnGris75.png) no-repeat top center;
+}
+a.btnGris75:hover {
+	color: #FFF;
+	background-position: bottom;
+}
+.dataTopRight p {
+	float: left;
+	color: #FFF;
+	padding-top: 1px;
+}
+.dataTopRight a {
+	float: left;
+	margin: 0 1px;
+}
+.auspiciadorTop {
+	margin-top: 25px;
+}
+.menuLeft {
+	width: 350px;
+	float: left;
+}
+.menuRight {
+	width: 600px;
+	float: right;
+}
+.fecha {
+	color: #FFF;
+	font-size: 11px;
+	margin: 13px 0 0 50px;
+}
+.ruta {
+	color: #a3a3a3;
+	margin: 15px 0 0 15px;
+}
+ul.tableFixture {
+	width: 350px;
+	margin: 20px auto 0;
+}
+ul.tableFixture li {
+	height: 28px;
+	margin-bottom: 2px;
+	#margin-bottom: 0px;
+}
+
+ul.tableFixture li.list1 {
+	background: url(../images/_fndTablaFixture1.png);
+}
+ul.tableFixture li.list2 {
+	background: url(../images/_fndTablaFixture2.png);
+}
+ul.tableFixture li .fechaTabla {
+	color: #b9e1ff;
+	float: left;
+	width: 45px;
+	padding-top: 6px;
+	text-align: center;
+}
+ul.tableFixture li .equipo {
+	float: left;
+	width: 130px;
+}
+ul.tableFixture li .goles {
+	float: left;
+	width: 20px;
+	color: #c9da2a;
+	font-weight: bold;
+    padding-top: 4px;
+    text-align: center;
+	font-size: 20px;
+}
+ul.tableFixture li .equipo img {
+	float: left;
+}
+ul.tableFixture li .equipo p {
+	float: left;
+	color: #FFF;
+	text-transform: uppercase;
+	padding-top: 9px;
+	#padding-top: 11px;
+	font-size: 9px;
+	letter-spacing: -1px;
+}
+ul.tableFixture li .versus {
+	float: left;
+	background: url(../images/_versus.png);
+	width: 26px;
+	height: 28px;
+	margin: 0 7px;
+}
+ul.tableFixture li.head {
+	height: 14px;
+}
+ul.tableFixture li .local, ul.tableFixture li .visita {
+	float: left;
+	width: 170px;
+	text-align: center;
+}
+.modulos h1 {
+	color: #3d7a00;
+	font-weight: bold;
+	font-size: 20px;
+	margin: 20px 0 0 70px;
+}
+.modulos h2 {
+	font-size: 11px;
+	margin: 0px 0 0 70px;
+}
+a.btnNaranja45:link, a.btnNaranja45:visited {
+	color: #FFF;
+	font-size: 10px;
+	text-decoration: none;
+	padding-top: 3px;
+	width: 65px;
+	height: 15px;
+	display: block;
+	text-align: center;
+	background: url(../images/_btnNaranja45.png) no-repeat;
+}
+a.btnNaranja45:hover {
+	color: #000;
+	text-decoration: none!important;
+}
+a.btnNaranja65:link, a.btnNaranja65:visited {
+	color: #FFF;
+	font-size: 10px;
+	text-decoration: none;
+	padding-top: 6px;
+	width: 65px;
+	height: 18px;
+	display: block;
+	text-align: center;
+	background: url(../images/_btnNaranja65.png) no-repeat;
+}
+a.btnNaranja65:hover {
+	color: #000;
+	text-decoration: none!important;
+}
+
+/*****************************POPUP AVISO CERRAR NIVEL*******************************/
+
+a.btnNaranja65_A:link, a.btnNaranja65_A:visited {
+	color: #FFF;
+	font-size: 10px;
+	text-decoration: none;
+	width: 65px;
+	height: 18px;
+	float:left;
+	padding-top: 6px;
+	display: block;
+	text-align: center;
+	background: url(../images/_btnNaranja65.png) no-repeat;
+	margin-top:10px;
+	margin-left:108px;
+}
+a.btnNaranja65_A:hover {
+	color: #000;
+	text-decoration: none!important;
+}
+
+a.btnNaranja65_C:link, a.btnNaranja65_C:visited {
+	color: #FFF;
+	font-size: 10px;
+	text-decoration: none;
+	width: 65px;
+	height: 18px;
+	float:left;
+	padding-top: 6px;
+	display: block;
+	text-align: center;
+	background: url(../images/_btnNaranja65.png) no-repeat;
+	margin-top:10px;
+	margin-left:10px;
+}
+a.btnNaranja65_C:hover {
+	color: #000;
+	text-decoration: none!important;
+}
+
+/************************************************************/
+
+a.btnNaranja180:link, a.btnNaranja180:visited {
+	color: #FFF;
+	font-size: 10px;
+	text-decoration: none;
+	padding-top: 6px;
+	width: 180px;
+	height: 18px;
+	display: block;
+	text-align: center;
+	background: url(../images/_btnNaranja180.png) no-repeat;
+}
+a.btnNaranja180:hover {
+	color: #000;
+	text-decoration: none!important;
+}
+.botonesMod1 {
+	width: 330px;
+	margin: 5px auto 0;
+}
+.overflowComentarios {
+	width: 300px;
+	margin: 15px auto 0;
+	overflow: auto;
+	height: 290px;
+}
+.overflowComment {
+	background: #FFF;
+	width: 260px;
+	border: 1px solid #bbbbbb;
+	padding: 7px 10px;
+	margin-bottom: 5px;
+	height: 76px;
+}
+.overflowComment h1 {
+	margin: 0;
+	font-size: 14px;
+	font-weight: bold;
+}
+.overflowComment h2 {
+	margin: 0;
+	color: #000;
+	float: right;
+}
+.overflowComment h2 span {
+	font-weight: bold;
+}
+.overflowComment p {
+	font-size: 11px;
+	color: #333;
+	margin: 3px 0 5px 0;
+	line-height: 12px;
+}
+.overflowComment .fechaComment {
+	font-size: 10px;
+	color: #3d7a00;
+	margin-top: 2px;
+}
+ul.listadoRanking {
+	width: 188px;
+	margin: 15px auto 0;
+}
+.mod3 ul.listadoRanking {
+	margin: 5px auto 0;
+}
+.rankingMancha .listadoRanking li {
+	background: url(../images/_fndRankingGeneralListado.png) no-repeat;
+	height: 20px;
+	padding-top: 6px;
+}
+.rankingMancha .listadoRanking li.first {
+	background: url(../images/_fndRankingGeneralListadoFirst.png) no-repeat!important;
+	height: 20px;
+	padding-top: 6px;
+}
+.rankingMancha .listadoRanking li .puntos {
+	width: 55px;
+}
+
+.listadoRanking li {
+	/*background: url(../images/_fndRankingGeneralListado.png) no-repeat;*/
+	background: url(../images/_fndRankingDashVerde.png) no-repeat;
+	clear:both;
+	float:left;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:10px;
+	width:188px;
+	height:21px;
+	margin:0;
+	padding-top: 5px;
+}
+.listadoRanking li.titulos {
+	background: none;
+	clear:both;
+	float:left;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:10px;
+	width:188px;
+	height: 14px;
+	margin:0;
+	padding-top: 5px;
+}
+.listadoRanking li.titulos .puesto {
+	color: #000;
+	font-size: 11px;
+	width: 60px;
+	padding: 0;
+	text-align: right;
+}
+.listadoRanking li.titulos .puntos {
+	color: #000;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 0;
+	width: 43px;
+}
+.listadoRanking li.titulos .nombre {
+	color: #000;
+	font-size: 11px;
+	padding: 0;
+}
+.miPuestov2 {
+	background: url(../images/_fndRankingDashNegro.png)!important;
+}
+.listadoRanking li.miPuestov2 .puntos {
+	color: #FFF;
+}
+.listadoRanking li.miPuestov2 .nombre {
+	color: #FFF;
+}
+.listadoRanking .persona {
+	font-weight: bold;
+	font-size: 11px;
+	float: left;
+	width: 27px;
+	text-align: center;
+	color: #FFF;
+	padding-top: 3px;
+}
+.listadoRanking .puesto {
+	font-weight: bold;
+	font-size: 13px;
+	float: left;
+	width: 30px;
+	text-align: center;
+	color: #FFF;
+}
+.listadoRanking .puntos {
+	float:left;
+	font-size:10px;
+	padding:2px 0 0 4px;
+	text-align:center;
+	width: 35px;
+}
+.listadoRanking .nombre {
+	float:left;
+	font-size:11px;
+	font-weight:bold;
+	padding:2px 0 0 4px;
+	text-align:left;
+	width: 80px;
+	color: #000;
+}
+.miPuesto {
+	background: url(../images/_fndRankingGeneralMio.png) no-repeat;
+	width:199px;
+	height:25px;
+	float: left;
+	margin: 8px 0 0 4px;
+}
+.miPuesto .puesto {
+	font-weight: bold;
+	font-size: 13px;
+	float: left;
+	width: 30px;
+	text-align: center;
+	color: #FFF;
+	margin-left:6px;
+	_margin-left:3px;
+	padding-top:6px;
+}
+.miPuesto .puntos {
+	float:left;
+	font-size:10px;
+	padding: 8px 0 0 12px;
+	text-align:left;
+	width: 45px;
+	color: #FFF;
+}
+.miPuesto .nombre {
+	float:left;
+	font-size:11px;
+	font-weight:bold;
+	padding: 8px 0 0 4px;
+	text-align:left;
+	width: 80px;
+	color: #FFF;
+}
+.botonesMod3 {
+	float: right;
+	margin: 2px 14px 0 0;
+}
+.modulosv2 h1 {
+	color: #3d7a00;
+	font-weight: bold;
+	font-size: 20px;
+	margin: 15px 0 0 15px;
+	letter-spacing: -1px;
+}
+.modulosv2 h2 {
+	font-size: 11px;
+	margin: 0px 0 0 15px;
+	height: 30px;
+	width: 135px;
+}
+.modulosv2 p {
+	width: 180px;
+	margin: 10px auto 0;
+	font-size: 11px;
+	height: 80px;
+}
+.modulosv2 p.pcuy {
+	width: 180px;
+	margin: 16px auto 0;
+	font-size: 11px;
+	height: 78px;
+}
+.modulosv2 ul {
+	width: 180px;
+	margin: 10px auto 0;
+	height: 80px;
+}
+.modulosv2 ul li {
+	font-size: 11px;
+	margin-bottom: 8px;
+}
+a.verMas:link, a.verMas:visited {
+	color: #000;
+	font-size: 11px;
+	text-decoration: none;
+	float: right;
+	margin: 7px 15px 0 0;
+}
+a.verMas:hover {
+	text-decoration: underline;
+}
+a.verMasP:link, a.verMasP:visited {
+	color: #000;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: underline;
+	float: right;
+	margin: 7px 15px 0 0;
+}
+a.verMasP:hover {
+	text-decoration: none;
+}
+.equipoLeft {
+	width: 100px;
+	float: left;
+	text-align: center;
+}
+.equipoRight {
+	width: 100px;
+	float: right;
+	text-align: left;
+}
+.iconosEquipos {
+	width: 150px;
+	margin: 2px auto;
+}
+.datosResultado {
+	width: 120px;
+	margin: 0 auto;
+	clear: both;
+}
+.marcador {
+	font-size: 24px;
+	font-weight: bold;
+}
+.fechaNum {
+	clear: both;
+	width: 150px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 11px;
+}
+.menuPrincipal {
+	float: right;
+	margin: 7px 58px 0 0;
+	_margin: 7px 20px 0 0;
+}
+a.btnMenu1Portada, a.btnMenu2Juega, a.btnMenu3miMancha {
+	width: 137px;
+	height: 35px;
+	display: block;
+	text-decoration: none;
+	float: left;
+}
+a.btnMenu1Portada:link, a.btnMenu1Portada:visited {
+	background: url(../images/_btn1Portada.png) no-repeat top center;
+}
+a.btnMenu2Juega:link, a.btnMenu2Juega:visited {
+	background: url(../images/_btn2Juega.png) no-repeat top center;
+	margin-right: 29px;
+}
+a.btnMenu3miMancha:link, a.btnMenu3miMancha:visited {
+	background: url(../images/_btn3miMancha.png) no-repeat top center;
+}
+a.btnMenu1Portada:hover, a.btnMenu2Juega:hover, a.btnMenu3miMancha:hover {
+	background-position: bottom;
+}
+.menuSecundario {
+	float: right;
+	margin: 5px 12px 0 0;
+	_margin: 5px 5px 0 0;
+	clear: both;
+	width: 280px;
+}
+
+/*************************** 18 DE MARZO *******************************/
+
+.bold {
+	font-weight: bold!important;
+}
+.center {
+	margin: 15px auto 0;
+}
+.btnBig {
+	font-size: 11px!important;
+}
+.pop480 {
+	width: 430px;
+	height: 366px;
+	background: url(../images/_popRegistro.png) no-repeat;
+	margin: 0 auto;
+	padding: 15px 25px;
+}
+.pop438 {
+	width: 388px;
+	height: 336px;
+	background: url(../images/_fndPop438.png) no-repeat;
+	margin: 0 auto;
+	padding: 15px 25px;
+}
+.popBienvenido {
+	width: 455px;
+	height: 385px;
+	background: url(../images/_fndPopBienvenido.png) no-repeat;
+	margin: 0 auto;
+	padding: 15px 25px;
+}
+.popStyle h1 {
+	color:#3D7A00;
+	font-size:26px;
+	font-weight:bold;
+	letter-spacing:-1px;
+	margin-bottom: 20px;
+}
+.popStyle h2 {
+	font-size: 16px;
+	letter-spacing: -0.5px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.popStyle h3 {
+	font-size: 22px;
+	letter-spacing: -0.5px;
+	font-weight: bold;
+	margin: 60px auto 10px;
+	text-align: center;
+}
+.popStyle h4 {
+	color:#3D7A00;
+	font-size:26px;
+	font-weight:bold;
+	letter-spacing:-1px;
+	margin: 182px 0 20px 0;
+	#margin: 195px 0 20px 0;
+}
+.popStyle h5 {
+	color:#ff5a00;
+	font-size:86px;
+	font-weight:bold;
+	float: left;
+}
+.popStyle p {
+	font-size: 12px;
+}
+.popBienvenido p {
+	margin-left:75px;
+	text-align:justify;
+	width:370px;
+	height: 85px;
+}
+table.formulaDepor {
+	width: 320px;
+	margin: 10px auto 0;
+}
+table.formulaDepor tr td .dataSingle, table.formulaDepor tr td .dataDoble {
+	font-size: 11px;
+	background: url(../images/_fndDataInput.gif) no-repeat top left;
+	display: block;
+	height: 19px;
+	float: left;
+	line-height: 11px;
+}
+table.formulaDepor tr td select {
+	float:right;
+	height:22px;
+	width:208px;
+	font-size: 11px;
+	padding: 2px;
+}
+table.formulaDepor tr td p.mails {
+	font-size: 12px;
+    margin-bottom: 5px;
+	color: #666666;
+}
+table.formulaDepor tr td .dataSingle {
+	padding: 5px 0 0 17px;
+	width: 100px;
+}
+table.formulaDepor tr td .dataDoble {
+	padding: 0px 0 0 17px;
+}
+table.formulaDepor tr td {
+	padding-bottom: 5px;
+}
+table.formulaDepor input {
+	float: right;
+	width: 191px;
+	height: 19px;
+	background: url(../images/_fndInputForm.gif) no-repeat;
+	border: none;
+	font-size: 11px;
+	padding: 4px 9px 0;
+}
+.msjBottomRegistro p {
+	margin: 20px 0 0 0;
+	font-size: 11px;
+}
+.msjBottomRegistro a:link, .msjBottomRegistro a:visited {
+	color: #000;
+	text-decoration: underline;
+}
+.terminos {
+	height: 230px;
+	overflow: auto;
+	width: 400px;
+	margin: 15px auto 0;
+}
+.terminos p {
+	margin-bottom: 7px;
+	width: 370px;
+	text-align: justify;
+}
+a.btnNaranja100:link, a.btnNaranja100:visited {
+	color: #FFF;
+	font-size: 10px;
+	text-decoration: none;
+	padding-top: 6px;
+	width: 100px;
+	height: 18px;
+	display: block;
+	text-align: center;
+	background: url(../images/_btnNaranja100.png) no-repeat;
+}
+a.btnNaranja100:hover {
+	color: #000;
+	text-decoration: none!important;
+}
+a.btnSaltar:link, a.btnSaltar:visited {
+	text-decoration: none;
+	font-size: 11px;
+	font-weight: bold;
+	color: #000;
+	float: right;
+	margin: 20px 0 0 0;
+}
+a.btnSaltar:hover {
+	text-decoration: underline;
+}
+.juegoFases {
+	height: 370px;
+	background: url(../images/_fndJuegoFases.png) no-repeat top center;
+	padding: 7px 16px 0;
+}
+.juegoFases h1 {
+	color:#3D7A00;
+	font-size:24px;
+	font-weight:bold;
+	letter-spacing:-1px;
+	margin-bottom: 2px;
+}
+.juegoFases h2 {
+	font-size: 11px;
+}
+.juegoFases h5 {
+	font-size: 20px;
+	color: #FFFFFF;
+	margin: 6px 0 15px;
+}
+.juegoFases h6 {
+	color:#3D7A00;
+	font-size:24px;
+	font-weight:bold;
+	letter-spacing:-1px;
+	margin-bottom: 2px;
+	padding-left:10px;
+}
+.fasesLeft {
+	float: left;
+	width: 360px;
+}
+.fasesRight {
+	float: right;
+	width: 555px;
+}
+.juegoFixture0 .faseHeadLeft {
+	padding-left: 27px;
+	position: absolute;
+}
+.juegoFixture0 .fasesLeft {
+	width: auto;
+}
+.faseHeadLeft {
+	padding-left: 70px;
+	height: 42px;
+}
+.faseHeadRight {
+	padding-left: 15px;
+	height: 42px;
+}
+.fasesLeft ul.tableFixture, .fasesRight ul.tablePronostico {
+	margin: 14px auto 0;
+	#margin: 7px auto 0;
+	width: 100%;
+}
+.fasesLeft a:link, .fasesLeft a:visited {
+	color: #fff;
+	font-size: 11px;
+	text-decoration: none;
+	margin: 25px 0 0 17px;
+	float: left;
+}
+.fasesLeft a:hover {
+	text-decoration: underline;
+}
+ul.tablePronostico li {
+	height: 28px;
+	margin-bottom: 2px;
+	#margin-bottom: 0px;
+}
+
+ul.tablePronostico li.list1 {
+	background: #a5cb4d;
+}
+ul.tablePronostico li.list2 {
+	background: #FFF;
+}
+ul.tablePronostico li .estado {
+	color: #000;
+	font-weight: bold;
+	float: left;
+	width: 70px;
+	padding-top: 6px;
+	text-align: center;
+}
+ul.tablePronostico li .estadon {
+	color: #000;
+	font-weight: bold;
+	float: left;
+	width: 70px;
+	padding-top: 6px;
+	padding-left: 5px;
+	text-align: left;
+}
+ul.tablePronostico li .equipo {
+	float: left;
+	width: 160px;
+}
+ul.tablePronostico li .equipo img {
+	float: left;
+}
+ul.tablePronostico li .equipo p {
+	float: left;
+	color: #000;
+	text-transform: uppercase;
+	padding-top: 8px;
+	#padding-top: 10px;
+	font-size: 10px;
+}
+ul.tablePronostico li .opt1 {
+	float: left;
+	width: 140px;
+	padding-top: 6px;
+	text-align: center;
+}
+ul.tablePronostico li .opt1 input {
+	float: left;
+	margin-right: 7px;
+}
+ul.tablePronostico li .opt1 p {
+	color: #000;
+	float: left;
+	padding-top: 4px;
+	font-size: 10px;
+}
+ul.tablePronostico li .opt2 {
+	float: left;
+	width: 180px;
+	padding-top: 6px;
+	text-align: center;
+}
+ul.tablePronostico li .opt2 input {
+	float: left;
+	margin-right: 7px;
+}
+ul.tablePronostico li .opt2 p {
+	color: #000;
+	float: left;
+	padding-top: 4px;
+	font-size: 10px;
+}
+
+ul.tablePronostico li.head {
+	height: 14px;
+}
+ul.tablePronostico li .local {
+	float: left;
+	width: 170px;
+	text-align: center;
+	font-weight: bold;
+}
+ul.tablePronostico li .visita {
+	float: left;
+	width: 350px;
+	text-align: center;
+	font-weight: bold;
+}
+ul.tablePronostico li .tit {
+	float: left;
+	width: 160px;
+	text-align: center;
+}
+.btnsBottomFasesRight {
+	width: 301px;
+	margin: 15px auto 0;
+}
+a.btnVerFixture:link, a.btnVerFixture:visited {
+	width: 117px;
+	height: 40px;
+	display: block;
+	text-decoration: none;
+	float: right;
+	background: url(../images/_btnVerFixture.png) no-repeat top center;
+	margin: 1px 8px 0 0;
+}
+.fase3 ul.tableFixture li .equipo p {
+	float: left;
+	color: #FFF;
+	text-transform: uppercase;
+	padding-top: 9px;
+	#padding-top: 9px;
+	font-size: 9px!important;
+	letter-spacing: -1px;
+}
+.fase3 ul.tableFixture li .activo p {
+	color: #ccff00;
+}
+.fase3 ul.tableFixture li .fechaTabla {
+	font-size: 10px;
+	width: 28px;
+	letter-spacing: -1px;
+	text-align: right;
+}
+.fase3 ul.tableFixture li .equipo {
+	width: 140px;
+}
+ul.tableFixture li .equipo input {
+	float: left;
+	margin-top: 7px;
+	#margin-top: 3px;
+}
+ul.tablePronostico li.head .featured {
+	padding-top: 0;
+	font-weight: normal;
+}
+ul.tablePronostico li .featured {
+	float: left;
+	width: 135px;
+	text-align: center;
+	font-weight: bold;
+	padding-top: 6px;
+	color: #000;
+}
+ul.tablePronostico li .featuredini {
+	float: left;
+	width: 135px;
+	text-align: center;
+	font-weight: bold;
+	font-size:14px;
+	padding-top: 6px;
+	color: #000;
+}
+.rellenoFase3 {
+	height: 140px;
+	background: #ccc;
+}
+.popFase1 {
+	width: 346px;
+	height: 241px;
+	background: url(../images/_popFasesJuegos1.png) no-repeat;
+	margin: 0 auto;
+	padding: 15px 25px;
+}
+.popFase2 {
+	width: 346px;
+	height: 241px;
+	background: url(../images/_popFasesJuegos2.png) no-repeat;
+	margin: 0 auto;
+	padding: 15px 25px;
+}
+.popFase3 {
+	width: 346px;
+	height: 241px;
+	background: url(../images/_popFasesJuegos3.png) no-repeat;
+	margin: 0 auto;
+	padding: 15px 25px;
+}
+.popJuegos h1 {
+	color:#3D7A00;
+	font-size:26px;
+	font-weight:bold;
+	letter-spacing:-1px;
+	margin-bottom: 20px;
+}
+.popJuegos h2 {
+	font-size: 16px;
+	letter-spacing: -0.5px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.popJuegos h3 {
+	font-size: 22px;
+	letter-spacing: -0.5px;
+	font-weight: bold;
+	margin: 60px auto 10px;
+	text-align: center;
+}
+.popJuegos h4 {
+	color:#3D7A00;
+	font-size:22px;
+	font-weight:bold;
+	letter-spacing:-1px;
+	padding-top: 4px;
+}
+.popJuegos p {
+	color:#000;
+	font-size: 11px;
+	padding-top: 1px;
+	float: left;
+}
+.popJuegos p.mensaje3 {
+	color:#000;
+	font-size: 13px;
+	padding-top: 1px;
+	float: left;
+}
+.popJuegoFase3 {
+	width: 567px;
+	height: 336px;
+	background: url(../images/_popFase3.png) no-repeat;
+	margin: 0 auto;
+	padding: 6px 15px;
+}
+.popJuegos img.logoEquipoFase3 {
+	float: left;
+}
+.popFase3Contenido {
+	clear:both;
+	float:left;
+	margin-top: 25px;
+	width: 600px;
+}
+table.fase3TabDatos {
+	width: 276px;
+}
+.cuadroFase3 {
+	width: 275px;
+	float: left;
+}
+.cuadroFase3 img {
+	float: left;
+}
+.cuadroFase3 ul.listadoFase3 {
+	width: 190px;
+}
+.cuadroFase3 ul.listadoFase3 li {
+	width: 190px;
+	float: left;
+	font-size: 11px;
+	padding: 4px 0;
+	#padding: 2px 0;
+}
+.cuadroFase3 ul.listadoFase3 li.verd {
+	background: #a5cb4d;
+	margin-bottom: 2px;
+}
+.cuadroFase3 ul.listadoFase3 li.verd span {
+	color: #FFF;
+}
+.cuadroFase3 ul.listadoFase3 li p {
+	padding-top: 3px;
+	#padding-top: 5px;
+}
+.cuadroFase3 ul.listadoFase3 li input {
+	float: left;
+	margin: 2px 3px 0 2px;
+	#margin: 0px 3px 0 2px;
+}
+.cuadroFase3Left {
+	float: left;
+}
+.cuadroFase3Right {
+	float: right;
+}
+.fase3Left {
+	float: left;
+	width: 75px;
+}
+.fase3Right {
+	float: left;
+	width: 105px;
+}
+.caso1 {
+	margin-left: 0px;
+}
+.caso2 {
+	margin-left: 10px;
+}
+.caso3 {
+	margin-top: 8px;
+	margin-left: 0px;
+}
+.caso4 {
+	margin-top: 8px;
+	margin-left: 10px;
+}
+
+/*************************** 21 DE MARZO *******************************/
+
+.manchaMuro {
+	background: url(../images/_fndMiMancha.png);
+	height: 825px;
+}
+.manchaUnete {
+	background: url("../images/_fndUneteManchaV2.png") repeat scroll 0 0 transparent;
+        height: 430px;
+}
+.miMancha h1 {
+	color:#3D7A00;
+	font-size:20px;
+	font-weight:bold;
+	margin:20px 0 25px 30px;
+}
+.miMancha .sideCenter h1 {
+	color:#3D7A00;
+	font-size:20px;
+	font-weight:bold;
+	margin: 28px 0 5px 0;
+}
+.miMancha h2 {
+	color:#3D7A00;
+	font-size:14px;
+	font-weight:bold;
+	text-transform: uppercase;
+}
+.sideLeft {
+	float: left;
+	width: 310px;
+}
+.sideCenter {
+	float: left;
+	padding: 0 30px;
+	width: 350px;
+}
+.sideRight {	
+	float: none !important;
+	padding:0 15px;
+	width:190px;
+}
+.profileMancha {
+	border-bottom:1px solid #CCCCCC;
+	margin-left:22px;
+	padding:0 15px 22px;
+	#padding:0 15px 15px;
+	width: 265px;
+}
+a.backMancha:link, a.backMancha:visited {
+	color: #000;
+	font-size: 11px;
+	text-decoration: none;
+	float: right;
+	margin: 30px 15px 0 0;
+}
+a.backMancha:hover {
+	text-decoration: underline;
+}
+a.btnNormal:link, a.btnNormal:visited {
+	color: #000;
+	font-size: 11px;
+	text-decoration: none;
+	margin: 10px;
+}
+a.btnNormal:hover {
+	text-decoration: underline;
+}
+a.btnNormalM:link, a.btnNormalM:visited {
+	color: #000;
+	font-size: 11px;
+	font-weight: bold;
+	margin: 10px;
+}
+a.btnNormalM:hover {
+	text-decoration: none;
+}
+a.btnNormalJ:link, a.btnNormalJ:visited {
+	color: #000;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: underline;
+	margin: 10px;
+}
+a.btnNormalJ:hover {
+	text-decoration: none;
+}
+a.editMancha:link, a.editMancha:visited {
+	color: #000;
+	font-size: 11px;
+	text-decoration: none;
+	float: right;
+	margin: 0px 15px 0 0;
+}
+a.editMancha:hover {
+	text-decoration: underline;
+}
+.profileMancha img.avatarMancha {
+	float: left;
+	margin-right: 8px;
+}
+.profileMancha p {
+	margin: 10px 0 0;
+}
+.profileMancha p span {
+	color: #3D7A00;
+}
+.listadoMancha {
+	margin: 10px 0 0 20px;
+	width: 290px;
+	border-bottom:1px solid #CCCCCC;
+	padding-bottom:8px;
+}
+.listadoMancha h3 {
+	background: url(../images/_fndDataInput.gif) no-repeat top left;
+	width: 260px;
+	height: 19px;
+	font-size: 11px;
+	padding: 6px 0 0 16px;
+	font-weight: bold;
+	color: #3D7A00;
+}
+.listadoMancha .overListMancha {
+	overflow: auto;
+	height: 130px;
+}
+.listadoMancha .overListMancha ol {
+	width: 273px;
+}
+.listadoMancha .overListMancha ol li {
+	font-size: 12px;
+	height: 17px;
+	padding:5px 0 4px 14px;
+}
+.listadoMancha .overListMancha ol li a:link, .listadoMancha .overListMancha ol li a:visited  {
+	color: #000;
+	text-decoration: none;
+}
+.listadoMancha .overListMancha ol li a:hover {
+	color: #3D7A00;
+	text-decoration: underline;
+}
+.listadoMancha .overListMancha ol li.inpar {
+	background: #d2d2d2;
+}
+.listadoMancha .overListMancha ol li.par {
+	background: #FFFFFF;
+}
+.botonesBottomMancha {
+	margin: 15px 0 0 20px;
+}
+a.btnBottomMancha:link, a.btnBottomMancha:visited {
+	background: url(../images/_btnBottomManchas.png) no-repeat top center;
+	width: 253px;
+	height: 23px;
+	display: block;
+	text-decoration: none;
+	color: #FFFFFF;
+	padding: 10px 0 0 40px;
+	margin-bottom: 1px;
+}
+a.btnBottomMancha:hover {
+	background-position: bottom;
+}
+div.btnBottomManchaDes {
+	background: url(../images/_btnBottomManchasDes.png) no-repeat top center;
+	width: 253px;
+	height: 23px;
+	display: block;
+	color: #FFFFFF;
+	padding: 10px 0 0 40px;
+	margin-bottom: 1px;
+}
+.comentarMancha {
+	width: 355px;
+	border-bottom:1px solid #CCCCCC;
+	padding-bottom:10px;
+}
+.comentarMancha p {
+	font-size: 12px;
+}
+.comentarMancha textarea {
+	background: url(../images/_fndTextArea.png) no-repeat top center;
+	width: 335px;
+	height: 68px;
+	border: none;
+	padding: 10px;
+	margin: 10px 0;
+}
+.manchaComentario {
+	margin: 15px 0 0;
+	#margin: 15px 0 -2px;
+	float: left;
+	padding-bottom: 20px;
+	border-bottom:1px solid #CCCCCC;
+	width: 320px;
+}
+.manchaComentario img.comAvatar {
+	float: left;
+	margin: 0 10px 10px 0;
+}
+.manchaComentario .title {
+	float: left;
+	width: 260px;
+	margin-bottom: 5px;
+}
+.manchaComentario h2 {
+	font-size: 12px;
+	font-weight: bold;
+	float: left;
+	color: #000;
+}
+.manchaComentario h4 {
+	font-size: 10px;
+	float: right;
+	padding-top: 3px;
+}
+.manchaComentario p {
+	width: 260px;
+	float: left;
+	font-size: 11px;
+	color: #666666;
+	line-height: 13px;
+}
+.miMancha .sideRight h1 {
+	color:#3D7A00;
+	font-size:20px;
+	font-weight:bold;
+	margin: 28px 0 20px 53px;
+}
+.miMancha .sideRight h3 {
+	background:transparent url(../images/_fndDataInput.gif) no-repeat scroll left top;
+	font-size:11px;
+	font-weight:bold;
+	height:19px;
+	padding:6px 0 0 16px;
+}
+.rankingMancha {
+	border-bottom:1px solid #CCCCCC;
+	margin-bottom:10px;
+	padding-bottom:7px;
+}
+.rankingMancha ul.listadoRanking {
+	margin: 0 auto;
+}
+.rankingMancha p {
+	font-size: 11px;
+}
+.first {
+	background: url(../images/_fndRankingGeneralListadoFirst.png)!important;
+}
+.listadoRanking li.first .puntos, .listadoRanking li.first .nombre {
+	color: #FFFFFF;
+}
+.manchaUnete .profileMancha {
+	border: none;
+	padding: 0 15px;
+}
+.manchaUnete .profileMancha h1 {
+	margin:	20px 0 10px 30px;
+	_margin: 20px 0 10px 15px;
+}
+.manchaUnete .sideRight2 h1 {
+	margin:	20px 0 0 30px;
+	_margin: 20px 0 0 10px;
+}
+.manchaUnete .botonesBottomMancha {
+	margin-top: 10px;
+}
+.buscaMancha {
+	float: right;
+	width: 255px;
+	margin: 20px 15px 0 0;
+}
+.buscaMancha input {
+	background: url(../images/_fndInputBuscador.png) no-repeat top center;
+	width: 204px;
+	height: 27px;
+	border: 0;
+	float: left;
+}
+.buscaMancha a:link, .buscaMancha a:visited {
+	background: url(../images/_btnBuscador.png) no-repeat top center;
+	width: 32px;
+	height: 27px;
+	display: block;
+	text-decoration: none;
+	float: left;
+}
+.sideRight2 {
+	float: left;
+	width: 635px;
+	#width: 600px;
+}
+.alfabeto {
+	margin:14px auto;
+	width: 550px;
+	text-align: center;
+}
+.alfabeto a:link, .alfabeto a:visited {
+	color: #000000;
+	font-weight: bold;
+}
+.alfabeto a:hover {
+	color: #3D7A00;
+}
+.listadoAlfabeto {
+	padding: 0 35px 0;
+}
+.listadoAlfabeto h3 {
+	font-weight: bold;
+	font-size: 11px;
+}
+.listadoAlfabeto .overAlfabeto {
+	margin-top: 5px;
+	overflow: auto;
+	height: 230px;
+	border:1px solid #CCCCCC;
+	padding: 10px;
+}
+.listadoAlfabeto .overAlfabeto ul li {
+	border:1px solid #CCCCCC;
+	clear:both;
+	height:28px;
+	padding:0 0;
+}
+.listadoAlfabeto .overAlfabeto ul li img {
+	width: 30px;
+	height: 30px;
+	float: left;
+}
+.listadoAlfabeto .overAlfabeto ul li p {
+	float: left;
+	padding: 8px 0 0 8px;
+}
+.sideRight2 table.formulaDepor {
+	width: 470px;
+}
+.sideRight2 table.formulaDepor tr td span {
+	font-size: 10px;
+}
+.sideRight2 table.formulaDepor tr td input {
+	background: url(../images/_fndManchaInput.png) no-repeat top center;
+	width: 266px;
+	height: 19px;
+	border: none;
+	float: left;
+	padding: 4px 8px;
+}
+.sideRight2 table.formulaDepor tr td textarea {
+	background: url(../images/_fndManchaTextArea.png) no-repeat top center;
+	width: 264px;
+	height: 67px;
+	border: none;
+	float: left;
+	padding: 4px 8px;
+}
+.sideRight2 table.formulaDepor tr td .radio {
+	width: auto;
+	background: none;
+	float: left;
+}
+.sideRight2 table.formulaDepor tr td p {
+	float: left;
+	padding-top: 6px;
+}
+.sideRight2 table.formulaDepor tr td p span {
+	font-size: 10px;
+}
+.popEditarCuenta {
+	width: 505px;
+	height: 454px;
+	background: url(../images/_fndEditarCuenta.png) no-repeat top center;
+	margin: 0 auto;
+	padding: 15px 25px;
+}
+.popEditarCuentaV2 {
+	width: 542px;
+	height: 541px;
+	background: url(../images/_fnd_formRegistroV2.png) no-repeat top center;
+	margin: 0 auto;
+	padding: 15px 25px;
+}
+.editarCuenta .left {
+	width: 330px;
+}
+.editarCuenta .right {
+	background: #DDD;
+	width: 180px;
+	margin-top:15px;
+	padding-bottom:10px;
+	padding-left: 20px;
+}
+.editarCuenta .right p {
+	margin: 9px 0 7px 0px;
+	font-weight: bold;
+}
+div.icoEditCuenta_Fb, div.icoEditCuenta_Tw, div.icoEditCuenta_Gg {
+	width: 46px;
+	height: 46px;
+}
+div.icoEditCuenta_Fb {
+	background: url(../images/_ico_editCuenta_Facebook.png) no-repeat bottom left;
+}
+div.icoEditCuenta_Tw {
+	background: url(../images/_ico_editCuenta_Twitter.png) no-repeat bottom left;
+}
+div.icoEditCuenta_Gg {
+	background: url(../images/_ico_editCuenta_Google.png) no-repeat bottom left;
+}
+.editarCuenta .right .activo {
+	background-position: top left;
+}
+
+/*************************** 22 DE MARZO *******************************/
+
+.popAyudaPoliticasMapa {
+	width: 551px;
+	height: 448px;
+	background: url(../images/_fndPopAyudaPoliticasMapa.png) no-repeat;
+	margin: 0 auto;
+	padding: 15px 25px;
+}
+.popAyudaPoliticasMapa h4 {
+	margin-top: 115px;
+	#margin-top: 130px;
+}
+.ayuda {
+
+}
+.ayuda .left {
+	width: 170px;
+}
+.ayuda .left ul li {
+	clear: both;
+}
+.ayuda .right {
+	width: 365px;
+	border-left: #bbb solid 1px;
+	padding-left: 15px;
+}
+.ayuda .right .overAyuda {
+	overflow: auto;
+	height: 275px;
+	padding: 0 20px 0 5px;
+}
+.ayuda .right .overAyuda p {
+	font-size: 12px;
+	color: #666666;
+	line-height: 14px;
+	text-align: justify;
+	margin-bottom: 15px;
+}
+.ayuda .right .overAyuda h1 {
+	font-size: 15px;
+	letter-spacing: 0;
+	margin-bottom: 2px;
+}
+.ayuda .left a:link, .ayuda .left a:visited {
+	font-size: 11px;
+	text-decoration: none;
+	color: #3d7a00;
+	font-weight: bold;
+	margin-bottom: 4px;
+	float: left;
+}
+.ayuda .left a:hover {
+	text-decoration: underline;
+}
+.sitemap {
+	margin: 30px 0 0 50px;
+	list-style: outside decimal;
+}
+.sitemap li a:link, .sitemap li a:visited {
+	font-size: 13px;
+	font-weight: bold;
+	color: #333333;
+	line-height: 17px;
+	text-decoration: none;
+}
+.sitemap li a:hover {
+	text-decoration: underline;
+}
+.politicas {
+	padding: 0 20px;
+	overflow: auto;
+	height: 280px;
+}
+.politicas h1 {
+	font-size: 18px;
+	letter-spacing: 0;
+	margin-bottom: 3px;
+}
+.politicas p {
+	line-height: 13px;
+	margin-bottom: 18px;
+	text-align: justify;
+}
+.juegoFixture0 {
+	background: url(../images/_fndFixture.jpg) no-repeat;
+}
+.juegoFixture1 {
+	background: url(../images/_fndFixture1.png) no-repeat;
+}
+.juegoFixture1 .faseHeadLeft {
+	padding-left: 28px;
+	height: 55px;
+}
+.juegoFixture1 .faseHeadRight {
+	height: 61px;
+	#height: 55px;
+	_height: 67px;
+}
+.juegoFixture1 .fixtureNiveles {
+	float: right;
+	margin: 10px 5px 0 0;
+}
+.juegoFixture1 .fixtureNiveles a:link, .juegoFixture1 .fixtureNiveles a:visited {
+	border-right:1px solid #000000;
+	color:#666666;
+	font-size:14px;
+	font-weight:bold;
+	padding:0 15px;
+}
+.juegoFixture1 .fixtureNiveles a:hover {
+	color: #000000;
+}
+.juegoFixture1 .fixtureNiveles a.activo {
+	color: #3d7a00!important;
+}
+li .casOptResultado {
+	width: 120px;
+	float: left;
+	text-align: center;
+	padding-top: 7px;
+}
+li .casOpt {
+	float: left;
+	width: 140px;
+	text-align: center;
+	padding-top: 5px;
+	font-size: 10px;
+}
+li .casOpt span {
+	font-size: 11px;
+}
+.bottomFixtureLeft {
+	background: url(../images/frm_arrow.png) no-repeat top left;
+	display: block;
+	height: 24px;
+	padding-left: 15px;
+	margin: 5px 0 0 10px;
+	float: left;
+}
+.bottomFixtureRight {
+	background: url(../images/frm_arrow.png) no-repeat top left;
+	display: block;
+	height: 24px;
+	padding-left: 15px;
+	margin: 5px 10px 0 0;
+	float: right;
+}
+.resultados {
+	height: 422px;
+/*	background: url(../images/_fndResultados.png) no-repeat top center;*/
+	background: url(../images/_fndResultadosV2.png) no-repeat top center;
+	padding: 7px 16px 0;
+}
+.resultados h1 {
+	color:#3D7A00;
+	font-size:24px;
+	font-weight:bold;
+	letter-spacing:-1px;
+	margin-bottom: 2px;
+	padding: 7px 0 0 15px;
+}
+.resultados h2 {
+	color:#3D7A00;
+	font-size:24px;
+	font-weight:bold;
+	letter-spacing:-1px;
+	margin-bottom: 2px;
+	padding: 7px 0 0 50px;
+}
+.resultados h5 {
+	font-size: 20px;
+	color: #FFFFFF;
+	margin: 6px 0 15px;
+}
+.resultados .title {
+	height: 28px;
+	#height: 35px;
+}
+.resultados .title h5{
+	margin: 8px 0 0 30px;
+}
+.resultados .resLeft p {
+	padding: 17px 0 8px 16px;
+}
+.resultados .resLeft {
+	float: left;
+    margin-left: 9px;
+    margin-top: 6px;
+    width: 143px;
+}
+.resultados .resCenter {
+	float: left;
+	width: 420px;
+	margin-left: 10px;
+	margin-top: 6px;
+}
+.resultados .resRight {
+	float: left;
+	margin-left: 10px;
+	margin-top: 6px;
+	width: 300px;
+}
+.resOverFlow {
+	overflow: auto;
+	height: 276px;
+}
+.resOverFlow ul li {
+
+}
+.resOverFlow ul li span {
+	margin-right: 20px;
+}
+.resOverFlow ul li a:link, .resOverFlow ul li a:visited {
+	padding: 4px 0 4px 15px;
+	background: #DDD;
+	margin: 2px 0;
+	display: block;
+	text-decoration: none;
+	color: #333333;
+}
+.resOverFlow ul li a.activ {
+	color: #FFF;
+	font-weight: bold;
+	background: #000;
+}
+.resOverFlow ul li a:hover {
+	background: #CCCCCC;
+	color: #000000;
+}
+ul.tableFixture li .verMasRes {
+	float: right;
+}
+ul.tableFixture li .verMasRes a {
+	background: url(../images/_btnVerMas.png) no-repeat top center;
+	width: 51px;
+	height: 28px;
+	display: block;
+	text-decoration: none;
+}
+.resCenter ul.tableFixture {
+	width: 400px;
+}
+.encuenttro {
+	padding-left: 10px;
+	height: 47px;
+}
+.encuenttro .equipoLeft {
+	float: left;
+	width: 120px;
+	margin-left: 15px;
+}
+.encuenttro .equipoRight {
+	float: left;
+	width: 120px;
+	margin-left: 30px;
+}
+.golLeft {
+	color: #FFF;
+	float: left;
+    text-align: center;
+    width: 130px;
+	font-size: 18px;
+}
+.golRight {
+	color: #FFF;
+	float: left;
+    text-align: center;
+    width: 130px;
+	margin-left: 30px;
+	font-size: 18px;
+}
+.encuenttro .equipoLeft img, .encuenttro .equipoRight img {
+	float: left;
+}
+.encuenttro .equipoLeft p, .encuenttro .equipoRight p {
+	float: left;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	font-size: 10px;
+	padding-top: 7px;
+	letter-spacing: -1px;
+}
+.encuenttro .versus {
+	float: left;
+	background: url(../images/_versus.png);
+	width: 26px;
+	height: 28px;
+	margin: 0 7px;
+}
+.overResulEncuentro {
+	/*overflow: auto;*/
+	/*height: 305px;*/
+	width: 300px;
+	margin: 5px 0 0 7px;
+	float: left;
+}
+.overResulEncuentro .resulLeft {
+	float: left;
+	width: 139px;
+}
+.overResulEncuentro .resulRight {
+	float: right;
+	width: 139px;
+}
+.overResulEncuentro ul li.top {
+	background: #c9da2a;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	color: #000000;
+}
+.overResulEncuentro ul li.marcador {
+	background: #c9da2a;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	color: #000000;
+}
+.overResulEncuentro ul li {
+	padding: 4px 10px;
+	background: #e6e6e6;
+	margin: 2px 0;
+	font-size: 11px;
+	clear: both;
+}
+.overResulEncuentro ul li div.jugador {
+	float: left;
+	color: #000000;
+	font-size: 12px;
+}
+.overResulEncuentro ul li div.puntaje {
+	float: right;
+	font-weight: bold;
+	color: #000000;
+	font-size: 12px;
+}
+.overResulEncuentro p {
+	margin: 10px 0;
+}
+
+/*************** 25 de Marzo ***********************/
+
+.juegoFixture0 .fasesLeft .cuadFixLeft {
+	float: left;
+	width: 193px;
+	margin: 90px 0 0 18px;
+}
+.juegoFixture0 .fasesLeft .cuadFixCenter {
+	float: left;
+	width: 388px;
+    margin: 6px 0 0 18px;
+}
+.juegoFixture0 .fasesLeft .cuadFixRight {
+	float: left;
+	width: 193px;
+    margin: 90px 0 0 25px;
+}
+a.arrowNaranjaLeft:link, a.arrowNaranjaLeft:visited {
+	background: url(../images/_arrowNaranjaLeft.png) no-repeat;
+	width: 23px;
+	height: 42px;
+	display: block;
+	text-decoration: none;
+	margin: 160px 0 0 10px;
+	_margin: 160px 0 0 5px;
+}
+a.arrowNaranjaRight:link, a.arrowNaranjaRight:visited {
+	background: url(../images/_arrowNaranjaRight.png) no-repeat;
+	width: 23px;
+	height: 42px;
+	display: block;
+	text-decoration: none;
+	margin: 160px 0 0 13px;
+}
+.contFix0 h1 {
+	float: left;
+}
+.contFix0 h2 {
+	float: right;
+}
+.contFix0 .cuadFixCenter h1 {
+	padding: 9px 0 0 50px;
+}
+.contFix0 .cuadFixCenter h2 {
+	font-weight: bold;
+	font-size: 13px;
+	color: #000;
+	padding: 15px 15px 0 0;
+}
+.contFix0 .cuadFixLeft h1, .contFix0 .cuadFixRight h1 {
+	padding: 5px 0 0 10px;
+	font-size: 14px;
+}
+.contFix0 .cuadFixLeft h2, .contFix0 .cuadFixRight h2 {
+	font-weight: bold;
+	font-size: 10px;
+	color: #000;
+	padding: 6px 8px 0 0;
+}
+.contFix0 .fixture {
+	clear: both;
+	padding: 5px 10px 0;
+	#padding: 8px 10px 0;
+}
+.contFix0 .fixture a {
+	margin: 5px 0 0 130px;
+	#margin: 0 0 0 130px;
+	_margin: 2px 0 0 60px!important;
+}
+.ranking {
+	background: url(../images/_fndRankingPagina.png) no-repeat top center;
+	height: 392px;
+}
+.ranking .faseHeadLeft {
+	padding-left: 30px;
+    height: auto;
+}
+.ranking .faseHeadLeft h5 {
+	margin: 6px 0 10px;
+}
+.dosRankPage {
+	width: 900px;
+	padding-left: 25px;
+}
+.rankPage {
+	width: 386px;
+	height: 330px;
+	float: left;
+}
+.rankRight {
+	margin-left: 75px;
+}
+.rankPage h1 {
+	padding: 4px 0 0 36px;
+}
+.rankPage h2 {
+	padding: 0 0 0 36px;
+}
+.rankPage h3 {
+	float: right;
+	padding: 12px 10px 0 0;
+	font-size: 11px;
+	font-weight: bold;
+}
+.rankPage ul.listadoRanking {
+	width: 310px;
+	margin: 0!important;
+}
+.rankPage ul.listadoRanking li {
+	width: 320px;
+}
+.rankPage ul.listadoRanking li.first {
+	background: url(../images/_franjaListRank3.png) no-repeat top center!important;
+}
+.rankPage ul.listadoRanking li.impar {
+	background: url(../images/_franjaListRank1.png) no-repeat top center!important;
+}
+.rankPage ul.listadoRanking li.par {
+	background: url(../images/_franjaListRank2.png) no-repeat top center!important;
+}
+.rankPage ul.listadoRanking li.first p {
+    color: #FFFFFF;
+    float: left;
+    font-weight: bold;
+	margin: 0 5px 0 36px;
+	_margin: 0 5px 0 18px;
+    padding-top: 3px;
+    text-align: center;
+    width: 20px;
+}
+.rankPage ul.listadoRanking li.first .puesto {
+	padding-left: 0;
+}
+.rankPage .listadoRanking .puesto {
+	padding-left: 61px;
+}
+.overListRank {
+	overflow: auto;
+	float: left;
+	width: 350px;
+	height: 235px;
+}
+.listadosRank {
+	padding: 15px 0 0 15px;
+}
+.dosRankPage a.arrowNaranjaLeft:link, .dosRankPage a.arrowNaranjaLeft:visited {
+	margin: 160px 13px 0 38px;
+	_margin: 160px 13px 0 43px;
+}
+.blogDepor {
+	background: url(../images/_blog_fnd.png);
+	width: 950px;
+}
+.contBlog {
+	background: url(../images/_blog_header.png) no-repeat top center;
+	width: 950px;
+}
+.contBlog .contLeft {
+    float: left;
+    margin: 0 0 0 10px;
+    padding: 0 20px;
+    width: 668px;
+	_width: 648px;
+}
+.contBlog .contRight {
+	float: left;
+	width: 210px;
+	margin: 5px 0 0 5px;
+	_margin: 5px 0 0 13px;
+}
+.contBlog .contRight h1 {
+	background: url(../images/_blog_sidebarHead.png) no-repeat;
+	width: 210px;
+    height: 35px;
+    padding: 12px 0 0 10px;
+}
+.contBlog .contRight h2 {
+	background: url(../images/frm_arrow.png) no-repeat top left;
+    margin-left: 11px;
+    padding: 0 0 8px 15px;
+	font-size: 11px;
+	font-weight: bold;
+	color: #666;
+}
+.contBlog .contRight .conSideRight {
+	width: 210px;
+	background: url(../images/_blog_sidebarFnd.png) repeat-y;
+}
+.contBlog .contRight .conSideRight ul.listadoRanking {
+	margin: 3px auto 0;
+}
+.contBlog h1 {
+	color: #3d7a00;
+	font-size: 24px;
+	font-weight: bold;
+	padding: 16px 0 0 36px;
+	height: 40px;
+}
+.contBlog .contRight .archivo h1 {
+	background: none;
+	height: 29px;
+}
+.archivo ul.archivoList {
+    border-top: 1px solid #BBBBBB;
+    margin: 0 10px;
+    padding-top: 4px;
+}
+.archivo ul.archivoList li {
+	clear: left;
+}
+.archivo ul.archivoList li a:link, .archivo ul.archivoList li a:visited {
+    color: #000000;
+    display: block;
+    padding: 9px 0 9px 10px;
+    text-decoration: none;
+}
+.archivo ul.archivoList li a:hover {
+	background: #b0d91a;
+}
+.fndGris {
+	background: #e0e0e0;
+}
+.titular {
+	border-bottom: 1px solid #999;
+	padding-bottom: 5px;
+}
+.titular h2 {
+	color: #3d7a00;
+	font-size: 30px;
+	font-weight: bold;
+    padding: 0 0 5px 0;
+}
+.titular h3 {
+	font-size: 12px;
+	font-weight: bold;
+	color: #000;
+	float: left;
+}
+.titular h4 {
+	float: right;
+}
+.titular h4 a:link, .titular h4 a:visited {
+	font-size: 12px;
+	font-weight: bold;
+	color: #000;
+	text-decoration: none;
+}
+.titular h4 a:hover {
+	text-decoration: underline;
+}
+.estracto {
+	clear: both;
+	padding-top: 10px;
+}
+.estracto img {
+	width: 250px;
+	height: 150px;
+	padding: 3px;
+	border: 1px solid #999;
+	float: left;
+	margin: 0 10px 10px 0;
+}
+.estracto p {
+	font-size: 13px;
+	margin-bottom: 10px;
+	line-height: 15px;
+	text-align: justify;
+}
+.single {
+	background: #efefef;
+	padding: 15px;
+	margin-bottom: 10px;
+}
+.val1, .val2, .val3, .cont1, .cont2, .cont3 {
+	float: left;
+	padding: 4px 8px;
+	text-align: center;
+	text-decoration: none;
+	color: #000;
+}
+a.val1:link, a.val1:visited {
+	background: #9cc701;
+}
+a.val2:link, a.val2:visited {
+	background: #b0d91a;
+}
+a.val3:link, a.val3:visited {
+	background: #c9da2a;
+}
+a.val1:hover, a.val2:hover, a.val3:hover {
+	background: #000;
+	color: #FFF;
+}
+.cont1 {
+	background: #c4da77;
+	border: 2px #9cc701 solid;
+}
+.cont2 {
+	background: #cee383;
+	border: 2px #b0d91a solid;
+}
+.cont3 {
+	background: #dbe38b;
+	border: 2px #c9da2a solid;
+}
+.cont1, .cont2, .cont3 {
+	padding: 2px 8px;
+	margin-right: 5px;
+}
+.comentarioSingle {
+	background: #efefef;
+	padding: 20px;
+}
+.comentarioSingle .formComent {
+	width: 450px;
+	margin: 0 auto;
+}
+.comentarioSingle h2 {
+	font-weight: bold;
+	float: left;
+}
+.comentarioSingle textarea {
+	width: 450px;
+	height: 120px;
+	margin: 10px 0;
+	float: left;
+}
+.singleComment {
+	padding: 10px 20px;
+	border-top: #999 solid 1px;
+	background: #EFEFEF;
+}
+.comLeft {
+	float: left;
+	width: 80px;
+}
+.comRight {
+    float: left;
+    width: 530px;
+}
+.comRight h1 {
+	font-size: 20px;
+	padding: 0;
+	height: 22px;
+}
+.comRight h2 {
+	color: #666;
+}
+.comRight p {
+	color: #333;
+	margin: 10px 0;
+	text-align: justify;
+	font-size: 12px;
+	line-height: 13px;
+}
+.listadoComentarios {
+	margin-bottom: 20px;
+}
+.blogFooter {
+	background: url(../images/_blog_footer.png);
+	height: 18px;
+}
+.overListMancha {
+	overflow: auto;
+	height: 550px;
+}
+.olvContra input {
+	background: url(../images/_fndInputForm.gif) no-repeat;
+	border: 0;
+	padding: 4px 8px;
+    width: 194px;
+	text-align: center;
+}
+.fas1BtnBottom {
+	width: 210px;
+	margin: 0 auto;
+}
+.overMailsAlter {
+	height: 45px;
+	overflow: auto;
+}
+.overMailsAlter p {
+	width: 80px;
+}
+.popEditarCuentaV2 p.titularFormV2 {
+	margin-top: 20px;
+}
+.foto img, .foto a {
+	float: left;
+}
+input.addMail {
+	padding-right: 10px!important;
+	background: #FFF!important;
+	width: 120px!important;
+	border: 1px solid #999!important;
+	height: 20px!important;
+	padding: 0 9px 0!important;
+	float: left!important;
+}
+.editarCuenta .right p.desc {
+	margin: 0;
+	font-size: 11px;
+	width: 50px;
+	text-align: center;
+	font-weight: normal;
+	padding-top: 4px;
+}
+.icoRed {
+	float: left;
+	margin: 0 7px 0 0;
+}
+.blokIcoRed {
+	float: left;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #CCC;
+}
+.resultados ul.tableFixture li {
+	padding-left: 7px;
+}
+.resultados ul.tableFixture li .versus {
+	margin: 0;
+}
+.resultados ul.tableFixture li .equipo {
+	width: 120px;
+}
+.puntAcumulado {
+	background: #c9da2a;
+    margin: 0 auto;
+    width: 92%;
+	height: 13px;
+	text-align: right;
+	padding: 5px 8px;
+}
+.puntAcumulado p {
+	font-weight: bold;
+	font-size: 11px;
+	color: #000;
+}
+table.tabResRight {
+
+}
+table.tabResRight td {
+	background: #CCC;
+	border: #FFF solid 1px;
+}
+table.tabResRight td table td.marcaGol {
+	background: #c9da2a;
+	color: #000;
+	font-weight: bold;
+	padding: 2px;
+	text-align: center;
+	font-size: 16px;
+}
+table.tabResRight td.tabTitleJugadas {
+	background: #FFF;
+	font-weight: bold;
+	color: #000;
+	padding: 2px 7px;
+	font-size: 11px;
+}
+table.tabResRight td.tabJugadas {
+	background: #e6e6e6;
+	color: #000;
+	padding: 4px 7px;
+	font-size: 11px;
+}
+table.tabResRight td.tabJugadas span {
+	font-weight: bold;
+}
+table.tabResRight td.tabJugadas .logo {
+	margin: 0 3px;
+}
+table.tabResRight td.tabJugadas .tabFases {
+	padding-top: 9px;
+}
+table.tabResRight td.blanco {
+	background: #f2f2f2;
+	color: #000;
+	padding: 6px 7px;
+	#padding: 3px 7px;
+	font-size: 11px;
+}
+table.tabResRight td.gris {
+	background: #e6e6e6;
+	color: #000;
+	padding: 6px 7px;
+	#padding: 3px 7px;
+	font-size: 11px;
+}
+.listadosRank .listadoRanking .puntos {
+	width: 70px;
+}
+.conSideRight .listadoRanking li {
+	background: url(../images/_fndRankingGeneralListado.png) no-repeat!important;
+}
+.conSideRight .listadoRanking li.first {
+    background: url("../images/_fndRankingGeneralListadoFirst.png") no-repeat!important;
+}
+.conSideRight .listadoRanking .puntos {
+	width: 65px;
+}
+.solicitudes {
+	padding-top: 15px;
+}
+.overListManchaSolicitudes {
+	width: 292px;
+	height: 230px;
+	overflow: auto;
+	margin: 0 auto;
+}
+.overListManchaSolicitudes ul {
+	width: 250px;
+}
+.overListManchaSolicitudes ul li {
+	float: left;
+	clear: both;
+	padding: 3px 10px;
+	width: 250px;
+}
+.overListManchaSolicitudes ul li.l1 {
+	background: #e3e3e3;
+}
+.overListManchaSolicitudes ul li.l2 {
+	background: #f9f9f9;
+}
+.overListManchaSolicitudes ul li p {
+	float: left;
+	padding-top: 3px;
+}
+.overListManchaSolicitudes ul li div {
+	padding-right: 20px;
+}
+a.derLink:link, a.derLink:visited {
+	color: #333;
+	font-size: 10px;
+	text-align: right;
+	margin-left: 252px;
+}
+a.derLink:hover {
+	color: #000;
+}
+.esp {
+	margin: 2px 0 0 60px !important;
+}
+#globo1{
+width:239px;
+height:96px;
+background:url(../images/globo1.png) no-repeat;
+padding-top:10px;
+padding-right:11px;
+}
+.btnCerrarGlobo{
+width:23px;
+height:22px;
+float:right;
+}
+.btnCerrarGlobo a{
+}

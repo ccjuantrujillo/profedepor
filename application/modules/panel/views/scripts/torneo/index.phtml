@@ -1,0 +1,25 @@
+<div class="crearbanner">
+       <h1><?php echo $this->title ?></h1>
+       <a class="aceptarlog2" href="/panel/torneo/registro/" alt="Nuevo" title="Nuevo">Ingresar Nuevo Campeonato</a>
+</div>
+
+<div class="containertable">
+  <div class="mensajetable" style="width:100%">Se han encontrado (<?php echo $this->cantidad; ?>) registro(s)</div>
+  <input type="hidden" name="variable_id" id="variable_id" />
+  <table style="width:100%" border="1" cellspacing="0" cellpadding="0">
+    <tr class="list1">
+        <td>Id</td>
+        <td>Descripci&oacute;n</td>
+        <td>Editar</td>
+        <td>Eliminar</td>
+    </tr>
+  <?php foreach($this->torneos as $i => $value): ?>
+    <tr id="torneo_<?php echo $value->torneo_id ?>" class="<?php echo $this->cycle(array('list_a', 'list_b'))->next() ?>">
+    <td><?php echo $i+1;?></td>
+    <td style="text-align: left;"><?php echo $value->descripcion;?></td>
+    <td><a href="#" onclick='javascript:editarTorneo("<?php echo $value->torneo_id ?>")'><img src="<?php echo $this->Image('editar.jpg');?>" border="0"/></a></td>
+    <td><a href="#" onclick="javascript:eliminarTorneo(<?php echo $value->torneo_id ?>)"><img src="<?php echo $this->Image('eliminar.jpg');?>" border="0"/></a></td>
+  </tr>
+  <?php endforeach; ?>
+  </table>
+</div>

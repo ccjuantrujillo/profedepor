@@ -1,0 +1,40 @@
+<form action="/panel/intervalo/" method="post" id="FormIntervalo">
+  <div class="crearbanner">
+       <h1><?php echo $this->title ?></h1>
+       <a class="aceptarlog2" href="/panel/intervalo/registro/" alt="Nuevo" title="Nuevo">Ingreso Nuevo Intervalo</a>
+      <ul>
+        <li>
+          <?php echo $this->tipo ?><br/><br>
+          <?php echo $this->variable ?>
+        </li>
+       </ul>
+  </div>
+</form>
+
+<div class="containertable">
+    <div class="mensajetable">Se han encontrado (<?php echo $this->intervalos->rowCount() ?>) registro(s)</div>
+    <table  border="1"  cellspacing="0" cellpadding="0">
+      <tr class="list1">
+        <td width="4%">Num.</td>
+        <td width="27%">Variable</td>
+        <td width="24%">Descripcion</td>
+        <td width="10%">Valor Inicial</td>
+        <td width="10%">Valor Final</td>
+        <td width="10%">Puntaje</td>
+        <td width="7%">Editar</td>
+        <td width="7%">Eliminar</td>
+      </tr>
+      <?php $i = 1; while($item = $this->intervalos->fetch()): ?>
+      <tr class="<?php echo $this->cycle(array('list_a', 'list_b'))->next() ?>">
+        <td><?php echo $i ?></td>
+        <td><?php echo $item->variable ?></td>
+        <td><?php echo $item->descripcion ?></td>
+        <td><?php echo $item->valori ?></td>
+        <td><?php echo $item->valorf ?></td>
+        <td><?php echo $item->puntaje ?></td>
+        <td><a href="#;" onclick="EditarIntervalo(<?php echo $item->intervalo_id;?>)"><img src="<?php echo $this->Image('editar.jpg');?>" border="0"/></a></td>
+        <td><a href="#" onclick="eliminarIntervalo(<?php echo $item->intervalo_id;?>)"><img src="<?php echo $this->Image('eliminar.jpg');?>" border="0"/></a></td>
+      </tr>
+      <?php $i++; endwhile ?>
+    </table>    
+</div>

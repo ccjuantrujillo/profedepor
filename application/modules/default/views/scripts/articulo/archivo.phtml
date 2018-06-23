@@ -1,0 +1,66 @@
+<div class="blogDepor">
+    <div class="contBlog">
+
+
+        <div class="contLeft">
+            <h1><?php echo $this->tipo->nombre; ?></h1>
+
+            <div class="articulos">
+                <?php foreach ($this->articulos as $listado): ?>
+                <div class="single">
+                    <div class="titular">
+                        <h2><?php echo $listado->titulo; ?></h2>
+                        <h3><?php echo $listado->registro; ?></h3>
+                        <h4><a href="#"><?php echo $listado->num; ?> comentario<?php echo ($listado->num == 1)?"":"s"; ?></a></h4>
+                        <div class="clear"></div>
+                    </div> <!--fin titular-->
+                    <div class="estracto">
+                        <!--<img src="<?php //echo $this->Image('_fotoBlog.png'); ?>" />-->
+                        <p><?php echo $listado->descripcion; ?></p>
+                        <a href="/articulo/mostrar/tipo/<?php echo $this->tipo->tipoarticulo_id; ?>/id/<?php echo $listado->articulo_id; ?>" class="btnNaranja100 right">Leer m&aacute;s</a>
+                    </div> <!--fin estracto-->
+                    <div class="clear"></div>
+                </div> <!--fin single-->
+                <?php endforeach; ?>
+            </div> <!--fin articulos-->
+        </div> <!--fin contLeft-->
+
+        <div class="contRight">
+            <h1>El Ranking</h1>
+            <div class="conSideRight">
+                <h2>GENERAL DEL PROFE DEPOR</h2>
+                <ul class="listadoRanking">
+                <?php if($this->rankgeneral != null): ?>
+                    <?php foreach($this->rankgeneral as $i => $rg): ?>
+                    <li<?php echo ($i==0)?" class=\"first\"":""; ?>>
+                        <div class="puesto"><?php echo ($i+1); ?></div>
+                        <div class="puntos"><?php echo $rg->puntaje; ?> Ptos.</div>
+                        <div class="nombre"><?php echo ucwords($rg->nomjugador); ?></div>
+                    </li>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <li><div class="puesto">&nbsp;</div>&nbsp;No Hay puntajes registrados</li>
+                <?php endif; ?>
+                </ul>
+                <a href="/ranking/" class="verMas">[Ver todo]</a>
+
+                <div class="clear"></div>
+
+                <div class="archivo">
+                    <h1>Archivo</h1>
+                    <ul class="archivoList">
+                        <?php foreach($this->archivo as $i => $archivo): ?>
+                        <li<?php echo ($i%2==0)?" class=\"fndGris\"":""; ?>><a href="/articulo/archivo/id/<?php echo $this->tipo->tipoarticulo_id; ?>/mes/<?php echo $archivo->mes; ?>/anio/<?php echo $archivo->anio; ?>"><?php echo $archivo->nombre; ?> <?php echo $archivo->anio; ?></a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div> <!--fin archivo-->
+
+                <div class="clear"></div>
+
+            </div> <!--fin conSideRight-->
+        </div> <!--fin contRight-->
+
+        <div class="clear"></div>
+
+    </div> <!--fin contBlog-->
+</div> <!--fin juegoFases-->

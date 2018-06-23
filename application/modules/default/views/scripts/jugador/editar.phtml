@@ -1,0 +1,76 @@
+<div class="popEditarCuentaV2 popStyle">
+  <h1 style="margin-bottom: 14px;">Editar cuenta</h1>
+  <p class="titularFormV2">Completa los datos de tu cuenta para participar en futuras promociones.</p>
+  <div class="editarCuenta">
+    <div class="left">
+      <form id="formDatosJugador" name="formDatosJugador" enctype="multipart/form-data" method="post" action="#">
+        <input name="jugador_id" type="hidden" id="jugador_id" value="<?php echo $this->jugador->jugador_id ?>" />
+        <div id="form-errors"></div>
+        <table border="0" cellspacing="0" cellpadding="0" class="formulaDepor">
+          <tr>
+            <td><div class="dataSingle" id="label-nombres">Nombre:</div></td>
+            <td><input name="nombres" type="text" id="nombres" class="required" value="<?php echo $this->jugador->nombres ?>" /></td>
+          </tr>
+          <tr>
+            <td><div class="dataSingle" id="label-apellidos">Apellidos:</div></td>
+            <td><input name="apellidos" type="text" id="apellidos" class="required" value="<?php echo $this->jugador->apellidos ?>" /></td>
+          </tr>
+          <tr>
+            <td><div class="dataSingle" id="label-email">E-mail:</div></td>
+            <td><input name="email" type="text" id="email" value="<?php echo $this->jugador->email ?>" readonly="readonly" /><!-- class="required email" --></td>
+          </tr>
+          <tr>
+            <td><div class="dataSingle" id="label-telefono">Tel&eacute;fono:</div></td>
+            <td><input name="telefono" type="text" id="telefono" value="<?php echo $this->jugador->telefono ?>" maxlength="9" /></td>
+          </tr>
+          <tr>
+            <td><div class="dataSingle">Departamento:</div></td>
+            <td><label><?php echo $this->departamento ?></label></td>
+          </tr>
+          <tr>
+            <td><div class="dataSingle">Provincia:</div></td>
+            <td><label id="provincia-label"><?php echo $this->provincia ?></label></td>
+          </tr>
+          <tr>
+            <td><div class="dataSingle">Distrito:</div></td>
+            <td><label id="distrito-label"><?php echo $this->distrito ?></label></td>
+          </tr>
+          <tr>
+            <td><div class="dataSingle" id="label-numero_doc">DNI:</div></td>
+            <td><input name="numero_doc" type="text" class="required" id="numero_doc" value="<?php echo $this->jugador->numero_doc ?>" maxlength="8" /></td>
+          </tr>
+          <tr>
+            <td><div class="dataSingle" id="label-dni_apoderado">DNI Apoderado:</div></td>
+            <td><input name="dni_apoderado" type="text" class="digits" id="dni_apoderado" value="<?php echo $this->jugador->dni_apoderado ?>" maxlength="8" /></td>
+          </tr>
+          <tr>
+            <td><div class="dataSingle">Tu equipo:</div></td>
+            <td><label><?php echo $this->club ?></label></td>
+          </tr>
+          <tr>
+            <td><div class="dataSingle">Foto: <span>(Opcional)</span></div></td>
+            <td><div class="foto">
+              <img width="50" height="45" src="<?php echo $this->Foto($this->jugador->foto) ?>" id="fotoJugador" align="left"/>
+              <a href="#" id="btnJugadorFoto" class="btnNaranja65 left" style="margin: 10px 0 0 7px;">Subir</a></div></td>
+          </tr>
+          <tr>
+            <td><div class="dataDoble">Agregar otro<br />
+              e-mail:</div></td>
+            <td><input class="addMail" name="otro_email" type="text" id="otro_email" />
+              <a href="#" id="btnAddEmail" class="btnNaranja65 derecha" style="margin-top: -2px; padding-bottom: 0;">Agregar</a> </td>
+          </tr>
+          <tr>
+            <td valign="top"><div class="dataDoble">Tus e-mail<br />
+              agregados:</div></td>
+            <td><div class="overMailsAlter" id="container-emails"><?php echo $this->render('jugador/email.phtml') ?></div>
+            <!--fin overMailsAlter-->
+            </td>
+          </tr>
+        </table>
+      </form>
+    <a href="#" id="btnGuardarDatosJugador" class="btnNaranja180 bold center btnBig">Actualizar datos</a> </div>
+    <!--fin left-->
+    <div class="right" id="containerLinks"><?php echo $this->action('link', 'jugador') ?></div>
+    <!--fin right-->
+  </div>
+</div>

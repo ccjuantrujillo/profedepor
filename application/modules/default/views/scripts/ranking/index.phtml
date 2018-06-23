@@ -1,0 +1,57 @@
+<div class="juegoFases ranking">
+  <div class="fasesLeft">
+    <div class="faseHeadLeft">
+      <h5>Ranking</h5>
+    </div>
+    <!--fin faseHead-->
+    <div class="dosRankPage">
+      <div class="rankPage">
+        <h1>Ranking general</h1>
+        <h2>Tu posici&oacute;n general en el juego</h2>
+        <div class="listadosRank">
+          <ul class="listadoRanking">
+            <li class="first">
+              <p>T&Uacute;</p>
+              <div class="puesto"><?php echo ($this->cgeneral != 0)?(($this->posicion_rank_jugador != null)?$this->posicion_rank_jugador:$this->pos):"-"; ?></div>
+              <div class="puntos"><?php echo $this->puntaje_jugador ?> Ptos.</div>
+              <div class="nombre"><?php echo ucwords($this->nombre_jugador); ?></div>
+            </li>
+          </ul>
+          <div class="overListRank">
+            <ul class="listadoRanking">
+            <?php if($this->rankgeneral != null): ?>
+                <?php foreach ($this->rankgeneral as $i => $p): ?>
+                  <li class="<?php echo $this->cycle(array('impar', 'par'))->next() ?>">
+                    <div class="puesto"><?php echo ($i + 1) ?></div>
+                    <div class="puntos"><?php echo $p->puntaje ?> ptos.</div>
+                    <div class="nombre"><?php echo substr(ucwords($p->nomjugador),0,25); ?></div>
+                  </li>
+                <?php endforeach; ?>
+            <?php endif; ?>
+            </ul>
+          </div>
+          <!--fin overListRank-->
+        </div>
+        <!--fin listadosRank-->
+      </div>
+      <!--fin rankPage-->
+      <!-- a href="/ranking/mostrar/id/<?php # echo $this->fecha_id-1; ?>" class="arrowNaranjaLeft">&nbsp;</a -->
+      <a href="javascript:;" class="arrowNaranjaLeft control" id="leftControl">&nbsp;</a>
+      <div class="rankPage">
+        <h3 id="rank_fecha_desc"><!-- Fecha <?php echo $this->fecha_hoy['descripcion']; ?>: 20/03/2011 --></h3>
+        <h1>Ranking por fecha</h1>
+        <h2>Conoce tu posici&oacute;n por fecha</h2>
+        <div class="listadosRank" id="slideshow">
+        </div>
+        <!--fin listadosRank-->
+      </div>
+      <!--fin rankPage-->
+      <a href="javascript:;" class="arrowNaranjaRight control" id="rightControl">&nbsp;</a>
+      <!-- a href="/ranking/mostrar/id/<?php # echo $this->fecha_id+1; ?>" class="arrowNaranjaRight">&nbsp;</a -->
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--fin fasesLeft-->
+</div>
+<!--fin juegoFases-->
+<!-- <a href="/ranking/mostrar/id/<?php # echo $this->fecha_id; ?>">[Ver m&aacute;s]</a> -->

@@ -1,0 +1,44 @@
+<div class="crearbanner">
+    <h1><?php echo $this->tipo->nombre; ?></h1>
+</div>
+
+<div class="containertable">
+<table style="width: 70%" border="1" cellspacing="0" cellpadding="2">
+<tr>
+	<td>
+		<?php if ($this->articulos != null): ?>
+        <?php foreach ($this->articulos as $listado): ?>
+        <table style="width: 100%; margin-bottom: 10px;" border="0" cellspacing="0" cellpadding="2">        
+	    	<tr class="list1">
+            	<td colspan="2" style="text-align: left;"><b><?php echo $listado->titulo; ?></b></td>
+	        </tr>
+	        <tr>
+	            <td style="width: 50%"><b><?php echo $listado->registro; ?></b></td>
+	            <td style="width: 50%; text-align: right;"><b><?php echo $listado->num; ?> comentario<?php echo ($listado->num == 1)?"":"s"; ?></b></td>
+	        </tr>
+	        <tr>
+	            <td colspan="2"><?php echo $listado->descripcion; ?></td>
+	        </tr>
+	        <tr>
+	        	<td colspan="2"><a class="aceptarlog2" href="#" onclick="verComentariosArchivo(<?php echo $this->tipo->tipoarticulo_id; ?>,<?php echo $listado->articulo_id; ?>);">Ver comentarios</a></td>
+	        </tr>
+         </table>
+        <?php endforeach; ?>
+        <?php endif; ?>
+     </td>
+</tr>	
+</table>
+</div>
+
+<div class="containertable">
+    <table style="width: 20%; margin-left: 10%;" border="1" cellspacing="0" cellpadding="0">
+        <tr class="list1">
+            <td>Archivo</td>
+        </tr>
+        <?php foreach($this->archivo as $archivo): ?>
+        <tr class="<?php echo $this->cycle(array('list_a', 'list_b'))->next() ?>">
+            <td style="text-align: left; padding-left: 20px;"><a href="#" onclick="verArchivo(<?php echo $this->tipo->tipoarticulo_id; ?>,<?php echo $archivo->mes; ?>,<?php echo $archivo->anio; ?>);"><?php echo $archivo->nombre; ?> <?php echo $archivo->anio; ?></a></td>
+        </tr>
+        <?php endforeach; ?>
+   </table>
+</div>

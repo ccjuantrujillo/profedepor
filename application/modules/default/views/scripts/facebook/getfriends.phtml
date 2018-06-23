@@ -1,0 +1,10 @@
+<?php foreach($this->my_friends as $friend): ?>
+<div align="left" class="masc_friend onclick">
+<?php echo $friend['name'] ?><br />
+<img src="http://graph.facebook.com/<?php echo $friend['id'] ?>/picture" /><br />
+<input type="checkbox" style="display: none" name="friends[]" value="<?php echo $friend['id'] ?>" />
+</div>
+<?php endforeach ?>
+<?php if($this->cantidad_pags > $this->pag): ?>
+<input type="button" id="btnVerMas" value="Ver Mas!" onclick="getRedFriends(this, <?php echo $this->pag ?>)" /><br />
+<?php endif ?>

@@ -1,0 +1,40 @@
+<div class="crearbanner">
+  <h1>Moderaci&oacute;n de Jugadores</h1>
+</div>
+
+<div style="text-align: left;">
+<!-- <a href="javascript:;" onclick="verTodos();" class="aceptarlog2">Ver Todos</a> -->
+<h3 style="margin: 10px 0 10px 0;">Buscar por Apellidos:</h3>
+<div class="alfabeto" style="margin: 10px 0 10px 0;">&lt;&lt;<?php echo $this->letters; ?>&gt;&gt;</div>
+<?php if(isset($this->letra)): ?>
+      <h3 style="margin: 10px 0 10px 0;">LETRA <?php echo $this->letra; ?></h3>
+<?php endif ?>
+</div>
+
+<div class="containertable">
+  <!--<div class="mensajetable" style="width:100%">Se han encontrado (<?php //echo $this->cantidad; ?>) registro(s)</div>-->
+  <table style="width:100%" border="1"  cellspacing="0" cellpadding="0">
+    <tr class="list1">
+        <td>Id</td>
+        <td>Nombres</td>
+        <td>Apellidos</td>
+        <td>Email</td>
+        <td>Puntaje</td>
+        <td>Detalle</td>
+        <td>Editar</td>
+        <td>Eliminar</td>
+    </tr>
+  <?php foreach($this->paginator as $i => $value): ?>
+    <tr id="jugadorid_<?php echo $value->jugador_id; ?>" class="<?php echo $this->cycle(array('list_a', 'list_b'))->next() ?>">
+    <td><?php echo $i+1;?></td>
+    <td class="textleft"><?php echo $value->nombres; ?></td>
+    <td class="textleft"><?php echo $value->apellidos; ?></td>
+    <td class="textleft"><?php echo $value->email; ?></td>
+    <td class="textleft"><?php echo $value->puntaje; ?></td>
+    <td><a href="#" onclick="verJugador(<?php echo $value->jugador_id;?>)"><img src="<?php echo $this->Image('ver.png');?>" border="0"/></a></td>
+    <td><a href="#" onclick="editarJugador(<?php echo $value->jugador_id;?>)"><img src="<?php echo $this->Image('editar.jpg');?>" border="0"/></a></td>
+    <td><a href="#" onclick="eliminarJugador(<?php echo $value->jugador_id;?>)"><img src="<?php echo $this->Image('eliminar.jpg');?>" border="0"/></a></td>
+  </tr>
+  <?php endforeach; ?>
+  </table>
+</div>

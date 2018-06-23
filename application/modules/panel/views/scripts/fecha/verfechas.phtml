@@ -1,0 +1,26 @@
+    <div class="mensajetable" style="width:100%">Se han encontrado (<?php echo $this->cantidad; ?>) registro(s)</div>
+    <table style="width:100%" border="1"  cellspacing="0" cellpadding="0">
+        <tr class="list1">
+          <td width="5%">Id</td>
+          <td width="10%">Descripci&oacute;n</td>
+          <td width="20%">Intervalo</td>
+          <td width="15%">Tipo</td>
+          <td width="20%">Situaci&oacute;n</td>
+          <td width="20%">Calculado</td>
+          <td width="10%">Editar</td>
+          <td width="10%">Eliminar</td>
+        </tr>
+    <?php foreach($this->fechas as $i => $f): ?>
+    <?php $nom_grupo = $f->grupo_id==1?"IDA":"VUELTA";?>
+        <tr id="fec_<?php echo $f->fecha_id; ?>" class="<?php echo $this->cycle(array('list_a', 'list_b'))->next() ?>">
+          <td><?php echo $i+1;?></td>
+          <td class="textleft"><?php echo $f->descripcion; ?></td>
+          <td class="textleft"><?php echo $f->intervalo; ?></td>
+          <td class="textleft"><?php echo $nom_grupo; ?></td>
+          <td><?php echo ($f->situacion == 0)?"No se ha jugado":"<img src='/images/panel/check.jpg' border='0'/>"; ?></td>
+          <td><?php echo ($f->calculado == 0)?"No se ha procesado":"<img src='/images/panel/check.jpg' border='0'/>"; ?></td>
+          <td><a href="#" onclick="editarFecha(<?php echo $f->fecha_id;?>)"><img src="<?php echo $this->Image('editar.jpg');?>" border="0"/></a></td>
+          <td><a href="#" onclick="eliminarFecha(<?php echo $f->fecha_id;?>)"><img src="<?php echo $this->Image('eliminar.jpg');?>" border="0"/></a></td>
+        </tr>
+    <?php endforeach; ?>
+    </table>

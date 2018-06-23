@@ -1,0 +1,47 @@
+<?php echo $this->doctype() . "\n" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<?php echo $this->headMeta() . "\n" ?>
+<?php echo $this->headTitle() . "\n" ?>
+<?php echo $this->headLink() . "\n" ?>
+<?php echo $this->headScript() . "\n" ?>
+</head>
+<body>
+<div class="wrapper">
+  <div class="top"></div>
+  <div><img src="<?php echo $this->Image('_homeLogosEquipos.jpg'); ?>" /></div>
+  <?php echo $this->layout()->content ?>
+  <div class="footer">
+    <div class="bd_simple1">
+      <div class="menu_btm">
+        <ul class="navi">
+          <li><a href="/ayuda/" target="_blank">Ayuda</a></li>
+          <li><a href="javascript:;" onClick="viewPopPolitica()">Politica del site</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bd_simple2">
+      <div class="logo_depor"> <img src="<?php echo $this->Image('depor.jpg') ?>" width="326" height="58" border="0" usemap="#Map2" /> </div>
+      <div class="copyright"> <img src="<?php echo $this->Image('copyright.jpg') ?>" width="307" height="58" /> </div>
+      <div class="recomendar"> <img src="<?php echo $this->Image('recomendar.jpg') ?>" width="317" height="58" border="0" usemap="#Map" />
+          <map name="Map" id="Map">
+            <area shape="rect" coords="212,16,232,35" href="javascript:;" class="btnShareFb" />
+            <area shape="rect" coords="237,15,251,34" href="javascript:;" class="btnShareTw" />
+            <area shape="rect" coords="255,15,273,34" href="javascript:;" class="btnShareMail" />
+          </map>
+      </div>
+    </div>
+  </div>
+  <!--fin footer-->
+</div>
+<!-- Inicio Loader -->
+<div id="box-loader" style="display: none;">
+  <div class="overlay_absolute"></div>
+  <div class="popCargando">
+	<h1>Espera, por favor</h1>
+    <div><img src="<?php echo $this->Image('loading.gif') ?>" /></div>
+  </div>
+</div>
+<!-- Fin Loader-->
+</body>
+</html>

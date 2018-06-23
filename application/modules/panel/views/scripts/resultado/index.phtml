@@ -1,0 +1,63 @@
+<form name="frmFase" method="post">
+     <?php
+     foreach($this->fases as $indice=>$value){
+          $arrDescripcion[$value->fase_id]=$value->descripcion;
+     }
+     ?>
+     <div class="crearbanner">
+            <h1><?php echo $this->title ?></h1>
+          <div style="position: relative;">Fases:</div>
+          <div><?php echo $this->formSelect('fase', $this->fase_id, array('onchange'=>'submit();','class'=>'optionn'), $arrDescripcion) ?></div>
+     </div>
+     <div class="containertable">
+          <table border="1" cellpadding="0" cellspacing="0">
+            <tr class="list1" >
+              <td align="center">ID</td>
+              <td align="center">FECHA</td>
+              <td align="center">INTERVALO</td>
+              <td align="center">ESTADO</td>
+              <td align="center">SITUACION</td>
+              <td align="center">ACCIONES</td>
+            </tr>
+              <div id="tblFecha">
+              <?php
+                foreach($this->fechas as $indice=>$value){
+                      switch($value->situacion){
+                           case 0: $mensaje = "POR JUGAR";break;
+                           case 1: $mensaje = "JUGADA";break;
+                      }
+                      switch ($value->calculado){
+                           case 0:$mensaje2="POR PROCESAR";break;
+                           case 1:$mensaje2="PROCESADO";break;
+                      }
+                 ?>
+              <tr class="list_a" valign="middle">
+                <td align="center"><?php echo $indice+1;?> </td>
+                <td align="left"><?php echo "Fecha ".$value->descripcion;?></td>
+                <td align="center"><?php echo $value->intervalo;?></td>
+                <td align="center"><?php echo ($value->situacion==1)?"<img src='/images/check.jpg'>":"POR JUGAR";?></td>
+                <td align="center"><?php echo $mensaje2;?></td>
+                <td align="center">
+                     <?php
+                     if($value->calculado==0){
+                     ?>
+                          <a href="/panel/resultado/fecha/id/<?php echo $value->fecha_id;?>"><img src="<?php echo $this->Image('pelota.png');?>" border="0"  width="30" height="30"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                          <a href="/panel/resultado/calificar/id/<?php echo $value->fecha_id;?>"><img src="<?php echo $this->Image('_icoFase3Depor.gif');?>" border="0" width="45" height="45"></a>&nbsp;&nbsp;
+                     <?php
+                     }
+                     elseif($value->calculado==1){
+                     ?>
+                          <a href="#" onclick="alert('No puede modificar los resultados,\nesta fecha ya fue procesada');"><img src="<?php echo $this->Image('pelota.png');?>" border="0"  width="30" height="30"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                         <a href="#" onclick="alert('No puede modificar los resultados,\nesta fecha ya fue procesada');"><img src="<?php echo $this->Image('_icoFase3Depor.gif');?>" border="0" width="45" height="45"></a>&nbsp;&nbsp;
+                     <?php
+                     }
+                     ?>
+                </td>
+              </tr>
+              <?php
+                }
+               ?>
+              </div>
+          </table>
+          </div>
+</form>
